@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const connect = require('gulp-connect-php');
 const browserSync = require('browser-sync');
+const plumber     = require('gulp-plumber');
 
 
 const phpSettings = { 
@@ -15,15 +16,29 @@ gulp.task('connect', function() {
  
 
 gulp.task('connect-sync', function() {
-  connect.server(phpSettings, function (){
-    browserSync({
-      proxy: '127.0.0.1:8010'
+
+    connect.server(phpSettings, function (){
+
+        browserSync({
+            proxy: '127.0.0.1:8010',
+            reqHeaders: function (config) {
+                console.log(config);
+                return {
+                    "accept-encoding": "UTF-8",
+                    "content-type": "UTF-8"
+                }
+            },
+            middleware: function (req, res, next) {
+                res.setHeader("Content-type", 'UTF-8');
+                next();
+            }
+        });
     });
-  });
  
-  gulp.watch('src/**/*.php').on('change', function () {
-    browserSync.reload();
-  });
+    gulp.watch(['src/*.php', 'src/local/**/*.*'],  function () {
+        browserSync.reload();
+    });
+
 });
 
 

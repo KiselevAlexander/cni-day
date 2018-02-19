@@ -1,0 +1,17 @@
+{
+  "name": "cni-day-2018",
+  "version": "0.0.1",
+  "authors": [
+    "Alexander Kiselev <alexander.kiselev@mail.ru>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
