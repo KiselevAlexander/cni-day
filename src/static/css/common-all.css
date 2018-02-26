@@ -1,0 +1,146 @@
+header {
+  font-family: ProximaNovaCond;
+}
+.page-header {
+  background-color: #000;
+  height: 40px;
+  display: block;
+  line-height: 40px;
+  font-size: 14px;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+.width-limiter {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+@font-face {
+  font-family: ProximaNovaCond;
+  src: url("/fonts/Proxima Nova Condensed Light.otf");
+}
+@font-face {
+  font-family: ProximaNova;
+  src: url("/fonts/Proxima Nova Condensed Semibold.otf");
+}
+@font-face {
+  font-family: PFDinTextCompProMedium;
+  src: url("/fonts/PFDinTextCompPro-Medium.ttf");
+}
+header a {
+  text-decoration: none;
+  margin-right: 30px;
+}
+header a:last-child {
+  margin-right: 0;
+}
+header .has-icon {
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+.page-header a {
+  color: #B2B2B2;
+}
+.page-header a:hover {
+  color: #fff;
+}
+.has-icon-right {
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.phone {
+  background-image: url(/images/phone.png);
+  padding-left: 18px;
+}
+.corporate {
+  background-image: url(/images/corporate.png);
+  padding-left: 23px;
+}
+.sign-in {
+  background-image: url(/images/sign-in.png);
+  padding-left: 22px;
+}
+.city {
+  background-image: url(/images/arrow-down.png);
+  padding-right: 15px;
+}
+.float-right {
+  float: right;
+}
+.shop-header {
+  border-bottom: 2px solid #ccc;
+  height: 60px;
+  line-height: 60px;
+}
+.shop-header a:hover {
+  color: #4d4d4d;
+}
+.logo {
+  line-height: 60px;
+  display: inline-block;
+}
+.logo > img {
+  vertical-align: middle;
+}
+.search {
+  background-image: url(/images/search.png);
+  padding-left: 23px;
+}
+.cart {
+  background-image: url(/images/cart.png);
+  padding-left: 27px;
+}
+.favorites {
+  background-image: url(/images/favorites.png);
+  padding-left: 27px;
+}
+.rounded-background {
+  background-color: #000;
+  border-radius: 10px;
+  padding: 2px 5px;
+  color: #fff;
+}
+.shop-header .has-icon > .rounded-background {
+  font-size: 11px;
+  font-family: ProximaNova;
+}
+.categories a {
+  color: #000;
+  margin-right: 30px;
+}
+.categories {
+  height: 44px;
+  line-height: 44px;
+  font-family: PFDinTextCompProMedium;
+  font-size: 16px;
+}
+@media (max-width: 972px) {
+  .categories a {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 860px) {
+  .shop-header .float-right > a {
+    width: 0;
+    display: inline-block;
+    overflow: hidden;
+  }
+}
+@media (max-width: 770px) {
+  .categories {
+    display: none;
+  }
+}
+@media (max-width: 530px) {
+  .page-header > .width-limiter > a {
+    width: 0;
+    display: inline-block;
+    overflow: hidden;
+    height: 40px;
+  }
+}

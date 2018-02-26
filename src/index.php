@@ -190,24 +190,19 @@ if ($day["DATE"]["VALUE"]) {
 
 $interval = $dateFut->diff($now);
 $days = $interval->days;
-$priceall = array(
-    $day["TICKET_1_LOWPRICE"]["VALUE"],
-    $day["TICKET_2_LOWPRICE"]["VALUE"],
-    $day["TICKET_3_LOWPRICE"]["VALUE"]
-);
-$price1 = $day["TICKET_1_LOWPRICE"]["VALUE"];
-$price2 = $day["TICKET_2_LOWPRICE"]["VALUE"];
-$price3 = $day["TICKET_3_LOWPRICE"]["VALUE"];
+
+$PRICES = [];
 
 if ($days <= 10){
-    $price1 = $day["TICKET_1_HIGHPRICE"]["VALUE"];
-    $price2 = $day["TICKET_2_HIGHPRICE"]["VALUE"];
-    $price3 = $day["TICKET_3_HIGHPRICE"]["VALUE"];
-    $priceall = array(
-        $day["TICKET_1_HIGHPRICE"]["VALUE"],
-        $day["TICKET_2_HIGHPRICE"]["VALUE"],
-        $day["TICKET_3_HIGHPRICE"]["VALUE"]
-    );
+
+    array_push($PRICES, $day["TICKET_1_HIGHPRICE"]["VALUE"]);
+    array_push($PRICES, $day["TICKET_2_HIGHPRICE"]["VALUE"]);
+    array_push($PRICES, $day["TICKET_3_HIGHPRICE"]["VALUE"]);
+
+} else {
+    array_push($PRICES, $day["TICKET_1_LOWPRICE"]["VALUE"]);
+    array_push($PRICES, $day["TICKET_2_LOWPRICE"]["VALUE"]);
+    array_push($PRICES, $day["TICKET_3_LOWPRICE"]["VALUE"]);
 }
 
 
@@ -224,7 +219,8 @@ if ($days <= 10){
 $APPLICATION->IncludeFile(
     "/local/templates/2017/index.php",
     Array(
-        "DAY" => $day
+        "DAY" => $day,
+        "PRICES" => $PRICES,
     ),
     Array("MODE"=>"html")
 );

@@ -12,7 +12,7 @@ $day = $arParams['DAY'];
 <html lang="ru"></html>
 <head>
     <meta charset="UTF-8"/>
-    <title>CNI - Дизайн. технологии. моделирование. <?= dateRus($day["DATE"]["VALUE"])?>, <?= $sCurCityName?></title>
+    <title>CNI - Дизайн. технологии. моделирование. <?=dateRus($day["DATE"]["VALUE"])?>, <?=$sCurCityName?></title>
     <script src="/static/preload.js"></script>
     <link rel="shortcut icon" type="image/png" href="/static/img/favicon.png?v=2"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet"/>
@@ -21,19 +21,19 @@ $day = $arParams['DAY'];
     /**
      * Кастомные стили для каждого города отдельно
      */
-    if (is_file($_SERVER['DOCUMENT_ROOT'] . '/css/cities/' . $GLOBALS['sCurCity'] . '.css')) {
+    if (is_file($_SERVER['DOCUMENT_ROOT'] . '/static/css/cities/' . $GLOBALS['sCurCity'] . '.css')) {
         ?>
-        <link rel="stylesheet" href="<?='/css/cities/' . $GLOBALS['sCurCity'] . '.css'?>">
+        <link rel="stylesheet" href="<?='/static/css/cities/' . $GLOBALS['sCurCity'] . '.css'?>">
         <?
     }
     ?>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"/>
     <meta property="og:url" content="http://<?=$GLOBALS['sCurCity'];?>.cni-day.ru"/>
-    <meta property="og:title" content="Nail-семинар в городе <?= $GLOBALS['sCurCityName']?>."/>
+    <meta property="og:title" content="Nail-семинар в городе <?=$GLOBALS['sCurCityName']?>."/>
     <meta property="og:description"
-          content="<?= dateRus($day["DATE"]["VALUE"])?> в Galich Hall пройдет день CNI с Еленой Морозовой. В программе новинки моделирования и дизайна, подарки и nail-вечеринка"/>
+          content="<?=dateRus($day["DATE"]["VALUE"])?> в Galich Hall пройдет день CNI с Еленой Морозовой. В программе новинки моделирования и дизайна, подарки и nail-вечеринка"/>
     <meta name="description"
-          content="<?= dateRus($day["DATE"]["VALUE"])?> в Galich Hall пройдет день CNI с Еленой Морозовой. В программе новинки моделирования и дизайна, подарки и nail-вечеринка"/>
+          content="<?=dateRus($day["DATE"]["VALUE"])?> в Galich Hall пройдет день CNI с Еленой Морозовой. В программе новинки моделирования и дизайна, подарки и nail-вечеринка"/>
     <meta property="og:image" content="/static/img/cni_share-img.jpg"/>
 
     <script async="async" type="text/javascript">(function (d, w, c) {
@@ -125,7 +125,7 @@ $day = $arParams['DAY'];
                     <span class="title--cena">
                         цена
                         <div class="title__second">
-                            Забери свой билет, пока не подорожал(осталось <?= ($days-10)?> <?= dayOut($days-10)?>)
+                            Забери свой билет, пока не подорожал(осталось <?=($days-10)?> <?=dayOut($days-10)?>)
                         </div>
                     </span>
                 </div>
@@ -135,7 +135,7 @@ $day = $arParams['DAY'];
                 <div class="title">
                     <span class="title--cena">
                         цена
-                        <div class="title__second">До начала осталось <?= $days?> дней</div>
+                        <div class="title__second">До начала осталось <?=$days?> дней</div>
                     </span>
                 </div>
                 <?
@@ -173,7 +173,7 @@ $day = $arParams['DAY'];
                         $i=1;
                         do {
                             ?>
-                            <option value="price<?= $i?>"><?= strip_tags($day["TICKET_".$i."_NAME"]["~VALUE"])?> | <?= $priceall[$i-1]?></option>
+                            <option value="price<?=$i?>"><?=strip_tags($day["TICKET_".$i."_NAME"]["~VALUE"])?> | <?=$arParams['PRICES'][$i-1]?></option>
                             <?
                             $i++;
                         } while (!empty($day["TICKET_".$i."_NAME"]["~VALUE"]))?>
@@ -220,18 +220,18 @@ $day = $arParams['DAY'];
     <div class="popup-price__container"><a href="javascript:void(0)" class="popup-price__close js-close-popup"></a>
 
         <div class="popup-price__header popup-price__header--musthave">
-            <div class="popup-price__header-name"><?= strip_tags($day["TICKET_2_NAME"]["~VALUE"]);?></div>
-            <div class="popup-price__header-date"><?= strip_tags($day["TICKET_2_DATE"]["~VALUE"]);?></div>
+            <div class="popup-price__header-name"><?=strip_tags($day["TICKET_2_NAME"]["~VALUE"]);?></div>
+            <div class="popup-price__header-date"><?=strip_tags($day["TICKET_2_DATE"]["~VALUE"]);?></div>
         </div>
         <?foreach ($day["TICKET_2_PROGRAMM_MORE"]["VALUE"] as $k=>$v){
             $text = explode("br",$day["TICKET_2_PROGRAMM_MORE"]["DESCRIPTION"][$k])?>
             <div class="popup-price__container-element">
-                <div class="popup-price__title"><span class="price__icon" style="background-image: url('<?= CFile::getPath($v)?>')"></span><?= $text[0]?></div>
+                <div class="popup-price__title"><span class="price__icon" style="background-image: url('<?=CFile::getPath($v)?>')"></span><?=$text[0]?></div>
                 <ul class="popup-price__keys">
                     <?$i = 1;
                     do {
                         ?>
-                        <li><?= $text[$i]?></li>
+                        <li><?=$text[$i]?></li>
                         <?
                         $i++;
                     } while ($i<count($text));?>
@@ -239,21 +239,21 @@ $day = $arParams['DAY'];
             </div>
         <?}?>
         <div class="popup-price__container-element">
-            <div class="price__bottom"><span class="price__value"><?= $price2?> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+            <div class="price__bottom"><span class="price__value"><?=$arParams['PRICES'][1]?> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                                                                      x="0px" y="0px" width="13.5px" height="27px" viewBox="0 0 13.5 27" style="enable-background:new 0 0 13.5 27;" xml:space="preserve"> <style type="text/css"> .st0 {
                                 stroke: #FFFFFF;
                                 stroke-width: 0.5;
                                 stroke-miterlimit: 10;
                             } </style> <defs> </defs> <path class="st0" d="M6.4,16.1c1.7,0,3.4-0.5,4.7-1.7s2.2-3.2,2.2-6.2c0-3-0.9-5-2.2-6.3s-3-1.7-4.7-1.7H2.5v11.9H0.2V16h2.3v2.3 H0.2v3.6h2.3v4.8h3.9v-4.8h5.1v-3.6H6.4V16.1z M6.4,4.2c1.2,0,1.9,0.3,2.4,0.9c0.4,0.6,0.5,1.7,0.5,3.2s-0.1,2.4-0.5,3 c-0.4,0.6-1.2,0.8-2.4,0.8V4.2z"/> </svg></span><span
                     class="price__ticket-left">
-                    <span class="price__ticket-left-value"><?= $day["TICKET_2_QUANTITY"]["VALUE"];?></span>
+                    <span class="price__ticket-left-value"><?=$day["TICKET_2_QUANTITY"]["VALUE"];?></span>
                     <div class="price__ticket-left-text">
                         осталось<br>мест
                     </div>
                 </span>
                 <a
                     data-selected="price1"
-                    data-cost="<?= $price2?>"
+                    data-cost="<?=$arParams['PRICES'][1]?>"
                     data-metrica="11scrn_send_NE"
                     text="купить"
                     class="button button--white js-open-popup"
@@ -276,21 +276,21 @@ $day = $arParams['DAY'];
         <a href="javascript:void(0)" class="popup-price__close js-close-popup"></a>
 
         <div class="popup-price__header popup-price__header--nailexpert">
-            <div class="popup-price__header-name"><?= strip_tags($day["TICKET_3_NAME"]["~VALUE"]);?></div>
-            <div class="popup-price__header-date"><?= strip_tags($day["TICKET_3_DATE"]["~VALUE"]);?></div>
+            <div class="popup-price__header-name"><?=strip_tags($day["TICKET_3_NAME"]["~VALUE"]);?></div>
+            <div class="popup-price__header-date"><?=strip_tags($day["TICKET_3_DATE"]["~VALUE"]);?></div>
         </div>
         <?foreach ($day["TICKET_3_PROGRAMM_MORE"]["VALUE"] as $k=>$v){
             $text = explode("br",$day["TICKET_3_PROGRAMM_MORE"]["DESCRIPTION"][$k])?>
             <div class="popup-price__container-element">
                 <div class="popup-price__title">
-                    <span class="price__icon" style="background-image: url('<?= CFile::getPath($v)?>')"></span>
-                    <?= $text[0]?>
+                    <span class="price__icon" style="background-image: url('<?=CFile::getPath($v)?>')"></span>
+                    <?=$text[0]?>
                 </div>
                 <ul class="popup-price__keys">
                     <?$i = 1;
                     do {
                         ?>
-                        <li><?= $text[$i]?></li>
+                        <li><?=$text[$i]?></li>
                         <?
                         $i++;
                     } while ($i<count($text));?>
@@ -301,7 +301,7 @@ $day = $arParams['DAY'];
             <div class="price__bottom">
 
                 <span class="price__value">
-                    <?= $price3?> <svg x="0px" y="0px" width="13.5px" height="27px" viewBox="0 0 13.5 27" style="enable-background:new 0 0 13.5 27;" xml:space="preserve">
+                    <?=$arParams['PRICES'][2]?> <svg x="0px" y="0px" width="13.5px" height="27px" viewBox="0 0 13.5 27" style="enable-background:new 0 0 13.5 27;" xml:space="preserve">
                         <style type="text/css">
                             .st0 {
                                 stroke: #FFFFFF;
@@ -317,7 +317,7 @@ $day = $arParams['DAY'];
                 <span class="price__ticket-left">
 
                     <span class="price__ticket-left-value">
-                        <?= $day["TICKET_3_QUANTITY"]["VALUE"]?>
+                        <?=$day["TICKET_3_QUANTITY"]["VALUE"]?>
                     </span>
 
                     <div class="price__ticket-left-text">
@@ -327,7 +327,7 @@ $day = $arParams['DAY'];
                 </span>
 
                 <a data-selected="price2"
-                   data-cost="<?= $price3?>"
+                   data-cost="<?=$arParams['PRICES'][2]?>"
                    data-metrica="11scrn_send_NE"
                    text="купить"
                    class="button button--white js-open-popup"
@@ -350,22 +350,22 @@ $day = $arParams['DAY'];
         <a href="javascript:void(0)" class="popup-price__close js-close-popup"></a>
 
         <div class="popup-price__header popup-price__header--naillover">
-            <div class="popup-price__header-name"><?= strip_tags($day["TICKET_1_NAME"]["~VALUE"]);?></div>
-            <div class="popup-price__header-date"><?= strip_tags($day["TICKET_1_DATE"]["~VALUE"]);?></div>
+            <div class="popup-price__header-name"><?=strip_tags($day["TICKET_1_NAME"]["~VALUE"]);?></div>
+            <div class="popup-price__header-date"><?=strip_tags($day["TICKET_1_DATE"]["~VALUE"]);?></div>
         </div>
 
         <?foreach ($day["TICKET_1_PROGRAMM_MORE"]["VALUE"] as $k=>$v){
             $text = explode("br",$day["TICKET_1_PROGRAMM_MORE"]["DESCRIPTION"][$k])?>
             <div class="popup-price__container-element">
                 <div class="popup-price__title">
-                    <span class="price__icon" style="background-image: url('<?= CFile::getPath($v)?>')"></span>
-                    <?= $text[0]?>
+                    <span class="price__icon" style="background-image: url('<?=CFile::getPath($v)?>')"></span>
+                    <?=$text[0]?>
                 </div>
                 <ul class="popup-price__keys">
                     <?$i = 1;
                     do {
                         ?>
-                        <li><?= $text[$i]?></li>
+                        <li><?=$text[$i]?></li>
                         <?
                         $i++;
                     } while ($i<count($text));?>
@@ -375,7 +375,7 @@ $day = $arParams['DAY'];
         <div class="popup-price__container-element">
             <div class="price__bottom">
                 <span class="price__value">
-                    <?= $price1?> <svg x="0px" y="0px" width="13.5px" height="27px" viewBox="0 0 13.5 27" style="enable-background:new 0 0 13.5 27;">
+                    <?=$arParams['PRICES'][0]?> <svg x="0px" y="0px" width="13.5px" height="27px" viewBox="0 0 13.5 27" style="enable-background:new 0 0 13.5 27;">
                         <style type="text/css">
                             .st0 {
                                 stroke: #FFFFFF;
@@ -388,13 +388,13 @@ $day = $arParams['DAY'];
                     </svg>
                 </span>
                 <span class="price__ticket-left">
-                    <span class="price__ticket-left-value"><?= $day["TICKET_1_QUANTITY"]["VALUE"]?></span>
+                    <span class="price__ticket-left-value"><?=$day["TICKET_1_QUANTITY"]["VALUE"]?></span>
                     <div class="price__ticket-left-text">
                         осталось<br>мест
                     </div>
                 </span>
                 <a data-selected="price2"
-                   data-cost="<?= $price1?> "
+                   data-cost="<?=$arParams['PRICES'][0]?> "
                    data-metrica="11scrn_send_NE"
                    text="купить"
                    class="button button--white js-open-popup"
@@ -415,13 +415,13 @@ $day = $arParams['DAY'];
     <a href="javascript:void(0);"
        class="menu__cni menu__cni--white js-cni"
     >
-        Дни<br><?= $day["IN_CITY"]["VALUE"]?>
+        Дни<br><?=$day["IN_CITY"]["VALUE"]?>
     </a>
 
     <a href="javascript:void(0);"
        class="menu__cni menu__cni--black js-cni"
     >
-        Дни<br><?= $day["IN_CITY"]["VALUE"]?>
+        Дни<br><?=$day["IN_CITY"]["VALUE"]?>
     </a>
 
     <a href="javascript:void(0);"
@@ -432,17 +432,17 @@ $day = $arParams['DAY'];
        class="menu__burger menu__burger--black js-menu"
     ></a>
 
-    <a href="tel:<?= $day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
+    <a href="tel:<?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
        data-metrica="20_Mobile_call"
        class="menu__phone-mobile"
     ></a>
 
-    <a href="tel:<?= $day["PHONE_CODE"].$day['PHONE_NUMBER']['VALUE']?>"
+    <a href="tel:<?=$day["PHONE_CODE"].$day['PHONE_NUMBER']['VALUE']?>"
        data-metrica="20_Mobile_call"
        class="menu__phone menu__phone--white"
     >
-        <div class="prefix"><?= $day["PHONE_CODE"]["VALUE"]?></div>
-        <div class="afix"><?= $day['PHONE_NUMBER']["VALUE"]?></div>
+        <div class="prefix"><?=$day["PHONE_CODE"]["VALUE"]?></div>
+        <div class="afix"><?=$day['PHONE_NUMBER']["VALUE"]?></div>
     </a>
 
     <a href="#" class="menu__buy menu__buy--white">
@@ -450,12 +450,12 @@ $day = $arParams['DAY'];
         <div data-metrica="01scrn_send" text="купить" class="buy mobile--hidden js-open-popup">записаться</div>
     </a>
 
-    <a href="tel:<?= $day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
+    <a href="tel:<?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
        data-metrica="20_Mobile_call"
        class="menu__phone menu__phone--black"
     >
-        <div class="prefix"><?= $day["PHONE_CODE"]["VALUE"]?></div>
-        <div class="afix"><?= $day['PHONE_NUMBER']["VALUE"]?></div>
+        <div class="prefix"><?=$day["PHONE_CODE"]["VALUE"]?></div>
+        <div class="afix"><?=$day['PHONE_NUMBER']["VALUE"]?></div>
     </a>
 
     <a href="#" class="menu__buy menu__buy--black">
@@ -500,10 +500,10 @@ $day = $arParams['DAY'];
                         <div class="main-logo">ДЕНЬ CNI</div>
 
                         <div class="main-title">
-                            <?= $day["DESCRIPTION"]["VALUE"]?>
+                            <?=$day["DESCRIPTION"]["VALUE"]?>
                         </div>
 
-                        <div class="main-days"><?= dateRus($day["DATE"]["VALUE"])?>, <?= $day["PLACE_NAME_RUS"]["VALUE"]?></div>
+                        <div class="main-days"><?=dateRus($day["DATE"]["VALUE"])?>, <?=$day["PLACE_NAME_RUS"]["VALUE"]?></div>
 
                         <div class="main-button">
                             <a data-metrica="01scrn_send"
@@ -588,7 +588,7 @@ $day = $arParams['DAY'];
 
                 <div class="techniks__slider js-slider">
 
-                    <div class="title"><?= $day["TECHNIKS_HEADER"]["VALUE"]?></div>
+                    <div class="title"><?=$day["TECHNIKS_HEADER"]["VALUE"]?></div>
 
                     <?
                     foreach ($day["TECHNIKS_SLIDER"]["VALUE"] as $k=>$v){
@@ -600,14 +600,14 @@ $day = $arParams['DAY'];
                             <div class="person-container">
 
                                 <img class="img avatar"
-                                     src="<?= CFile::getPath($v)?>"
+                                     src="<?=CFile::getPath($v)?>"
                                 />
 
                             </div>
 
                             <div class="text">
                                 <div class="text__title">
-                                    <?= $text[0]?>
+                                    <?=$text[0]?>
                                 </div>
                                 <div class="text__description">
                                     <?=$text[1]?>
@@ -629,7 +629,7 @@ $day = $arParams['DAY'];
 
                 <div class="title-container">
                     <div class="title">
-                        <?= count($day["GALLERY_DESIGN"]["VALUE"])?> <?= designOut(count($day["GALLERY_DESIGN"]["VALUE"]))?>
+                        <?=count($day["GALLERY_DESIGN"]["VALUE"])?> <?=designOut(count($day["GALLERY_DESIGN"]["VALUE"]))?>
                         , которым вы научитесь
                     </div>
 
@@ -662,13 +662,13 @@ $day = $arParams['DAY'];
             <div class="gifts__overflow">
                 <div class="gifts__container">
                     <div class="gifts__gifts-for-you">
-                        <div class="text--small"><?= $day["GIFTS_HEADER"]["VALUE"]?></div>
+                        <div class="text--small"><?=$day["GIFTS_HEADER"]["VALUE"]?></div>
                     </div>
                     <div class="gifts__prizes">
                         <div class="message"><img src="/static/img/lamp.png"/>
 
                             <div class="text">
-                                <?= $day["GIFTS_TEXT"]["VALUE"]?>
+                                <?=$day["GIFTS_TEXT"]["VALUE"]?>
                             </div>
                         </div>
                         <div class="prizes__list">
@@ -678,12 +678,12 @@ $day = $arParams['DAY'];
                                 ?>
                                 <div class="prizes__item">
                                     <?if (!empty($day['GIFTS_IMG_'.$i]['VALUE'])){?>
-                                        <img src="<?= CFile::getPath($day['GIFTS_IMG_'.$i]['VALUE'])?>"/>
+                                        <img src="<?=CFile::getPath($day['GIFTS_IMG_'.$i]['VALUE'])?>"/>
                                     <?}?>
 
-                                    <div class="name"><?= $day["GIFTS_HEADER_".$i]["VALUE"]?></div>
+                                    <div class="name"><?=$day["GIFTS_HEADER_".$i]["VALUE"]?></div>
                                     <div class="descr">
-                                        <?= $day["GIFTS_TEXT_".$i]["VALUE"]?>
+                                        <?=$day["GIFTS_TEXT_".$i]["VALUE"]?>
                                     </div>
                                 </div>
                                 <?
@@ -724,7 +724,7 @@ $day = $arParams['DAY'];
                         <div data-layer="6" data-slide="3" class="expert__vacancy-container js-particles">
                             <div class="expert-vacancy">speaker</div>
                             <div class="expert-descr">
-                                <?= $day["SPEAKER_DESCRIPTION"]["~VALUE"][0]?>
+                                <?=$day["SPEAKER_DESCRIPTION"]["~VALUE"][0]?>
                             </div>
                         </div>
 
@@ -750,7 +750,7 @@ $day = $arParams['DAY'];
                                 </div>
 
                                 <div class="expert-descr">
-                                    <?= $day["SPEAKER_DESCRIPTION"]["~VALUE"][$key]?>
+                                    <?=$day["SPEAKER_DESCRIPTION"]["~VALUE"][$key]?>
                                 </div>
 
                             </div>
@@ -766,7 +766,7 @@ $day = $arParams['DAY'];
             </div>
 
             <div class="skeaker__photo"
-                 style="background-image: url(<?= CFile::GetPath($day['SPEAKER_PHOTO']['VALUE'])?>)"
+                 style="background-image: url(<?=CFile::GetPath($day['SPEAKER_PHOTO']['VALUE'])?>)"
             ></div>
 
         </div>
@@ -788,12 +788,12 @@ $day = $arParams['DAY'];
                     ?>
                     <div class="comments__slider-item js-item">
                         <div class="text">
-                            <?= $text?>
+                            <?=$text?>
                         </div>
                         <div class="person-container">
-                            <img src="<?= CFile::GetPath($v)?>" class="img avatar"/>
-                            <div class="name"><?= $header[0]?></div>
-                            <div class="city"><?= (count($city) > 1)? $city [0]:""?></div>
+                            <img src="<?=CFile::GetPath($v)?>" class="img avatar"/>
+                            <div class="name"><?=$header[0]?></div>
+                            <div class="city"><?=(count($city) > 1)? $city [0]:""?></div>
                         </div>
                     </div>
                 <?}?>
@@ -808,7 +808,7 @@ $day = $arParams['DAY'];
             <div class="video__container">
                 <div class="video__title">Видео-отзывы участников</div>
                 <div class="video__content">
-                    <div data-id="<?= $day["REVIEWS_VIDEO"]["DESCRIPTION"][0]?>" style="background-image: url(<?= CFile::getPath($day["REVIEWS_VIDEO"]["VALUE"][0])?>)"
+                    <div data-id="<?=$day["REVIEWS_VIDEO"]["DESCRIPTION"][0]?>" style="background-image: url(<?=CFile::getPath($day["REVIEWS_VIDEO"]["VALUE"][0])?>)"
                          class="video__content-overlay"></div>
                     <iframe></iframe>
                 </div>
@@ -817,8 +817,8 @@ $day = $arParams['DAY'];
                         if ($k>0){
                             ?>
                             <div class="video__element">
-                                <div data-id="<?= $day["REVIEWS_VIDEO"]["DESCRIPTION"][$k]?>"
-                                     style="background-image:url(<?= CFile::getPath($v)?>)"
+                                <div data-id="<?=$day["REVIEWS_VIDEO"]["DESCRIPTION"][$k]?>"
+                                     style="background-image:url(<?=CFile::getPath($v)?>)"
                                      class="thumbnail js-video"
                                 ></div>
                             </div>
@@ -867,12 +867,12 @@ $day = $arParams['DAY'];
                     }?>
 
                     <img class="calendar__first-day__digit"
-                         src="/static/img/<?= substr(explode(".",$day["DATE"]["VALUE"])[0], -1)?>-active.png"
+                         src="/static/img/<?=substr(explode(".",$day["DATE"]["VALUE"])[0], -1)?>-active.png"
                     />
 
                 </div>
                 <div class="calendar__day-slider">
-                    <div class="item active"><?= dateRus($day["DATE"]["VALUE"])?></div>
+                    <div class="item active"><?=dateRus($day["DATE"]["VALUE"])?></div>
                     <?
                     $i = 1;
                     while($i<$day["DAYS"]["VALUE"]) {
@@ -881,7 +881,7 @@ $day = $arParams['DAY'];
                         $date = implode(".", $date);
                         ?>
                         <div class="item">
-                            <?= dateRus($date)?>
+                            <?=dateRus($date)?>
                         </div>
                         <?
                         $i++;
@@ -891,7 +891,7 @@ $day = $arParams['DAY'];
                 <div class="calendar__programm active">
 
                     <div class="calendar__mobile-accordion">
-                        <?= dateRus($day["DATE"]["VALUE"])?>
+                        <?=dateRus($day["DATE"]["VALUE"])?>
                     </div>
 
                     <?
@@ -900,12 +900,12 @@ $day = $arParams['DAY'];
                         <div class="item">
                             <div class="content">
                                 <span class="time">
-                                    <?= $day["DAY_1"]["DESCRIPTION"][$k]?>
+                                    <?=$day["DAY_1"]["DESCRIPTION"][$k]?>
                                 </span>
                                 <?$text = explode("br", $text);
                                 foreach ($text as $v){
                                     ?>
-                                    <p class="text"><?= $v?></p>
+                                    <p class="text"><?=$v?></p>
                                     <?
                                 }
                                 ?>
@@ -947,13 +947,13 @@ $day = $arParams['DAY'];
                                 <div class="content">
 
                                     <span class="time">
-                                        <?= $day["DAY_2"]["DESCRIPTION"][$k]?>
+                                        <?=$day["DAY_2"]["DESCRIPTION"][$k]?>
                                     </span>
 
                                     <?$text = explode("br", $text);
                                     foreach ($text as $v){
                                         ?>
-                                        <p class="text"><?= $v?></p>
+                                        <p class="text"><?=$v?></p>
                                         <?
                                     }
                                     ?>
@@ -994,12 +994,12 @@ $day = $arParams['DAY'];
                             <div class="item">
                                 <div class="content">
                                     <span class="time">
-                                        <?= $day["DAY_3"]["DESCRIPTION"][$k]?>
+                                        <?=$day["DAY_3"]["DESCRIPTION"][$k]?>
                                     </span>
                                     <?$text = explode("br", $text);
                                     foreach ($text as $v){
                                         ?>
-                                        <p class="text"><?= $v?></p>
+                                        <p class="text"><?=$v?></p>
                                         <?
                                     }
                                     ?>
@@ -1029,7 +1029,7 @@ $day = $arParams['DAY'];
                         $date = explode(".",$day["DATE"]["VALUE"]);
                         $date[0] += $i;
                         ?>
-                        <div class="day js-calendar-day"><?= $date[0]?></div>
+                        <div class="day js-calendar-day"><?=$date[0]?></div>
                         <?
                         $i++;
                     } ?>
@@ -1045,33 +1045,33 @@ $day = $arParams['DAY'];
                 <div data-layer="2" data-slide="7" class="sets__logo js-particles"></div>
                 <div class="sets__keys">
 
-                    <div class="big-title"><?= $day["SETS_HEADER"]["VALUE"]?></div>
+                    <div class="big-title"><?=$day["SETS_HEADER"]["VALUE"]?></div>
 
                     <div class="sets__item">
-                        <div class="sets__item-title"><?= $day["SETS_HEADER_1"]["VALUE"]?></div>
+                        <div class="sets__item-title"><?=$day["SETS_HEADER_1"]["VALUE"]?></div>
                         <div class="sets__item-descr">
-                            <?= $day["SETS_TEXT_1"]["VALUE"]?>
+                            <?=$day["SETS_TEXT_1"]["VALUE"]?>
                         </div>
                     </div>
 
                     <div class="sets__item">
-                        <div class="sets__item-title"><?= $day["SETS_HEADER_2"]["VALUE"]?></div>
+                        <div class="sets__item-title"><?=$day["SETS_HEADER_2"]["VALUE"]?></div>
                         <div class="sets__item-descr">
-                            <?= $day["SETS_TEXT_2"]["VALUE"]?>
+                            <?=$day["SETS_TEXT_2"]["VALUE"]?>
                         </div>
                     </div>
 
                     <div class="sets__item">
-                        <div class="sets__item-title"><?= $day["SETS_HEADER_3"]["VALUE"]?></div>
+                        <div class="sets__item-title"><?=$day["SETS_HEADER_3"]["VALUE"]?></div>
                         <div class="sets__item-descr">
-                            <?= $day["SETS_TEXT_3"]["VALUE"]?>
+                            <?=$day["SETS_TEXT_3"]["VALUE"]?>
                         </div>
                     </div>
 
                     <div class="sets__item">
-                        <div class="sets__item-title"><?= $day["SETS_HEADER_4"]["VALUE"]?></div>
+                        <div class="sets__item-title"><?=$day["SETS_HEADER_4"]["VALUE"]?></div>
                         <div class="sets__item-descr">
-                            <?= $day["SETS_TEXT_4"]["VALUE"]?>
+                            <?=$day["SETS_TEXT_4"]["VALUE"]?>
                         </div>
                     </div>
 
@@ -1089,17 +1089,17 @@ $day = $arParams['DAY'];
 
                             <div
                                 class="price__product-header-image price__product-header-image--first price__product-header-image--black">
-                                <?= $day["TICKET_2_NAME"]["~VALUE"]?>
+                                <?=$day["TICKET_2_NAME"]["~VALUE"]?>
                             </div>
 
                             <div class="price__product-header-caption">
-                                <?= $day["TICKET_2_DATE"]["VALUE"]?>
+                                <?=$day["TICKET_2_DATE"]["VALUE"]?>
                             </div>
 
                         </div>
                         <?foreach ($day["TICKET_2_PROGRAMM"]["VALUE"] as $k=>$v){
                             ?>
-                            <div class="price__key"><span class="price__icon" style="background-image: url('<?= CFile::getPath($v)?>')"></span><?= $day["TICKET_2_PROGRAMM"]["DESCRIPTION"][$k]?></div>
+                            <div class="price__key"><span class="price__icon" style="background-image: url('<?=CFile::getPath($v)?>')"></span><?=$day["TICKET_2_PROGRAMM"]["DESCRIPTION"][$k]?></div>
                             <?
                         }?>
 
@@ -1113,7 +1113,7 @@ $day = $arParams['DAY'];
                         <div class="price__bottom">
 
                             <span class="price__value">
-                                <?= $price2?>
+                                <?=$arParams['PRICES'][1]?>
                                 <svg class="rubble" x="0px" y="0px" width="13.5px" height="27px" viewBox="0 0 13.5 27" style="enable-background:new 0 0 13.5 27;" xml:space="preserve">
                                     <style type="text/css"> .st0 {
                                             stroke: #FFFFFF;
@@ -1127,7 +1127,7 @@ $day = $arParams['DAY'];
 
                             <span class="price__ticket-left">
                                 <span class="price__ticket-left-value">
-                                    <?=  $day["TICKET_2_QUANTITY"]["VALUE"]?>
+                                    <?= $day["TICKET_2_QUANTITY"]["VALUE"]?>
                                 </span>
                                 <div class="price__ticket-left-text">
                                     осталось<br>мест
@@ -1135,7 +1135,7 @@ $day = $arParams['DAY'];
                             </span>
 
                             <a data-selected="price1"
-                               data-cost="<?= $price2?>"
+                               data-cost="<?=$arParams['PRICES'][1]?>"
                                data-metrica="11scrn_send_MH"
                                text="купить"
                                class="button button--white js-open-popup"
@@ -1149,15 +1149,15 @@ $day = $arParams['DAY'];
                 <div class="price__product">
 
                     <div class="price__product-header">
-                        <div class="price__product-header-image price__product-header-image--second"><?= $day["TICKET_1_NAME"]["~VALUE"]?></div>
-                        <div class="price__product-header-caption"><?= $day["TICKET_1_DATE"]["VALUE"]?></div>
+                        <div class="price__product-header-image price__product-header-image--second"><?=$day["TICKET_1_NAME"]["~VALUE"]?></div>
+                        <div class="price__product-header-caption"><?=$day["TICKET_1_DATE"]["VALUE"]?></div>
                     </div>
 
                     <?foreach ($day["TICKET_1_PROGRAMM"]["VALUE"] as $k=>$v){
                         ?>
                         <div class="price__key">
-                            <span class="price__icon" style="background-image: url('<?= CFile::getPath($v)?>')"></span>
-                            <?= $day["TICKET_1_PROGRAMM"]["DESCRIPTION"][$k]?>
+                            <span class="price__icon" style="background-image: url('<?=CFile::getPath($v)?>')"></span>
+                            <?=$day["TICKET_1_PROGRAMM"]["DESCRIPTION"][$k]?>
                         </div>
                         <?
                     }?>
@@ -1171,7 +1171,7 @@ $day = $arParams['DAY'];
 
                     <div class="price__bottom">
                         <span class="price__value">
-                            <?= $price1?>
+                            <?=$arParams['PRICES'][0]?>
                             <svg class="rubble" x="0px" y="0px" width="13.5px" height="27px" viewBox="0 0 13.5 27" style="enable-background:new 0 0 13.5 27;" xml:space="preserve">
                                 <style type="text/css">
                                     .st0 {
@@ -1185,14 +1185,14 @@ $day = $arParams['DAY'];
                         </span>
                         <span class="price__ticket-left">
                             <span class="price__ticket-left-value">
-                                <?=  $day["TICKET_1_QUANTITY"]["VALUE"]?>
+                                <?= $day["TICKET_1_QUANTITY"]["VALUE"]?>
                             </span>
                             <div class="price__ticket-left-text">
                                 осталось<br>мест
                             </div>
                         </span>
                         <a data-selected="price2"
-                           data-cost="<?= $price1?>"
+                           data-cost="<?=$arParams['PRICES'][0]?>"
                            data-metrica="11scrn_send_NL"
                            text="купить"
                            class="button button--white js-open-popup"
@@ -1207,14 +1207,14 @@ $day = $arParams['DAY'];
                             <div
                                 class="price__product-header-image price__product-header-image--third price__product-header-image--black"
                             >
-                                <?= $day["TICKET_3_NAME"]["~VALUE"]?>
+                                <?=$day["TICKET_3_NAME"]["~VALUE"]?>
                             </div>
-                            <div class="price__product-header-caption"><?= $day["TICKET_3_DATE"]["VALUE"]?></div>
+                            <div class="price__product-header-caption"><?=$day["TICKET_3_DATE"]["VALUE"]?></div>
                         </div>
                         <?foreach ($day["TICKET_3_PROGRAMM"]["VALUE"] as $k=>$v){
                             ?>
-                            <div class="price__key"><span class="price__icon" style="background-image: url('<?= CFile::getPath($v)?>')"></span>
-                                <?= $day["TICKET_3_PROGRAMM"]["DESCRIPTION"][$k]?>
+                            <div class="price__key"><span class="price__icon" style="background-image: url('<?=CFile::getPath($v)?>')"></span>
+                                <?=$day["TICKET_3_PROGRAMM"]["DESCRIPTION"][$k]?>
                             </div>
                             <?
                         }?>
@@ -1227,7 +1227,7 @@ $day = $arParams['DAY'];
                         </a>
 
                         <div class="price__bottom">
-                            <span class="price__value"><?= $price3?>
+                            <span class="price__value"><?=$arParams['PRICES'][2]?>
                                 <svg class="rubble" x="0px" y="0px" width="13.5px" height="27px" viewBox="0 0 13.5 27" style="enable-background:new 0 0 13.5 27;" xml:space="preserve">
                                     <style type="text/css">
                                         .st0 {
@@ -1244,7 +1244,7 @@ $day = $arParams['DAY'];
                             <span class="price__ticket-left">
 
                                 <span class="price__ticket-left-value">
-                                    <?=  $day["TICKET_3_QUANTITY"]["VALUE"]?>
+                                    <?= $day["TICKET_3_QUANTITY"]["VALUE"]?>
                                 </span>
 
                                 <div class="price__ticket-left-text">
@@ -1254,7 +1254,7 @@ $day = $arParams['DAY'];
                             </span>
 
                             <a data-selected="price3"
-                               data-cost="<?= $price3?>"
+                               data-cost="<?=$arParams['PRICES'][2]?>"
                                data-metrica="11scrn_send_NE"
                                text="купить"
                                class="button button--white js-open-popup"
@@ -1280,11 +1280,11 @@ $day = $arParams['DAY'];
                     <div class="inspiration__quote-icon"></div>
 
                     <div class="inspiration__quote-name">
-                        <?= $day["SPEAKER_NAME"]["VALUE"][0]." ".$day["SPEAKER_SURNAME"]["VALUE"][0]?>
+                        <?=$day["SPEAKER_NAME"]["VALUE"][0]." ".$day["SPEAKER_SURNAME"]["VALUE"][0]?>
                     </div>
 
                     <div class="inspiration__quote-text">
-                        <?= $day["INSPIRATION_TEXT"]["~VALUE"] ?>
+                        <?=$day["INSPIRATION_TEXT"]["~VALUE"] ?>
                     </div>
                 </div>
 
@@ -1319,9 +1319,9 @@ $day = $arParams['DAY'];
                     <div class="contact__contact"></div>
                     <div class="contact__us"></div>
                     <div class="col first">
-                        <div class="contact__city"><?= $day["PLACE_NAME"]["VALUE"]?></div>
+                        <div class="contact__city"><?=$day["PLACE_NAME"]["VALUE"]?></div>
                         <div class="contact__address">
-                            <?= $day["PLACE_ADDRESS"]["VALUE"]?>. <a href="mailto:<?= $day['MAIL']['VALUE']?>"><?= $day["MAIL"]["VALUE"]?></a>
+                            <?=$day["PLACE_ADDRESS"]["VALUE"]?>. <a href="mailto:<?=$day['MAIL']['VALUE']?>"><?=$day["MAIL"]["VALUE"]?></a>
                         </div>
                         <div data-metrica="15scrn_send_contact"
                              text="забронировать"
@@ -1331,13 +1331,13 @@ $day = $arParams['DAY'];
                         </div>
                     </div>
                     <div class="col second">
-                        <a href="tel:<?= $day["PHONE_CODE"]['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
+                        <a href="tel:<?=$day["PHONE_CODE"]['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
                            class="contact__phone"
                         >
-                            <?= str_replace(array("(", ")"), "",$day["PHONE_CODE"]["VALUE"].$day['PHONE_NUMBER']["VALUE"])?>
+                            <?=str_replace(array("(", ")"), "",$day["PHONE_CODE"]["VALUE"].$day['PHONE_NUMBER']["VALUE"])?>
                         </a>
 
-                        <div class="contact__naming"><?= $day["PLACE_STATUS"]["VALUE"]?></div>
+                        <div class="contact__naming"><?=$day["PLACE_STATUS"]["VALUE"]?></div>
                         <div class="contact__partner"></div>
                     </div>
                 </div>
@@ -1466,7 +1466,7 @@ $day = $arParams['DAY'];
     function getDesign(){
         var gallery = [];
         $.ajax({
-            url: "/gallery.php?id=<?= $iCurCityID?>&req=DESIGN",
+            url: "/gallery.php?id=<?=$iCurCityID?>&req=DESIGN",
             async: false,
             type: "GET",
             dataType: "json",
@@ -1479,7 +1479,7 @@ $day = $arParams['DAY'];
     function getEvents(){
         var events = [];
         $.ajax({
-            url: "/gallery.php?id=<?= $iCurCityID?>&req=EVENTS",
+            url: "/gallery.php?id=<?=$iCurCityID?>&req=EVENTS",
             async: false,
             type: "GET",
             dataType: "json",
@@ -1495,7 +1495,7 @@ $day = $arParams['DAY'];
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE2or3wm2a-ZZPFPnrkb6TsGEguYN-s3o&amp;callback=initMap"></script>
 <script>
     function setMarker(map){
-        $.get( "http://maps.googleapis.com/maps/api/geocode/json?address=<?= $day["PLACE_ADDRESS"]["VALUE"]?>о&sensor=false&language=ru", function( data ) {
+        $.get( "http://maps.googleapis.com/maps/api/geocode/json?address=<?=$day["PLACE_ADDRESS"]["VALUE"]?>о&sensor=false&language=ru", function( data ) {
             var image = '/static/img/pin.png';
             var marker = new google.maps.Marker({
                 position: data.results[0].geometry.location,
@@ -1504,7 +1504,7 @@ $day = $arParams['DAY'];
                 title: 'CNI'
             });
             var infowindow = new google.maps.InfoWindow({
-                content: '<?= $day["PLACE_ADDRESS"]["VALUE"]?>'
+                content: '<?=$day["PLACE_ADDRESS"]["VALUE"]?>'
             });
             map.setCenter(data.results[0].geometry.location);
             marker.addListener('click', function () {

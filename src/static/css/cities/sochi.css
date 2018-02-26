@@ -1,0 +1,11 @@
+.skeaker__photo {
+    width: 70%;
+    height: 100%;
+    transform: none !important;
+}
+
+.price__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
