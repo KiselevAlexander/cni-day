@@ -6,3 +6,4 @@ src/.access.php
 src/bitrix/*
 src/upload/*
 src/web.config
+.idea/

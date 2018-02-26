@@ -1,0 +1,5696 @@
+@font-face {
+    font-family: 'LeagueGothic';
+    src: url("fonts/leaguegothic-regular.eot");
+    src: url("fonts/leaguegothic-regular.eot?#iefix") format("embedded-opentype"), url("fonts/leaguegothic-regular.woff2") format("woff2"), url("fonts/leaguegothic-regular.woff") format("woff"), url("fonts/leaguegothic-regular.ttf") format("truetype"), url("fonts/leaguegothic-regular.svg#LeagueGothic") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Comp Pro';
+    src: url("fonts/pfdin_textcomppro-regular.eot");
+    src: url("fonts/pfdin_textcomppro-regular.eot?#iefix") format("embedded-opentype"), url("fonts/pfdin_textcomppro-regular.woff") format("woff"), url("fonts/pfdin_textcomppro-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Comp Pro';
+    src: url("fonts/pfdin_textcomppro-light.eot");
+    src: url("fonts/pfdin_textcomppro-light.eot?#iefix") format("embedded-opentype"), url("fonts/PFDinTextCompPro-Light.woff") format("woff"), url("fonts/pfdin_textcomppro-light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Comp Pro';
+    src: url("fonts/pfdin_textcomppro-thin.eot");
+    src: url("fonts/pfdin_textcomppro-thin.eot?#iefix") format("embedded-opentype"), url("fonts/PFDinTextCompPro-Thin.woff") format("woff"), url("fonts/pfdin_textcomppro-thin.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Comp Pro';
+    src: url("fonts/pfdin_textcomppro-xthin.eot");
+    src: url("fonts/pfdin_textcomppro-xthin.eot?#iefix") format("embedded-opentype"), url("fonts/PFDinTextCompPro-XThin.woff") format("woff"), url("fonts/pfdin_textcomppro-xthin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Comp Pro';
+    src: url("fonts/pfdin_textcomppro-medium.eot");
+    src: url("fonts/pfdin_textcomppro-medium.eot?#iefix") format("embedded-opentype"), url("fonts/pfdin_textcomppro-medium.woff") format("woff"), url("fonts/pfdin_textcomppro-medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Cond Pro';
+    src: url("fonts/pfdin_textcondpro-reguler.eot");
+    src: url("fonts/pfdin_textcondpro-regular.eot?#iefix") format("embedded-opentype"), url("fonts/pfdin_textcondpro-regular.woff") format("woff"), url("fonts/pfdin_textcondpro-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Cond Pro';
+    src: url("fonts/pfdin_textcondpro-medium.eot");
+    src: url("fonts/pfdin_textcondpro-medium.eot?#iefix") format("embedded-opentype"), url("fonts/pfdin_textcondpro-medium.woff") format("woff"), url("fonts/pfdin_textcondpro-medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Cond Pro';
+    src: url("fonts/pfdin_textcondpro-bold.eot");
+    src: url("fonts/pfdin_textcondpro-bold.eot?#iefix") format("embedded-opentype"), url("fonts/pfdin_textcondpro-bold.woff") format("woff"), url("fonts/pfdin_textcondpro-bold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'PFDin Text Cond Pro';
+    src: url("fonts/pfdin_textcondpro-light.eot");
+    src: url("fonts/pfdin_textcondpro-light.eot?#iefix") format("embedded-opentype"), url("fonts/pfdin_textcondpro-light.woff") format("woff"), url("fonts/pfdin_textcondpro-light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font: 1.02489vw/1.31772vw "PFDin Text Comp Pro";
+    -webkit-text-size-adjust: none;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+.preload {
+    transition: opacity .25s;
+    opacity: 1
+}
+
+.preload-hidden {
+    opacity: 0;
+    visibility: hidden
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .wrapper {
+        height: auto
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .wrapper {
+        height: auto
+    }
+}
+
+.js-particles {
+    -webkit-perspective: 1;
+    perspective: 1;
+}
+
+.svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em
+}
+
+.svg--cni-white {
+    background: url('/static/img/cni__white.svg') no-repeat;
+    background-size: contain
+}
+
+.svg--cni-black {
+    background: url('/static/img/cni__black.svg') no-repeat;
+    background-size: contain
+}
+
+.button {
+    display: inline-block;
+    border: 1px solid #fff;
+    color: #fff;
+    font: 17px/1 "PFDin Text Cond Pro";
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    background: transparent;
+    letter-spacing: .19em;
+    transition: color .2s, background .2s;
+    overflow: hidden;
+    padding: 20px 52px 20px 52px
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .button {
+        padding: 10px 24px 10px 24px
+    }
+}
+
+.button:after {
+    content: '';
+    display: block;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    transition: height .25s ease-in-out
+}
+
+.button:before {
+    content: attr(text);
+    position: absolute;
+    display: block;
+    z-index: 2
+}
+
+.button:hover {
+    color: black
+}
+
+.button:hover:after {
+    height: 100%
+}
+
+.button--white {
+    color: black;
+    border-color: black
+}
+
+.button--white:after {
+    background: black
+}
+
+.button--white:hover {
+    color: white
+}
+
+.button--blue {
+    background-color: #01488b
+}
+
+.button--blue:after {
+    display: none
+}
+
+.button-secret {
+    display: inline-block;
+    border: 1px solid #fff;
+    color: #000;
+    font: 17px/1 "PFDin Text Cond Pro";
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    background: #fff;
+    letter-spacing: .19em;
+    transition: color .2s, background .2s;
+    overflow: hidden;
+    padding: 20px 52px 20px 52px
+}
+
+.button-secret:after {
+    content: '';
+    display: block;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    transition: height .25s ease-in-out
+}
+
+.button-secret:before {
+    content: attr(text);
+    position: absolute;
+    display: block;
+    z-index: 2
+}
+
+.button-secret:hover {
+    color: black
+}
+
+.button-secret:hover:after {
+    height: 100%
+}
+
+.button-secret--white {
+    color: black;
+    border-color: black
+}
+
+.button-secret--white:after {
+    background: black
+}
+
+.button-secret--white:hover {
+    color: white
+}
+
+.button-secret--blue {
+    background-color: #01488b
+}
+
+.button-secret--blue:after {
+    display: none
+}
+
+.scroll-icon {
+    width: 8.78477vw;
+    height: 1.75695vw;
+    position: absolute;
+    bottom: 1.31772vw;
+    text-align: center;
+    left: 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    font: 500 1.02489vw/1.31772vw "PFDin Text Comp Pro";
+    letter-spacing: .2em;
+    color: white;
+    cursor: pointer;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.scroll-icon:after {
+    content: '';
+    position: absolute;
+    background: url('/static/img/arrow.svg') no-repeat top center;
+    background-size: contain;
+    width: 7px;
+    height: 10px;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: rotateZ(90deg) translateY(-50%);
+    transform: rotateZ(90deg) translateY(-50%);
+    -webkit-animation: scroll-slide 1.2s infinite;
+    animation: scroll-slide 1.2s infinite;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in
+}
+
+a {
+    text-decoration: none
+}
+
+@-webkit-keyframes scroll-slide{0%{-webkit-transform:rotate(90deg) translateX(0) translateY(50%);transform:rotate(90deg) translateX(0) translateY(50%)}30%{-webkit-transform:rotate(90deg) translateX(4px) translateY(50%);transform:rotate(90deg) translateX(4px) translateY(50%)}100%{-webkit-transform:rotate(90deg) translateX(0) translateY(50%);transform:rotate(90deg) translateX(0) translateY(50%)}} @keyframes scroll-slide{0%{-webkit-transform:rotate(90deg) translateX(0) translateY(50%);transform:rotate(90deg) translateX(0) translateY(50%)}30%{-webkit-transform:rotate(90deg) translateX(4px) translateY(50%);transform:rotate(90deg) translateX(4px) translateY(50%)}100%{-webkit-transform:rotate(90deg) translateX(0) translateY(50%);transform:rotate(90deg) translateX(0) translateY(50%)}} .insight-logo {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background: url('/static/img/insight.svg') no-repeat center center;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-size: contain;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        width: 8.12592vw
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .button {
+        font: 4.02635vw/1 "PFDin Text Cond Pro"
+    }
+
+    .button-secret {
+        padding: 20px 80px 20px 80px
+    }
+
+    .wrapper {
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: white
+    }
+
+    .secret-slide {
+        height: 1080px !important
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .secret-slide {
+        height: 150vh !important
+    }
+}
+
+.noscroll {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%
+}
+
+.menu__container {
+    background: url('/static/img/main__bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9000;
+    padding: 44.27083vh 31.69839vw 0;
+    overflow: hidden;
+    box-sizing: border-box
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .menu__container {
+        position: fixed
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .menu__container {
+        position: fixed
+    }
+}
+
+.menu {
+    height: 8.05271vw;
+    width: 100%;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .menu {
+        position: fixed
+    }
+}
+
+.menu .show {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s
+}
+
+.menu__cni {
+    width: 52px;
+    height: 41px;
+    display: block;
+    position: absolute;
+    top: 1.75695vw;
+    left: 2.19619vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .7s linear, visibility 0s linear .7s
+}
+
+.menu__cni--white {
+    color: white;
+    background: url('/static/img/cni__white.svg') no-repeat;
+    background-size: contain
+}
+
+.menu__cni--white:after {
+    color: white
+}
+
+.menu__cni--black {
+    color: black;
+    background: url('/static/img/cni__black.svg') no-repeat;
+    background-size: contain
+}
+
+.menu__cni--black:after {
+    color: black
+}
+
+.menu__cni {
+    padding-left: 53px;
+    width: 190px;
+    font: 200 24px/23px "PFDin Text Comp Pro";
+    white-space: pre;
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    right: -5em
+}
+
+.menu__burger {
+    width: 44px;
+    height: 39px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 1.75695vw;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .7s linear, visibility 0s linear .7s
+}
+
+.menu__burger--white {
+    background: url('/static/img/menu__white.png') no-repeat;
+    background-size: contain
+}
+
+.menu__burger--black {
+    background: url('/static/img/menu__black.png') no-repeat;
+    background-size: contain
+}
+
+.menu__phone-mobile {
+    position: absolute;
+    height: 5.72917vw;
+    width: 3.25521vw;
+    top: 8.33333vw;
+    right: 9.63542vw;
+    background: url('/static/img/phone__white.svg') no-repeat;
+    background-size: contain;
+    visibility: hidden
+}
+
+.menu__phone {
+    font: 1.75695vw "LeagueGothic";
+    letter-spacing: .1em;
+    position: absolute;
+    color: white;
+    display: block;
+    vertical-align: middle;
+    right: 2.34261vw;
+    top: 1.90337vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .7s linear, visibility 0s linear .7s
+}
+
+.menu__phone:before {
+    content: '';
+    width: 19px;
+    height: 32px;
+    position: relative;
+    margin-right: 1em;
+    top: .43924vw;
+    display: none
+}
+
+.menu__phone--white {
+    color: white
+}
+
+.menu__phone--white:before {
+    background: url('/static/img/phone__white.svg') no-repeat;
+    background-size: contain
+}
+
+.menu__phone--black {
+    color: black
+}
+
+.menu__phone--black:before {
+    background: url('/static/img/phone__black.svg') no-repeat;
+    background-size: contain
+}
+
+.menu__phone--black .prefix, .menu__phone--black .afix {
+    color: black
+}
+
+.menu__phone--white .prefix, .menu__phone--white .afix {
+    color: white
+}
+
+.menu__phone .prefix, .menu__phone .afix {
+    vertical-align: top;
+    display: inline-block;
+    -webkit-transform: perspective(1px);
+    transform: perspective(1px)
+}
+
+.menu__phone .prefix {
+    font: 500 16px "PFDin Text Comp Pro";
+    letter-spacing: .075em;
+    position: relative;
+    top: 0px
+}
+
+.menu__phone .afix {
+    margin-left: 8px;
+    margin-top: -4px;
+    font: 300 36px "PFDin Text Comp Pro"
+}
+
+.menu__buy {
+    font: .73206vw "LeagueGothic";
+    letter-spacing: .1em;
+    position: absolute;
+    color: white;
+    display: block;
+    vertical-align: middle;
+    right: 2.34261vw;
+    text-transform: uppercase;
+    top: 5.12445vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .7s linear, visibility 0s linear .7s
+}
+
+.menu__buy:before {
+    content: '';
+    width: 19px;
+    height: 32px;
+    position: relative;
+    margin-right: 1em;
+    top: .43924vw;
+    display: none
+}
+
+.menu__buy--white {
+    color: white
+}
+
+.menu__buy--white:before {
+    background: url('/static/img/phone__white.svg') no-repeat;
+    background-size: contain
+}
+
+.menu__buy--black {
+    color: black
+}
+
+.menu__buy--black:before {
+    background: url('/static/img/phone__black.svg') no-repeat;
+    background-size: contain
+}
+
+.menu__buy--black .prefix, .menu__buy--black .afix {
+    color: black
+}
+
+.menu__buy--white .prefix, .menu__buy--white .afix {
+    color: white
+}
+
+.menu__buy .prefix, .menu__buy .afix {
+    vertical-align: top;
+    display: inline-block;
+    -webkit-transform: perspective(1px);
+    transform: perspective(1px)
+}
+
+.menu__buy .buy {
+    margin-left: 8px;
+    margin-top: -4px;
+    font: 300 25px "PFDin Text Comp Pro";
+    text-decoration: underline
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .menu__buy .buy {
+        display: none
+    }
+}
+
+.menu__buy .mobile--hidden {
+    display: none
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .menu__buy .mobile--hidden {
+        display: block
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .menu__buy {
+        top: 7.32064vw
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .menu__buy {
+        right: 32%;
+        top: 7.68668vw
+    }
+}
+
+.menu__item {
+    font: 2.63543vw/4.24597vw "PFDin Text Comp Pro";
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 36.16398vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+    text-decoration: none
+}
+
+.menu__item.active {
+    opacity: .4;
+    color: white !important;
+    cursor: default
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .menu__item {
+        font-size: 10.41667vw !important
+    }
+}
+
+.menu__item:hover {
+    color: #128bff
+}
+
+.menu__close {
+    background: url('/static/img/close.svg') no-repeat center center;
+    background-size: contain;
+    width: 2.41581vw;
+    height: 2.41581vw;
+    position: absolute;
+    left: 50%;
+    top: 3.64583vh;
+    visibility: hidden;
+    margin-left: -1.20791vw;
+    cursor: pointer
+}
+
+@media screen and (min-width: 1370px) {
+    .menu__close {
+        margin-left: -16.5px;
+        width: 33px;
+        height: 33px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .menu {
+        position: fixed
+    }
+
+    .menu__cni {
+        display: none
+    }
+
+    .menu__close {
+        width: 5.85938vw;
+        height: 4.3vw;
+        top: 8.63543vw;
+        left: 6.64063vw
+    }
+
+    .menu__container {
+        background: url('/static/img/main__bg_mob.jpg') no-repeat center center;
+        background-size: cover;
+        padding-top: 19vh
+    }
+
+    .menu__item {
+        font: 9vw/18.5vw "PFDin Text Comp Pro"
+    }
+
+    .menu__burger--white {
+        background: url('/static/img/wide_menu.svg');
+        background-size: contain;
+        visibility: visible;
+        width: 7.8125vw;
+        height: 5.72917vw;
+        left: 6.64063vw;
+        top: 8.33333vw;
+        -webkit-transform: none;
+        transform: none
+    }
+
+    .menu__phone-mobile {
+        visibility: visible !important
+    }
+
+    .menu__phone--white {
+        visibility: hidden !important
+    }
+
+    .menu__phone--black {
+        visibility: hidden !important
+    }
+
+    .menu__burger--black {
+        visibility: hidden !important
+    }
+}
+
+.page-slider {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 998
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .page-slider {
+        display: none
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .page-slider {
+        display: none
+    }
+}
+
+.page-slider--black .page-slider__item:before {
+    background: #323232
+}
+
+.page-slider--black .page-slider__item:after {
+    color: white
+}
+
+.page-slider--black .page-slider__item.active:before {
+    background: white
+}
+
+.page-slider--white .page-slider__item:before {
+    background: #cccccc
+}
+
+.page-slider--white .page-slider__item:after {
+    color: black
+}
+
+.page-slider--white .page-slider__item.active:before {
+    background: black
+}
+
+.page-slider--blue .page-slider__item:before {
+    background: #326aa3
+}
+
+.page-slider--blue .page-slider__item:after {
+    color: white
+}
+
+.page-slider--blue .page-slider__item.active:before {
+    background: #326aa4;
+}
+
+.page-slider__item {
+    height: 1px;
+    width: 60px;
+    position: relative;
+    padding-top: 7px;
+    cursor: pointer;
+    padding-bottom: 7px
+}
+
+.page-slider__item:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 25px;
+    height: 1px;
+    transition: width .25s ease-out, background .5s
+}
+
+.page-slider__item:after {
+    content: attr(data-id);
+    font: 14px "PFDin Text Comp Pro";
+    position: absolute;
+    opacity: 0;
+    -webkit-transform: translateX(25px) perspective(1px);
+    transform: translateX(25px) perspective(1px);
+    transition: opacity .25s ease-out, color .5s, -webkit-transform .25s ease-out;
+    transition: opacity .25s ease-out, transform .25s ease-out, color .5s;
+    transition: opacity .25s ease-out, transform .25s ease-out, color .5s, -webkit-transform .25s ease-out;
+    left: -1em;
+    top: .05em
+}
+
+.page-slider__item:hover:before {
+    width: 40px
+}
+
+.page-slider__item.active:before {
+    width: 60px
+}
+
+.page-slider__item.active:after {
+    opacity: 1;
+    -webkit-transform: translateX(0) perspective(1px);
+    transform: translateX(0) perspective(1px)
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    display: block;
+    left: -9999px;
+    transition: opacity .5s ease-out;
+    overflow: hidden;
+    background-color: transparent
+}
+
+.overlay.show {
+    left: 0;
+    background: rgba(0, 0, 0, 0.6)
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .overlay {
+        background-color: transparent !important
+    }
+}
+
+.form {
+    margin-right: 150px
+}
+
+@media (max-width: 50em) {
+    .form {
+        margin-right: 0
+    }
+}
+
+.form.hidden {
+    display: none
+}
+
+.form__input {
+    display: block;
+    float: left;
+    width: 50%
+}
+
+@media (max-width: 50em) {
+    .form__input {
+        float: none;
+        width: 312px;
+        margin: 0 auto;
+        margin-bottom: 24px
+    }
+}
+
+.form__input input, .form__input select {
+    width: 210px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #7f7f7f;
+    color: #1a1c1f;
+    font-family: 'PFDin Text Cond Pro';
+    font-size: 18px;
+    padding: 13px 15px;
+    z-index: 100;
+    letter-spacing: 0.025em
+}
+
+@media screen and (max-width: 768px) {
+    .form__input input, .form__input select {
+        width: calc(100% - 33px)
+    }
+}
+
+@media (max-width: 50em) {
+    .form__input input, .form__input select {
+        width: 280px;
+        display: block;
+        margin: 0 auto
+    }
+}
+
+.form__input input:focus, .form__input select:focus {
+    outline: 0
+}
+
+.form__input button {
+    width: 96%
+}
+
+@media (max-width: 50em) {
+    .form__input button {
+        width: 312px;
+        display: block;
+        margin: 0 auto
+    }
+}
+
+.form__input select {
+    width: 242px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    background-image: url("/static/img/caret.svg");
+    background-size: 12px auto;
+    background-position: 218px 50%;
+    background-repeat: no-repeat;
+    cursor: pointer
+}
+
+@media (max-width: 50em) {
+    .form__input select {
+        width: 312px;
+        display: block;
+        margin: 0 auto
+    }
+}
+
+.form__input.error {
+    position: relative
+}
+
+.form__input.error input {
+    border-color: red
+}
+
+.form__input.error:after {
+    display: block;
+    content: attr(message);
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    background-color: #f00;
+    padding: 1px 4px;
+    letter-spacing: 0.1em;
+    font-size: 11px;
+    transition: all 0.3s ease
+}
+
+@media (max-width: 50em) {
+    .form__input.error:after {
+        font-size: 13px;
+        padding: 7px 4px;
+        bottom: -17px
+    }
+}
+
+.form__input__text {
+    color: #747474;
+    font: 16px/18px 'PFDin Text Comp Pro';
+    padding-top: 20px;
+    text-align: center
+}
+
+@media (max-width: 50em) {
+    .form__limit {
+        display: none
+    }
+}
+
+.form__limit__count {
+    background-image: url("/static/img/count_bg.png");
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 29px;
+    float: left
+}
+
+.form__limit__text {
+    padding-left: 44px;
+    padding-top: 4px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: .05em
+}
+
+.form__complete {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+@media screen and (max-width: 768px) {
+    .form__complete {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%
+    }
+}
+
+.form__complete .title__second {
+    line-height: 32px
+}
+
+@media (max-width: 50em) {
+    .form__complete .close-wrapper {
+        text-align: center
+    }
+}
+
+.popup-button {
+    display: inline-block;
+    text-decoration: none;
+    z-index: 100;
+    vertical-align: top;
+    font-family: 'PFDin Text Cond Pro';
+    font-size: 18px;
+    width: 243px;
+    text-align: center;
+    letter-spacing: 1px;
+    height: 51px;
+    line-height: 51px;
+    border: 0;
+    text-transform: uppercase;
+    color: white;
+    background: #01488b;
+    cursor: pointer
+}
+
+@media screen and (max-width: 768px) {
+    .popup-button {
+        width: 100%
+    }
+}
+
+.popup-button:hover {
+    background: #0157a7
+}
+
+.popup {
+    position: absolute;
+    overflow: hidden;
+    top: 46%;
+    left: -9999px;
+    z-index: 99999;
+    display: block;
+    width: 810px;
+    height: 640px;
+    background: white;
+    margin-left: -325px;
+    margin-top: -201.5px;
+    padding: 0 0 0 33px;
+    opacity: 0;
+    transition: opacity .5s ease-out, -webkit-transform .5s ease-out;
+    transition: opacity .5s ease-out, transform .5s ease-out;
+    transition: opacity .5s ease-out, transform .5s ease-out, -webkit-transform .5s ease-out;
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px)
+}
+
+.popup .form__complete {
+    font-size: 24px
+}
+
+.popup .form, .popup .form__complete {
+    transition: opacity .25s, visibility 0s .25s;
+    visibility: visible;
+    opacity: 1
+}
+
+.popup .form__wrapper, .popup .form__complete__wrapper {
+    margin: 0 auto
+}
+
+.popup .form.hidden, .popup .form__complete.hidden {
+    visibility: hidden;
+    opacity: 0
+}
+
+.popup.show {
+    left: 50%;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1
+}
+
+@media screen and (max-width: 768px) {
+    .popup.show {
+        box-sizing: border-box;
+        left: 0;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 33px;
+        overflow-x: hidden;
+        overflow-y: auto
+    }
+}
+
+.popup .close {
+    background: url('/static/img/close_black.svg') no-repeat center;
+    background-size: contain;
+    width: 14px;
+    height: 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup .close {
+        top: 25px;
+        left: 50%;
+        right: auto;
+        width: 30px;
+        height: 30px;
+        margin-left: -15px
+    }
+}
+
+.popup .tube {
+    width: 440px;
+    height: auto;
+    position: absolute;
+    right: -176px;
+    bottom: 345px;
+    z-index: -1
+}
+
+.popup .tube img {
+    width: 80%;
+    -webkit-transform: rotateZ(54deg);
+    transform: rotateZ(54deg)
+}
+
+@media (max-width: 50em) {
+    .popup .tube {
+        right: -42px;
+        bottom: -300px;
+        width: 97.36457vw
+    }
+
+    .popup .tube img {
+        -webkit-transform: rotateZ(125deg);
+        transform: rotateZ(125deg)
+    }
+}
+
+.popup .title {
+    font-size: 72px;
+    margin-top: 71px;
+    text-transform: uppercase;
+    color: #01488b
+}
+
+@media (max-width: 50em) {
+    .popup .title {
+        text-align: center
+    }
+}
+
+.popup .title--stop {
+    font-family: LeagueGothic
+}
+
+.popup .title--cena {
+    font-family: 'PFDin Text Comp Pro';
+    font-weight: 500
+}
+
+@media (max-width: 50em) {
+    .popup .title--cena {
+        margin-left: 4px
+    }
+}
+
+.popup .title__second {
+    margin-top: 34px;
+    color: black;
+    text-transform: none;
+    font-family: 'PFDin Text Cond Pro';
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 45px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media (max-width: 50em) {
+    .popup .title__second {
+        font-size: 20px;
+        line-height: 1;
+        margin-top: 40px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: .05em
+    }
+}
+
+.popup .low-text {
+    display: inline-block;
+    margin-top: 4px;
+    font-family: 'PFDin Text Cond Pro';
+    font-size: 18px;
+    letter-spacing: 0.050em
+}
+
+@media screen and (max-width: 769px) {
+    .popup .low-text {
+        display: none
+    }
+}
+
+.button__buy {
+    width: 596px;
+    display: none;
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .button__buy {
+        width: 100%
+    }
+}
+
+.button__reserved {
+    width: 596px;
+    padding-top: 42px
+}
+
+.button__reserved .popup-button {
+    background: #ffffff;
+    color: #01488b;
+    border: 1px solid #01488b
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .button__reserved {
+        width: 100%
+    }
+}
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.preloader .mask, .preloader .progress {
+    transition: height 1s;
+    overflow: hidden;
+    width: 120px;
+    height: 160px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -60px;
+    z-index: 2;
+    margin-top: -80px
+}
+
+.preloader .progress {
+    overflow: visible;
+    z-index: 1;
+    background: url('/static/img/cni__00.svg') no-repeat
+}
+
+.preloader .progress:after {
+    content: attr(percent);
+    font-size: 24px;
+    line-height: .85;
+    display: inline-block;
+    position: absolute;
+    text-align: right;
+    right: -2.2em;
+    bottom: 0;
+    font-family: Arial
+}
+
+.preloader .empty {
+    width: 120px;
+    height: 160px;
+    background: #fff url('/static/img/cni__e4.svg') no-repeat
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .preloader .mask, .preloader .progress, .preloader .empty {
+        width: 28.64583vw;
+        height: 38.28125vw
+    }
+
+    .preloader .progress:after {
+        font-size: 6.90104vw;
+        line-height: .85;
+        right: -2.2em;
+        bottom: 0
+    }
+
+    .preloader .mask, .preloader .progress {
+        margin-left: -14.32292vw;
+        margin-top: -19.14063vw
+    }
+}
+
+.ps-container {
+    -ms-touch-action: auto;
+    touch-action: auto;
+    overflow: hidden !important;
+    -ms-overflow-style: none
+}
+
+@supports (-ms-overflow-style: none){.ps-container{overflow:auto !important}} @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .ps-container {
+        overflow: auto !important
+    }
+}
+
+.ps-container.ps-active-x>.ps-scrollbar-x-rail, .ps-container.ps-active-y>.ps-scrollbar-y-rail {
+    display: block;
+    background-color: transparent
+}
+
+.ps-container.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail {
+    background-color: #eee;
+    opacity: 0.9
+}
+
+.ps-container.ps-in-scrolling.ps-x>.ps-scrollbar-x-rail>.ps-scrollbar-x {
+    background-color: #999;
+    height: 11px
+}
+
+.ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail {
+    background-color: #eee;
+    opacity: 0.9
+}
+
+.ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y {
+    background-color: #999;
+    width: 11px
+}
+
+.ps-container>.ps-scrollbar-x-rail {
+    display: none;
+    position: absolute;
+    opacity: 1;
+    bottom: 15px;
+    height: 15px
+}
+
+.ps-container>.ps-scrollbar-x-rail>.ps-scrollbar-x {
+    display: none;
+    position: absolute;
+    background-color: #636363;
+    bottom: -15px;
+    height: 2px
+}
+
+.ps-container>.ps-scrollbar-y-rail {
+    display: none;
+    position: absolute;
+    opacity: 1;
+    right: 0 !important;
+    width: 15px
+}
+
+.ps-container>.ps-scrollbar-y-rail>.ps-scrollbar-y {
+    position: absolute;
+    background-color: #636363;
+    right: 5px;
+    width: 2px
+}
+
+.slide {
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    height: 100vh
+}
+
+.slide--inline {
+    position: absolute;
+    left: 9999px;
+    z-index: 1;
+    opacity: 0
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .slide--inline {
+        left: 0;
+        position: relative;
+        opacity: 1
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .slide--inline {
+        left: 0;
+        position: relative;
+        opacity: 1
+    }
+}
+
+.particles-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 15%;
+    left: -15%;
+    overflow: hidden
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .particles-wrapper {
+        height: 100%
+    }
+}
+
+.bullets-item {
+    display: inline-block;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative
+}
+
+.bullets-item:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 1px solid white;
+    left: 4px;
+    top: 4px;
+    width: 7px;
+    height: 7px
+}
+
+.bullets-item--active:after {
+    background: white
+}
+
+.bullets-item--inverse.bullets-item--active:after {
+    background: black
+}
+
+.bullets-item--inverse:after {
+    border-color: black
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .slide {
+        max-height: none;
+        height: 100vh
+    }
+
+    .bullets-item {
+        width: 20px;
+        height: 20px
+    }
+
+    .bullets-item:after {
+        left: 4px;
+        top: 4px;
+        width: 10px;
+        height: 10px
+    }
+}
+
+.tooltip {
+    background: #333;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    letter-spacing: .050em;
+    z-index: 120000;
+    opacity: 0;
+    left: -1000px
+}
+
+.tooltip:before {
+    content: '';
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: -6px;
+    left: 50%;
+    margin-left: -6px;
+    position: absolute;
+    z-index: 99
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    [data-anchor="calendar"] {
+        height: auto
+    }
+}
+
+.calendar__bg {
+    position: absolute;
+    background: #01488b;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.calendar__mobile-accordion {
+    display: none;
+    font: 500 11.71875vw "PFDin Text Comp Pro";
+    color: white;
+    margin-left: -3px;
+    margin-bottom: 24px;
+    letter-spacing: .05em;
+    cursor: pointer;
+    text-transform: uppercase
+}
+
+.calendar__mobile-accordion.active:after {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+}
+
+.calendar__mobile-accordion:after {
+    content: '';
+    transition: -webkit-transform .25s;
+    transition: transform .25s;
+    transition: transform .25s, -webkit-transform .25s;
+    display: inline-block;
+    background: url('/static/img/calendar__mobile-arrow.png') no-repeat center center;
+    background-size: contain;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    position: relative;
+    margin-left: 12px;
+    top: 3px;
+    width: 9.63542vw;
+    height: 9.63542vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__mobile-accordion {
+        display: block
+    }
+}
+
+.calendar__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 85.13909vw;
+    height: 33.30893vw;
+    margin: auto
+}
+
+@media screen and (min-width: 1370px) {
+    .calendar__container {
+        width: 1163px;
+        height: 455px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__container {
+        width: 100vw;
+        padding: 9.88287vw 4.09956vw;
+        position: relative;
+        box-sizing: border-box;
+        height: auto
+    }
+}
+
+.calendar__first-day {
+    width: 30.60103%;
+    font: 550px/450px "LeagueGothic";
+    color: #ffffff;
+    height: 100%;
+    float: left;
+    transition: background-image .25s;
+    -webkit-transform: perspective(1px);
+    transform: perspective(1px);
+    background-size: contain
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__first-day {
+        display: none
+    }
+}
+
+.calendar__first-day img {
+    max-height: 413px
+}
+
+.calendar__second-days {
+    position: absolute;
+    right: 0;
+    top: -12px;
+    width: 12.72571%;
+    height: 100%
+}
+
+.calendar__second-days .day {
+    float: right;
+    font: 260px/240px "LeagueGothic";
+    color: #0f68ba;
+    cursor: pointer;
+    transition: color .25s
+}
+
+.calendar__second-days .day:hover, .calendar__second-days .day.active {
+    color: white
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__second-days {
+        display: none
+    }
+}
+
+.calendar__day-slider {
+    margin: 0 5.41702%;
+    float: left;
+    width: 48.23732%;
+    height: 11.64835%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    vertical-align: top;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border-bottom: 1px solid #0059aa
+}
+
+.calendar__day-slider .item {
+    display: inline-block;
+    cursor: pointer;
+    font: 500 40px/46px "PFDin Text Comp Pro";
+    color: #0f68ba;
+    text-transform: uppercase;
+    transition: color .25s
+}
+
+.calendar__day-slider .item:hover, .calendar__day-slider .item.active {
+    color: white
+}
+
+.calendar__day-slider .active-line {
+    position: absolute;
+    bottom: -1px;
+    height: 1px;
+    background: white
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__day-slider {
+        display: none
+    }
+}
+
+.calendar__programm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    left: 33.01806%;
+    top: 19.78022%;
+    opacity: 0;
+    position: absolute;
+    width: 48.23732%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    vertical-align: bottom;
+    height: 85%;
+    font-size: 0;
+    overflow: hidden
+}
+
+.calendar__programm.with_subheader {
+    padding-top: 40px
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__programm.with_subheader {
+        padding: 0
+    }
+}
+
+.calendar__programm.active {
+    opacity: 1;
+    visibility: visible
+}
+
+.calendar__programm .item {
+    padding-bottom: 4%;
+    width: 44.56328%
+}
+
+.calendar__programm .item.subheader {
+    position: absolute;
+    width: 100%;
+    top: -10px
+}
+
+.calendar__programm .item.subheader p.text {
+    font-size: 24px !important
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__programm .item {
+        position: relative !important;
+        top: auto !important;
+        width: 100%
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .calendar__programm .item {
+        padding-bottom: 20px
+    }
+}
+
+.calendar__programm .item .content {
+    width: 100%;
+    text-align: left;
+    position: relative;
+    top: 10px
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__programm .item .content .button {
+        display: none
+    }
+}
+
+.calendar__programm .item .time {
+    font: 500 1.75695vw/1px "PFDin Text Cond Pro";
+    letter-spacing: .025em;
+    color: white
+}
+
+@media screen and (min-width: 1370px) {
+    .calendar__programm .item .time {
+        font-size: 24px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__programm .item .time {
+        font: 500 6.90104vw "PFDin Text Cond Pro";
+        letter-spacing: .025em
+    }
+}
+
+.calendar__programm .item p.text {
+    font: 1.1713vw "PFDin Text Cond Pro";
+    color: white;
+    padding: 0;
+    margin: 0
+}
+
+@media screen and (min-width: 1370px) {
+    .calendar__programm .item p.text {
+        font-size: 16px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__programm .item p.text {
+        font: 4.55729vw "PFDin Text Cond Pro";
+        letter-spacing: .025em
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .calendar__programm {
+        position: relative;
+        max-height: 14.84375vw;
+        display: block;
+        width: 100%;
+        height: auto;
+        left: 0;
+        visibility: visible;
+        transition: max-height .5s ease-out;
+        margin-bottom: 6.51042vw;
+        opacity: 1
+    }
+
+    .calendar__programm.active {
+        transition: max-height 1s ease-out;
+        max-height: 2000px
+    }
+}
+
+[data-anchor="comments"] {
+    overflow: hidden
+}
+
+.comments__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    width: 100vw;
+    height: 100vh
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .comments__bg {
+        height: 100%
+    }
+}
+
+.comments__bullets {
+    position: absolute;
+    top: 19.8vw;
+    left: 72.90044vw
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .comments__bullets {
+        top: 22.6vw
+    }
+}
+
+.comments__bullets .bullets-item {
+    display: block
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .comments__bullets .bullets-item {
+        display: inline-block
+    }
+}
+
+.comments__slider {
+    left: 45.90044vw;
+    top: 16.83748vw;
+    width: 51.24451vw;
+    position: absolute
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .comments__slider {
+        left: 4.90044vw;
+        top: 65vw;
+        width: 90vw
+    }
+}
+
+.comments__slider .title {
+    font: 300 36px/40px "PFDin Text Comp Pro";
+    letter-spacing: .075em;
+    color: white
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .comments__slider .title {
+        display: none
+    }
+}
+
+.comments__slider-item {
+    position: absolute;
+    top: 45px
+}
+
+@media screen and (min-width: 1370px) {
+    .comments__slider-item {
+        top: 60px
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .comments__slider-item {
+        top: 60px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .comments__slider-item {
+        top: 0
+    }
+}
+
+.comments__slider-item .text {
+    font: 16px/18px "PFDin Text Cond Pro";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: .075em;
+    color: #9e9e9e;
+    display: table-cell;
+    vertical-align: bottom;
+    position: relative;
+    width: 25.62225vw;
+    height: auto;
+    bottom: 0px
+}
+
+.comments__slider-item .person-container {
+    position: relative;
+    margin-top: 32px
+}
+
+.comments__slider-item .person-container .avatar {
+    border-radius: 50%;
+    float: left;
+    width: 37px;
+    height: 37px;
+    margin-right: 12px
+}
+
+.comments__slider-item .person-container .name {
+    font: 20px/28px "PFDin Text Comp Pro";
+    letter-spacing: .075em;
+    color: white;
+    position: relative
+}
+
+.comments__slider-item .person-container .city {
+    font: 12px/9px "PFDin Text Comp Pro";
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .150em;
+    color: #9e9e9e
+}
+
+.comments__quote-left {
+    position: absolute;
+    background: url('/static/img/comments__quote.svg') no-repeat;
+    background-size: contain;
+    width: 36.60322vw;
+    height: 27.67204vw;
+    left: 8.19912vw;
+    top: 2.70864vw
+}
+
+.comments__quote-right {
+    position: absolute;
+    background: url('/static/img/comments__quote.svg') no-repeat;
+    background-size: contain;
+    width: 9.0776vw;
+    height: 6.73499vw;
+    right: 7.9063vw;
+    bottom: 2.41581vw;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .comments__quote-left {
+        height: 28.33583%;
+        width: 60vw;
+        left: 5.19912vw;
+        top: 14.70864vw
+    }
+
+    .comments__quote-right {
+        bottom: 19.41581vw
+    }
+
+    .comments__slider-item .text {
+        font: 3.90625vw "PFDin Text Cond Pro";
+        width: 100%
+    }
+
+    .comments__slider-item .person-container {
+        margin-top: 20px
+    }
+
+    .comments__slider-item .person-container .name {
+        font: 12px/18px "PFDin Text Comp Pro"
+    }
+
+    .comments__slider-item .person-container .city {
+        font: 12px/18px "PFDin Text Comp Pro"
+    }
+
+    .comments__bullets {
+        bottom: 15.06735%;
+        left: 3.90044vw;
+        top: auto
+    }
+}
+
+#map {
+    height: 100%;
+    width: 25.62225vw;
+    z-index: 10
+}
+
+.contact__canvas {
+    background: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 29.28258vw;
+    height: 100%;
+    opacity: .5;
+    z-index: 15
+}
+
+.contact__sheet {
+    background: white;
+    width: 72.694vw;
+    top: 0;
+    right: 0;
+    height: 100%;
+    position: absolute;
+    z-index: 20
+}
+
+.contact__contact {
+    margin-left: 7.02782vw;
+    margin-top: 19.53125vh;
+    margin-bottom: 1.95313vh;
+    width: 52.12299vw;
+    height: 29.29688vh;
+    background: url('/static/img/contact__contact.png') no-repeat;
+    background-size: contain
+}
+
+.contact__us {
+    background: url('/static/img/contact__us.png') no-repeat;
+    background-size: contain;
+    margin-left: 7.02782vw;
+    width: 14.05564vw;
+    height: 29.16667vh;
+    display: inline-block
+}
+
+.contact__city, .contact__phone {
+    line-height: 1;
+    display: inline-block;
+    font-family: LeagueGothic;
+    font-size: 2.63543vw;
+    letter-spacing: .050em;
+    margin-bottom: 3.125vh;
+    text-transform: uppercase
+}
+
+.contact__address, .contact__naming {
+    font-family: "PFDin Text Cond Pro";
+    font-size: 1.02489vw;
+    line-height: 1.31772vw;
+    letter-spacing: .075em;
+    margin-bottom: 3.125vh;
+    text-transform: uppercase
+}
+
+.contact__phone {
+    font-size: 2.48902vw;
+    color: black
+}
+
+.contact__copyright {
+    font-family: "PFDin Text Cond Pro";
+    font-size: 1.1713vw;
+    position: absolute;
+    display: block;
+    left: 7.02782vw;
+    bottom: 3.64583vh
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .contact__copyright {
+        display: none
+    }
+}
+
+.col {
+    display: inline-block;
+    vertical-align: top
+}
+
+.first, .second {
+    margin-top: 5.46875vh
+}
+
+.first {
+    margin-left: 4.5388vw;
+    width: 14.20205vw
+}
+
+.second {
+    margin-left: 3.3675vw;
+    width: 14.34846vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    #map {
+        display: none
+    }
+
+    .contact__canvas {
+        display: none
+    }
+
+    .contact__sheet {
+        width: 100%;
+        right: auto
+    }
+
+    .contact__contact {
+        margin-left: 6.02782vw;
+        margin-top: 6.53125vh;
+        margin-bottom: 1.95312vw;
+        width: 87.12299vw;
+        height: 28.29688vw
+    }
+
+    .contact__us {
+        margin-left: 6.02782vw;
+        width: 23.05564vw;
+        height: 28.16667vw;
+        display: block
+    }
+
+    .first {
+        margin-top: 11vw
+    }
+
+    .second {
+        margin-top: 3.03125vw
+    }
+
+    .first, .second {
+        margin-left: 6vw;
+        width: 88%
+    }
+
+    .first .button, .second .button {
+        display: none
+    }
+
+    .contact__city {
+        font-size: 6.63543vw;
+        line-height: 4vw;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility
+    }
+
+    .contact__address {
+        font-size: 4.63543vw;
+        line-height: 6.31772vw;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility
+    }
+
+    .contact__phone {
+        font-size: 6.63543vw;
+        line-height: 4vw;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility
+    }
+
+    .contact__naming {
+        font-size: 4.63543vw;
+        line-height: 6.31772vw;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility
+    }
+
+    .contact__copyright {
+        font-size: 4.1713vw
+    }
+}
+
+.expert {
+    overflow: hidden
+}
+
+.expert__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 63.54319vw;
+    height: 61.97917vh
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .expert__container {
+        width: 100vw;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 8.09595% 4.94792vw
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .expert__container {
+        width: 868px;
+        height: 476px
+    }
+}
+
+.expert__first-name, .expert__last-name {
+    font: 21.74231vw/18.1552vw "LeagueGothic";
+    color: black;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media screen and (min-width: 1370px) {
+    .expert__first-name, .expert__last-name {
+        font-size: 297px;
+        line-height: 248px
+    }
+}
+
+.expert__first-name {
+    left: 0;
+    top: 0;
+    position: relative;
+    display: inline-block
+}
+
+.expert__last-name {
+    overflow: hidden;
+    height: .89em
+}
+
+.expert__vacancy-container {
+    display: inline-block;
+    margin-left: 2.19619vw;
+    width: 21.74231vw
+}
+
+.is-single .expert__vacancy-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .skeakers {
+        height: auto !important;
+        overflow: visible;
+    }
+
+    .skeakers .expert__container {
+        position: relative !important;
+        height: auto !important;
+        padding-bottom: 0;
+    }
+
+    .skeakers .expert__vacancy-container {
+        position: relative !important;
+        height: auto !important;
+    }
+
+    .skeakers .skeaker__photo {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 5em 0;
+        background-position: 50%;
+    }
+
+    .skeakers .skeaker__photo:before {
+        display: block;
+        width: 1px;
+        padding-top: 100%;
+        content: '';
+    }
+}
+
+.expert__first-name-container.is-several {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.expert__first-name-container.is-several .expert__vacancy-container {
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    float: right;
+}
+
+
+@media screen and (min-width: 1370px) {
+    .expert__vacancy-container {
+        width: 297px;
+        margin-left: 30px
+    }
+}
+
+.expert-vacancy {
+    font: 3.51391vw/1 LeagueGothic;
+    letter-spacing: .050em;
+    text-transform: uppercase;
+    margin-bottom: 1.1713vw
+}
+
+@media screen and (min-width: 1370px) {
+    .expert-vacancy {
+        font-size: 48px;
+        margin-bottom: 16px
+    }
+}
+
+.expert-descr {
+    font: 1.02489vw/1.46413vw "PFDin Text Cond Pro";
+    letter-spacing: .050em;
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+@media screen and (min-width: 1370px) {
+    .expert-descr {
+        font-size: 14px;
+        line-height: 20px
+    }
+}
+
+.skeaker__photo {
+    background: url('/static/img/skeaker__photo.jpg') no-repeat left bottom;
+    background-size: contain;
+    width: 51.24451vw;
+    height: 73.20644vw;
+    -webkit-transform: translateX(-33%);
+    transform: translateX(-33%);
+    position: absolute;
+    z-index: -1;
+    bottom: 0
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .skeaker__photo {
+        left: 4.94792vw;
+        top: 43%;
+        position: relative;
+        z-index: 1;
+        -webkit-transform: none;
+        transform: none;
+        width: 22vw;
+        height: 22vw;
+        border-radius: 50%
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .skeaker__photo {
+        top: 50%
+    }
+}
+
+.expert__particle {
+    position: absolute;
+    width: 21.44949vw;
+    height: 11.93265vw;
+    z-index: 1
+}
+
+.expert__particle--1 {
+    background: url('/static/img/expert__partials.png') no-repeat;
+    background-size: contain;
+    top: 1.53734vw;
+    left: 19.83895vw
+}
+
+.expert__particle--2 {
+    background: url('/static/img/expert__partials1.png') no-repeat;
+    background-size: contain;
+    left: 19.83895vw;
+    top: 1.61054vw
+}
+
+.expert__particle--3 {
+    background: url('/static/img/expert__partials2.png') no-repeat;
+    background-size: contain;
+    height: 15px;
+    width: 13px;
+    left: 23.71889vw;
+    top: 24.15813vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .expert__first-name {
+        font: 40.74231vw/32.29167vw "LeagueGothic"
+    }
+
+    .expert__last-name {
+        left: .015em;
+        font-size: 29vw;
+        top: 10px;
+        position: relative;
+        overflow: visible
+    }
+
+    .expert__vacancy-container {
+        position: absolute;
+        top: 58%;
+        width: 100%
+    }
+
+    .expert-vacancy {
+        font: 10.51391vw/1 LeagueGothic;
+        margin-bottom: 5.1713vw
+    }
+
+    .expert-descr {
+        font: 3.38542vw/5.20833vw "PFDin Text Cond Pro";
+        width: 82.94271vw
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .expert__vacancy-container {
+        top: 69%
+    }
+}
+
+.gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: #efefef;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow-x: visible
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .gallery {
+        display: block;
+        height: 620px !important;
+    }
+}
+
+.events .design {
+    letter-spacing: -0.01em
+}
+
+.learn {
+    width: 100vw;
+    position: relative
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn {
+        height: 100%
+    }
+}
+
+.learn:after {
+    display: block;
+    content: '';
+    clear: both;
+    width: 100%;
+    height: 1px;
+    visibility: hidden
+}
+
+.learn__container {
+    margin: auto;
+    left: 0;
+    top: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 86.3836vw;
+    height: 63.80208vh
+}
+
+@media screen and (min-width: 1366px) {
+    .learn__container {
+        width: 1180px;
+        height: 423px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .learn__container {
+        margin: 0;
+        position: relative;
+        width: 100%;
+        height: 100%
+    }
+}
+
+.learn__container .big-preview {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 20px
+}
+
+@media (max-width: 50em) and (orientation: portrait) {
+    .learn__container .big-preview {
+        width: 100vw;
+        height: 300px;
+        margin: 0
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .learn__container .big-preview {
+        height: 400px !important
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .learn__container .big-preview {
+        height: 100% !important
+    }
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn__container .big-preview {
+        width: 100vw;
+        height: 220px;
+        margin: 0;
+        margin-bottom: 10px
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .learn__container .big-preview {
+        height: 300px
+    }
+}
+
+.learn__container .big-preview__wrapper {
+    width: 50%;
+    height: 100%;
+    float: right;
+    position: relative
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn__container .big-preview__wrapper {
+        width: 100%;
+        height: auto;
+        float: none
+    }
+}
+
+.learn__container .big-preview__category {
+    position: relative;
+    top: -6px;
+    float: left;
+    margin-right: 18px
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn__container .big-preview__category {
+        display: none
+    }
+}
+
+.learn__container .big-preview .slick-list, .learn__container .big-preview .slick-track {
+    height: 100%
+}
+
+.learn__container .big-preview .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50%
+}
+
+.learn__container .big-preview .image:focus {
+    outline: 0
+}
+
+.learn__container .title-container {
+    float: left;
+    width: 50%
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn__container .title-container {
+        width: 100%;
+        float: none;
+        padding: 6.8vw;
+        box-sizing: border-box
+    }
+}
+
+.learn__container .title-container .title {
+    width: 85.94436vw;
+    margin: auto;
+    font-family: "PFDin Text Cond Pro";
+    font-size: 2.19619vw;
+    line-height: 2.48902vw;
+    letter-spacing: .05em;
+    margin-bottom: 1.83016vw
+}
+
+@media screen and (min-width: 1370px) {
+    .learn__container .title-container .title {
+        font-size: 30px;
+        margin-bottom: 25px;
+        width: auto
+    }
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn__container .title-container .title {
+        width: auto;
+        float: none;
+        font-size: 25px;
+        line-height: 30px
+    }
+}
+
+.learn__container .title-container .design {
+    width: 85.94436vw;
+    margin: auto;
+    font-family: "LeagueGothic";
+    font-size: 21.74231vw;
+    line-height: 18.1552vw;
+    margin-left: -.04em;
+    text-transform: uppercase;
+    color: #d4d4d4
+}
+
+@media screen and (min-width: 1370px) {
+    .learn__container .title-container .design {
+        font-size: 297px;
+        line-height: 248px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .learn__container .title-container .design {
+        font-size: 39.6vw;
+        line-height: 33.06667vw
+    }
+}
+
+.learn__container .choosen-container {
+    clear: both;
+    width: 45%;
+    position: relative;
+    bottom: 120px
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn__container .choosen-container {
+        float: none;
+        width: 100vw;
+        position: static;
+        margin-top: 20px
+    }
+}
+
+.learn__container .choosen-container .cat-link {
+    font-family: "PFDin Text Cond Pro";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #a2a2a2;
+    transition: color .25s;
+    padding: 0 1em;
+    display: inline-block;
+    margin-left: -1em;
+    margin-bottom: .5em
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .learn__container .choosen-container .cat-link {
+        position: relative;
+        left: 1em;
+        font-size: 3.46667vw
+    }
+}
+
+.learn__container .choosen-container .cat-link:hover {
+    color: black
+}
+
+.learn__container .choosen-container .preview-slider-container {
+    width: 100%;
+    height: 120px;
+    white-space: nowrap
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn__container .choosen-container .preview-slider-container {
+        width: 100vw;
+        height: 100px;
+        margin: 0;
+        margin-bottom: 20px
+    }
+
+    .learn__container .choosen-container .preview-slider-container .bullets-container {
+        visibility: hidden
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .learn__container .choosen-container .preview-slider-container {
+        height: 124px
+    }
+}
+
+.learn__container .choosen-container .preview-slider-container .owl-item {
+    margin-right: 5px
+}
+
+.learn__container .choosen-container .preview-slider-container .preview {
+    position: relative;
+    width: 164px;
+    height: 120px;
+    margin: 5px 14px 5px 0;
+    background: black;
+    cursor: pointer;
+    outline: 0 !important;
+    margin-right: 10px
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .learn__container .choosen-container .preview-slider-container .preview {
+        height: 80px
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .learn__container .choosen-container .preview-slider-container .preview {
+        height: 145px
+    }
+}
+
+.learn__container .choosen-container .preview-slider-container .preview .preview-overlay {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    white-space: pre;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    cursor: pointer
+}
+
+.learn__container .choosen-container .preview-slider-container .preview .preview-overlay:focus {
+    outline: 0
+}
+
+.learn__container .choosen-container .preview-slider-container .preview .preview-overlay:after {
+    display: table-cell;
+    content: attr(text);
+    width: 100%;
+    height: 100%;
+    vertical-align: middle
+}
+
+.learn__container .choosen-container .preview-slider-container .preview .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50%
+}
+
+.learn__container .choosen-container .preview-slider-container .preview:hover img {
+    transition: -webkit-transform 10s linear;
+    transition: transform 10s linear;
+    transition: transform 10s linear, -webkit-transform 10s linear;
+    -webkit-transform: translate(-48%, -45%) scale(1.5) perspective(1px);
+    transform: translate(-48%, -45%) scale(1.5) perspective(1px)
+}
+
+.learn__container .choosen-container .preview-slider-container .preview:hover .preview-overlay {
+    opacity: 1
+}
+
+.learn__container .choosen-container .preview-slider-container .preview.selected .preview-overlay {
+    opacity: 1
+}
+
+.bullets-container__wrapper {
+    margin-top: 8px
+}
+
+.bullets-container__wrapper--big-preview {
+    margin-top: 0;
+    top: -3px;
+    position: relative
+}
+
+.bullets-container__wrapper--big-preview .bullets-container {
+    display: inline-block !important;
+    margin: 0
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .bullets-container__wrapper--big-preview {
+        position: relative;
+        top: 0;
+        margin-left: 6.8vw
+    }
+}
+
+.bullets-container__wrapper .bullets-container {
+    display: none !important
+}
+
+.bullets-container__wrapper .bullets-container:first-child {
+    display: block !important
+}
+
+.bullets-container {
+    height: 25px;
+    padding: 0;
+    margin-top: 15px;
+    margin-left: 2px;
+    float: right
+}
+
+.bullets-container li {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    list-style: none
+}
+
+.bullets-container li button {
+    visibility: hidden
+}
+
+.bullets-container li:hover:after {
+    background: #323232
+}
+
+.bullets-container li.slick-active:after {
+    background: #323232
+}
+
+.bullets-container li:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -4px;
+    margin-left: -4px;
+    border: 1px solid black;
+    display: block;
+    background: white;
+    transition: background .25s;
+    height: 6px;
+    width: 6px
+}
+
+.slick-arrow {
+    color: transparent;
+    position: absolute;
+    top: 100%;
+    margin: 22px 0 0px 0px;
+    width: 50px;
+    height: 50px;
+    outline-color: transparent;
+    border: none;
+    transition: .2s
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .slick-arrow {
+        opacity: 0
+    }
+}
+
+.slick-arrow:hover {
+    cursor: pointer
+}
+
+@media (max-width: 37.5em) and (orientation: portrait) {
+    .slick-arrow {
+        opacity: 0
+    }
+}
+
+.slick-next {
+    left: 10%
+}
+
+.slick-next {
+    background: url('/static/img/next.png') no-repeat
+}
+
+.slick-next:hover {
+    background: url('/static/img/next-white.png') no-repeat
+}
+
+.slick-prev {
+    background: url('/static/img/prev.png') no-repeat
+}
+
+.slick-prev:hover {
+    background: url('/static/img/prev-white.png') no-repeat
+}
+
+.gifts__overflow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden
+}
+
+.gifts__bg {
+    background: #01488b;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.gifts__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 87.84773vw;
+    height: 75%
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .gifts__container {
+        position: relative
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .gifts__container {
+        width: 1200px;
+        height: 583px
+    }
+}
+
+.gifts__text-mobile {
+    background: url('/static/img/gifts__text__mobile.png') no-repeat;
+    background-size: contain;
+    width: 54.77306vw;
+    height: 81.78184vw;
+    display: none
+}
+
+.gifts__cream {
+    background: url('/static/img/gifts__cream.png') no-repeat;
+    background-size: cover;
+    width: 20.35139vw;
+    height: 51.5625vh;
+    position: absolute;
+    bottom: -2.19619vw;
+    right: -5.12445vw
+}
+
+.gifts__gifts-for-you .text--small {
+    font: 2.19619vw/3.125vh "PFDin Text Cond Pro";
+    margin-bottom: 3.125vh;
+    letter-spacing: .050em;
+    color: white;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media screen and (min-width: 1370px) {
+    .gifts__gifts-for-you .text--small {
+        font-size: 50px;
+        line-height: 54px;
+        margin-bottom: 24px
+    }
+}
+
+.gifts__gifts-for-you .text-img {
+    width: 100%
+}
+
+.gifts__prizes {
+    margin-top: 7.42188vh
+}
+
+@media screen and (min-width: 1370px) {
+    .gifts__prizes {
+        margin-top: 57px
+    }
+}
+
+.gifts__prizes .message {
+    font: 1.02489vw/1.31772vw "PFDin Text Cond Pro";
+    color: white;
+    letter-spacing: .025em;
+    float: left;
+    width: 16.25%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+.gifts__prizes .message .text {
+    margin-bottom: 7.03125vh
+}
+
+@media screen and (min-width: 1370px) {
+    .gifts__prizes .message {
+        margin-bottom: 54px;
+        font-size: 14px;
+        line-height: 18px
+    }
+
+    .gifts__prizes .message .text {
+        margin-bottom: 54px
+    }
+}
+
+.gifts__prizes .prizes__col {
+    display: inline-block;
+    vertical-align: top
+}
+
+.gifts__prizes .prizes__item {
+    width: 25.75%;
+    margin-right: 4.68521vw;
+    margin-bottom: 4.6875vh;
+    display: inline-block;
+    vertical-align: top;
+    font-family: "PFDin Text Comp Pro"
+}
+
+.gifts__prizes .prizes__item:nth-child(3n) {
+    margin-right: 0
+}
+
+.gifts__prizes .prizes__item .name {
+    font: 1.46413vw "PFDin Text Cond Pro";
+    font-weight: 600;
+    margin-bottom: 1.82292vh;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .050em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media screen and (min-width: 1370px) {
+    .gifts__prizes .prizes__item .name {
+        font-size: 20px;
+        margin-bottom: 14px
+    }
+}
+
+.gifts__prizes .prizes__item .descr {
+    font: 16px/18px "PFDin Text Cond Pro";
+    color: #4ab6f3;
+    letter-spacing: .025em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media screen and (min-width: 1370px) {
+    .gifts__prizes .prizes__item .descr {
+        font-size: 14px;
+        line-height: 18px
+    }
+}
+
+.gifts__prizes .prizes__list {
+    width: 75%;
+    display: inline-block;
+    margin-left: 5.5%
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .gifts__prizes .button {
+        font-size: 14px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    div[data-anchor="gifts"] {
+        background: #01488b;
+        height: auto
+    }
+    div[data-anchor="main"] {
+        height: 720px !important;
+    }
+
+    .gifts__prizes .button {
+        display: none
+    }
+
+    .gifts__overflow {
+        overflow: auto;
+        position: relative;
+        height: auto
+    }
+
+    .gifts__gifts-for-you {
+        padding-top: 10.96875vh
+    }
+
+    .gifts__gifts-for-you .text--small {
+        font: 7.8125vw/9.11458vw "PFDin Text Cond Pro";
+        margin-bottom: 6.125vh
+    }
+
+    .gifts__prizes {
+        position: relative
+    }
+
+    .gifts__prizes .message {
+        font: 5.02489vw/6.31772vw "PFDin Text Cond Pro";
+        width: 100%;
+        text-align: center
+    }
+
+    .gifts__prizes .message .text {
+        text-align: left
+    }
+
+    .gifts__text-mobile {
+        display: block
+    }
+
+    .text-img {
+        display: none
+    }
+
+    .gifts__cream {
+        width: 50.35139vw;
+        height: 54.5625vh;
+        top: 58.80381vw;
+        bottom: auto;
+        right: -0.12445vw
+    }
+
+    .prizes__col .button {
+        display: none !important
+    }
+
+    .prizes__list {
+        margin-left: 0 !important;
+        width: 90% !important
+    }
+}
+
+@media only screen and (max-width: 1028px) and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .prizes__list {
+        width: 100% !important
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .prizes__item {
+        text-align: center;
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 7.6875vh !important
+    }
+}
+
+@media only screen and (max-width: 1028px) and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .prizes__item {
+        width: 44% !important;
+        margin-right: 35px !important;
+        margin-bottom: 30px !important
+    }
+
+    .prizes__item:last-child {
+        margin-bottom: 120px !important
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .prizes__item .name {
+        font-size: 7.46413vw !important;
+        text-align: justify;
+        margin-top: 40px
+    }
+}
+
+@media only screen and (max-width: 1028px) and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .prizes__item .name {
+        font-size: 34px !important
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .prizes__item .descr {
+        font: 16px/18px "PFDin Text Cond Pro" !important;
+        text-align: left
+    }
+}
+
+@media only screen and (max-width: 1028px) and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .prizes__item .descr {
+        font-size: 24px !important;
+        line-height: 28px !important
+    }
+}
+
+.inspiration__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 79.06296vw;
+    height: 65%
+}
+
+@media screen and (min-width: 1370px) {
+    .inspiration__container {
+        width: 1080px;
+        height: 500px
+    }
+}
+
+.inspiration__quote {
+    left: 20%;
+    bottom: 0;
+    position: absolute
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .inspiration__quote {
+        bottom: -50px
+    }
+}
+
+.inspiration__quote-icon {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    background: url('/static/img/inspiration__quote__black.svg') no-repeat left top;
+    background-size: contain;
+    width: 3.29429vw;
+    height: 2.56223vw;
+    margin-right: .95168vw
+}
+
+@media screen and (min-width: 1370px) {
+    .inspiration__quote-icon {
+        width: 45px;
+        height: 35px;
+        margin-right: 13px
+    }
+}
+
+.inspiration__quote-name {
+    display: inline-block;
+    font: 3.51391vw/2.78184vw "LeagueGothic";
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    margin-bottom: 1.61054vw
+}
+
+@media screen and (min-width: 1370px) {
+    .inspiration__quote-name {
+        font-size: 48px;
+        line-height: 38px;
+        margin-bottom: 22px
+    }
+}
+
+.inspiration__quote-text {
+    font: 1.02489vw/1.46413vw "PFDin Text Cond Pro";
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    margin-left: 4.39239vw;
+    width: 21.52269vw
+}
+
+@media screen and (min-width: 1370px) {
+    .inspiration__quote-text {
+        font-size: 14px;
+        line-height: 20px;
+        width: 294px;
+        margin-left: 60px
+    }
+}
+
+.inspiration__word {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: url('/static/img/inspiration__abstract.jpg')
+}
+
+.inspiration__word-mask {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    box-shadow: 0 0 0 9999px white;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1
+}
+
+.inspiration__word-text {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    box-shadow: 0 0 0 9999px white;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.inspiration__mobile {
+    display: none;
+    background: url('/static/img/inspiration__mob.jpg') no-repeat;
+    background-size: contain;
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    top: 19vw;
+    left: 7vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .inspiration__mobile {
+        display: block
+    }
+
+    .inspiration__quote {
+        left: 0;
+        position: absolute
+    }
+
+    .inspiration__quote-icon {
+        width: 11.29429vw;
+        height: 8.56223vw;
+        margin-right: 3.95168vw
+    }
+
+    .inspiration__quote-name {
+        font: 11.51391vw/13.78184vw "LeagueGothic"
+    }
+
+    .inspiration__quote-text {
+        font: 3.02489vw/4.46413vw "PFDin Text Cond Pro";
+        margin-left: 15.39239vw;
+        width: 80%
+    }
+}
+
+.main__bg, .main__bg-black {
+    background: url("img/main__bg.jpg") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.main__bg-black {
+    background: black
+}
+
+.main__container {
+    position: absolute;
+    width: 100%;
+    color: white;
+    top: 39%;
+    letter-spacing: .05em;
+    text-align: center;
+    font-weight: 500
+}
+
+@media (min-width: 100em) and (orientation: portrait) {
+    .main__container {
+        bottom: 0;
+        height: 50%
+    }
+}
+
+@media (max-width: 37.5em) and (orientation: portrait) {
+    .main__container {
+        top: 0%
+    }
+}
+
+.main-logo {
+    font: 500 121px/119px "PFDin Text Comp Pro";
+    color: white;
+    width: 100%;
+    line-height: 1;
+    display: block;
+    text-align: center
+}
+
+.main-title {
+    font: 300 28px/27px "PFDin Text Comp Pro";
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .050em;
+    padding-top: 22px;
+    width: 46%;
+    margin: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media (max-width: 37.5em) and (orientation: portrait) {
+    .main-title {
+        margin-top: 1.68375vw
+    }
+}
+
+.main-days {
+    line-height: 1;
+    font: 100 24px/40px "PFDin Text Comp Pro";
+    letter-spacing: .05em;
+    margin-top: .95168vw;
+    font-size: 1.75549vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media (max-width: 37.5em) and (orientation: portrait) {
+    .main-days {
+        margin-top: 0 !important;
+        margin-bottom: 35px;
+        letter-spacing: .1em
+    }
+}
+
+.main-button {
+    margin-top: 59px;
+    text-align: center;
+    width: 100%
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .main__bg {
+        background: url("img/main__bg_mob.jpg") no-repeat center center;
+        background-size: cover
+    }
+
+    .main__container {
+        margin-top: 44vh
+    }
+
+    .main-title {
+        font-size: 5.98958vw
+    }
+
+    .main-days {
+        margin-top: 1.82292vw;
+        font-size: 4.03646vw
+    }
+
+    .main-logo {
+        font-size: 20.57292vw
+    }
+
+    .main-button {
+        margin-top: 20px
+    }
+
+    .scroll-icon {
+        display: none
+    }
+}
+
+.mastery__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/img/mastery__nail_tube_bg.png') no-repeat center center;
+    background-size: cover
+}
+
+.mastery__mobile {
+    display: none
+}
+
+.mastery__block {
+    display: inline-block;
+    letter-spacing: .025em
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .mastery__block {
+        box-sizing: border-box;
+        padding: 7.64618% 7.03125vw
+    }
+}
+
+.mastery__container {
+    display: table;
+    width: 100%;
+    height: 100%
+}
+
+.mastery__container-left, .mastery__container-right {
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .mastery__container-left, .mastery__container-right {
+        padding-top: 40px;
+        vertical-align: top
+    }
+}
+
+.mastery__container-left .mastery__block {
+    text-align: left
+}
+
+.mastery__container-right .mastery__block {
+    text-align: right;
+    color: white
+}
+
+.mastery__title {
+    font: 2.63543vw/1.75695vw "PFDin Text Cond Pro";
+    margin-bottom: 2.12299vw;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .mastery__title {
+        font-size: 6.25vw;
+        text-transform: uppercase;
+        line-height: 5.98958vw;
+        letter-spacing: .025em;
+        position: relative;
+        margin-right: 1.17188vw;
+        margin-bottom: 2em
+    }
+}
+
+.mastery__perk {
+    font: 1.31772vw/2.63543vw "PFDin Text Cond Pro";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+.mastery__perk:before {
+    content: '\2022\00a0'
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .mastery__perk {
+        font-size: 3.90625vw;
+        line-height: 4.6875vw;
+        letter-spacing: .025em;
+        position: relative;
+        margin-bottom: 1em
+    }
+
+    .mastery__perk:before {
+        content: none
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .mastery__container {
+        height: auto
+    }
+
+    .mastery__bg {
+        background-image: url('/static/img/mastery__nail_tube_bg_mob.png')
+    }
+}
+
+.popup-price {
+    transition: opacity .25s ease-out;
+    position: relative
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price#musthave .popup-price__close {
+        background-image: url('/static/img/close_black.svg')
+    }
+
+    .popup-price#naillover .popup-price__close {
+        background-image: url('/static/img/close.svg')
+    }
+
+    .popup-price#nailexpert .popup-price__close {
+        background-image: url('/static/img/close_black.svg')
+    }
+
+    .popup-price .price__bottom {
+        position: unset;
+        padding: 0
+    }
+
+    .popup-price .price__bottom .button {
+        padding: 20px 140px 20px 140px
+    }
+
+    .popup-price .price__ticket-left-value {
+        font-size: 36px;
+        margin-right: 10px
+    }
+
+    .popup-price .price__ticket-left-text {
+        font: 600 15px/16px "PFDin Text Cond Pro"
+    }
+}
+
+.popup-price.show .overlay {
+    left: 0;
+    right: 0;
+    opacity: .8
+}
+
+.popup-price.show .popup-price__container {
+    left: 0;
+    right: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+}
+
+.popup-price__big-close {
+    display: none
+}
+
+.popup-price__big-close .close-text {
+    font: 4.6875vw "PFDin Text Cond Pro";
+    color: #202124;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.popup-price__big-close .close-button {
+    width: 100%;
+    height: 30px;
+    background: url('/static/img/close_black.svg') no-repeat center center;
+    margin-bottom: 20px
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price__big-close {
+        display: block
+    }
+}
+
+.popup-price .overlay {
+    left: -9999px;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: black
+}
+
+.popup-price__container {
+    transition: -webkit-transform .25s ease-out;
+    transition: transform .25s ease-out;
+    transition: transform .25s ease-out, -webkit-transform .25s ease-out;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+    position: fixed;
+    width: 47.58419%;
+    height: 680px;
+    background: white;
+    z-index: 100000;
+    left: -9999px;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    margin: auto
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price__container {
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        overflow: scroll
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .popup-price__container {
+        width: 650px;
+        height: 680px
+    }
+}
+
+.popup-price__container-element {
+    width: 29.23077%;
+    height: 270px;
+    display: inline-block;
+    margin-right: 3.84615%;
+    padding-left: 3.38462%;
+    vertical-align: top;
+    box-sizing: border-box
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price__container-element {
+        width: 100%;
+        height: auto;
+        padding-right: 6%;
+        display: block;
+        margin-bottom: 15%
+    }
+}
+
+.popup-price__keys {
+    padding-left: 1.6em;
+    font: 1.02489vw/1.1713vw "PFDin Text Cond Pro"
+}
+
+.popup-price__keys li {
+    margin-bottom: 15px
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .popup-price__keys {
+        font-size: 3.64583vw;
+        line-height: 4.16667vw
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price__keys {
+        font-size: 4.42708vw;
+        line-height: 5.46875vw
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .popup-price__keys {
+        font-size: 14px;
+        line-height: 16px
+    }
+}
+
+.popup-price__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    box-shadow: 0 0 0 6px black;
+    margin: 6px;
+    box-sizing: border-box;
+    background: black url('/static/img/close.svg') no-repeat center center
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price__close {
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        left: 50%;
+        top: 10px;
+        margin-left: -15px;
+        box-shadow: none
+    }
+}
+
+.popup-price__title {
+    font: 600 1.31772vw "PFDin Text Cond Pro"
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price__title {
+        font-size: 4.6875vw
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .popup-price__title {
+        font-size: 18px
+    }
+}
+
+.popup-price__header {
+    height: 25%;
+    width: 100%;
+    background: black no-repeat center center;
+    background-size: cover;
+    margin-bottom: 30px
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price__header {
+        padding-top: 45px;
+        height: auto
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .popup-price__header {
+        height: 27%
+    }
+}
+
+.popup-price__header--naillover {
+    background-image: url('/static/img/price__nlover-header.jpg')
+}
+
+.popup-price__header--musthave {
+    background-image: url('/static/img/price__mhave-header.jpg')
+}
+
+.popup-price__header--musthave .popup-price__header-name {
+    color: black
+}
+
+.popup-price__header--nailexpert {
+    background-image: url('/static/img/price__nexpert-header.jpg')
+}
+
+.popup-price__header--nailexpert .popup-price__header-name {
+    color: black
+}
+
+.popup-price__header-name {
+    font: 75px "LeagueGothic";
+    color: white;
+    display: inline-block;
+    margin-left: 35px;
+    margin-top: 10px
+}
+
+.popup-price__header-date {
+    font: 500 15px "PFDin Text Cond Pro";
+    color: white;
+    background: black;
+    padding: 5px 10px;
+    margin-left: 10px;
+    top: -10px;
+    position: relative;
+    display: inline-block
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .popup-price__header-date {
+        margin-right: 50%;
+        margin-left: 35px
+    }
+}
+
+.price__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 18vh;
+    width: 73.71889vw;
+    height: 67.70833vh
+}
+
+@media screen and (min-width: 1370px) {
+    .price__container {
+        width: 1007px;
+        height: 560px;
+        margin-top: auto
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__container {
+        position: relative;
+        margin-top: 8.9955%;
+        width: auto;
+        height: auto;
+        display: block;
+        margin-left: 5vw;
+        margin-right: 5vw
+    }
+}
+
+.price__bg {
+    background: #eee;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__bg {
+        z-index: 0
+    }
+}
+
+.price__title {
+    font: 1.75695vw "PFDin Text Cond Pro";
+    margin: 6.95461vw 0 3.58712vw;
+    text-align: center
+}
+
+@media screen and (min-width: 1370px) {
+    .price__title {
+        font-size: 24px;
+        margin: 121px 0 49px
+    }
+}
+
+.price__key {
+    font: 500 1.02489vw "PFDin Text Cond Pro";
+    color: black;
+    text-transform: uppercase;
+    height: 3.25521vh;
+    max-height: 25px;
+    line-height: 3.25521vh;
+    padding-left: 7.16846%;
+    margin-bottom: 1.30208vh
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__key {
+        font-size: 3.64583vw;
+        margin-bottom: 2.60417vw;
+        line-height: 6.51042vw;
+        height: 6.51042vw
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .price__key {
+        font-size: 14px
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .price__key {
+        font-size: 24px
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .price__key {
+        display: none !important
+    }
+}
+
+.price__icon {
+    width: 25px;
+    height: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url('/static/img/price__icons.png') no-repeat;
+    display: inline-block
+}
+
+.price__icon--name {
+    background-position: 0 0
+}
+
+.price__icon--tube {
+    background-position: -25px 0
+}
+
+.price__icon--gift {
+    background-position: -50px 0
+}
+
+.price__icon--medal {
+    background-position: -75px 0
+}
+
+.price__icon--nail {
+    background-position: -100px 0
+}
+
+.price__more-link {
+    font: 500 14px "PFDin Text Cond Pro";
+    margin-top: 1.5625vh;
+    display: inline-block;
+    color: black;
+    text-decoration: underline;
+    padding-left: 9.67742%
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__more-link {
+        margin-top: 12px;
+        font-size: 3.64583vw;
+        margin-bottom: 200px
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .price__more-link {
+        font-size: 24px
+    }
+}
+
+.price__bottom {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 5.19231%;
+    padding-left: 9.67742%;
+    padding-right: 9.67742%
+}
+
+.price__value {
+    font: 36px "LeagueGothic";
+    float: left;
+    margin-bottom: 12px
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .price__value {
+        font-size: 20px
+    }
+}
+
+.price__ticket-left {
+    float: right;
+    margin-bottom: 12px
+}
+
+.price__ticket-left-value {
+    font: 36px "LeagueGothic"
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__ticket-left-value {
+        font-size: 5.46875vw;
+        position: relative;
+        top: -2px
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .price__ticket-left-value {
+        font-size: 20px
+    }
+}
+
+.price__ticket-left-text {
+    font: 600 12px "PFDin Text Cond Pro";
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    top: -2px
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__ticket-left-text {
+        font-size: 3.125vw;
+        line-height: 2.60417vw
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .price__ticket-left-text {
+        font-size: 10px
+    }
+}
+
+.price__product {
+    width: 27.70606%;
+    height: 100%;
+    background: white;
+    position: relative
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__product {
+        width: auto;
+        margin-bottom: 24px
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .price__product {
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 90px
+    }
+}
+
+.price__product .button {
+    clear: both;
+    display: block;
+    text-align: center
+}
+
+.price__product .button:before {
+    text-align: center;
+    display: inline
+}
+
+.price__product-header {
+    margin-bottom: 30px
+}
+
+.price__product-header-caption {
+    background: black;
+    color: white;
+    box-sizing: border-box;
+    padding-left: 9.67742%;
+    font: 500 16px/18px "PFDin Text Cond Pro";
+    line-height: 27.30769px
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__product-header-caption {
+        font-size: 4.16667vw;
+        line-height: 5.46875vw
+    }
+}
+
+.price__product-header-image {
+    font: 9.76563vh/8.72396vh "LeagueGothic";
+    color: white;
+    box-sizing: border-box;
+    padding-top: 5.6338px;
+    padding-left: 9.67742%;
+    height: auto;
+    background: white no-repeat center center;
+    background-size: cover
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .price__product-header-image {
+        font-size: 16.66667vw;
+        line-height: 14.32292vw
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .price__product-header-image {
+        font-size: 75px;
+        line-height: 67px
+    }
+}
+
+.price__product-header-image--black {
+    color: black
+}
+
+.price__product-header-image--first {
+    background-image: url('/static/img/price_mhave.jpg')
+}
+
+.price__product-header-image--second {
+    background-image: url('/static/img/price_nlover.jpg')
+}
+
+.price__product-header-image--third {
+    background-image: url('/static/img/price_nexpert.jpg')
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    div[data-anchor="price"] {
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .rubble {
+        height: 15px
+    }
+}
+
+[data-anchor="secrets"] {
+    overflow: hidden
+}
+
+.secrets-bg {
+    background: #01488b;
+    width: 100vw;
+    height: 100vh;
+    position: absolute
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .secrets-bg {
+        height: 100%
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .secrets-bg {
+        height: 150vh
+    }
+}
+
+.secrets-particle {
+    position: absolute;
+    pointer-events: none;
+    width: 50.73206vw;
+    height: 41.94729vw;
+    z-index: 999
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets-particle {
+        width: 86.73206vw;
+        height: 88.94729vw
+    }
+}
+
+.secrets-particle--1-0 {
+    background: url('/static/img/secrets__partials0.png') no-repeat;
+    background-size: contain;
+    left: 17.93558vw;
+    top: 3.00146vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets-particle--1-0 {
+        left: 10.93558vw;
+        top: 13.00146vw
+    }
+}
+
+.secrets-particle--1-1 {
+    background: url('/static/img/secrets__partials0-1.png') no-repeat;
+    background-size: contain;
+    right: 36.67643vw;
+    bottom: 10.83455vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets-particle--1-1 {
+        right: 38.28404vw;
+        bottom: 10.83455vw
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .secrets-particle--1-1 {
+        bottom: 14.49488vw
+    }
+}
+
+.secrets-particle--2-0 {
+    background: url('/static/img/secrets__partials1.png') no-repeat;
+    background-size: contain;
+    left: 16.76428vw;
+    top: 2.12299vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets-particle--2-0 {
+        left: 11.76428vw;
+        top: 14.12299vw
+    }
+}
+
+.secrets-particle--2-1 {
+    background: url('/static/img/secrets__partials1-1.png') no-repeat;
+    background-size: contain;
+    right: 37.18887vw;
+    bottom: 9.37042vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets-particle--2-1 {
+        right: 39.79649vw;
+        bottom: 9.37042vw
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .secrets-particle--2-1 {
+        bottom: 13.03075vw
+    }
+}
+
+.secrets-particle--3-0 {
+    background: url('/static/img/secrets__partials2.png') no-repeat;
+    background-size: contain;
+    left: 16.61786vw;
+    top: 2.19619vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets-particle--3-0 {
+        left: 16.61786vw;
+        top: 4.19619vw
+    }
+}
+
+.secrets-particle--3-1 {
+    background: url('/static/img/secrets__partials2-1.png') no-repeat;
+    background-size: contain;
+    right: 37.26208vw;
+    bottom: 9.44363vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets-particle--3-1 {
+        right: 36.86969vw;
+        bottom: 18.44363vw
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .secrets-particle--3-1 {
+        bottom: 13.10395vw
+    }
+}
+
+.secrets__container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative
+}
+
+@media (max-width: 64em) and (orientation: portrait) {
+    .secrets__container {
+        height: 100%
+    }
+}
+
+.secrets__left {
+    display: table;
+    position: absolute;
+    top: 11.71303vw;
+    left: 14.64129vw
+}
+
+.secrets__left .secrets-text {
+    padding-bottom: 4.39239vw
+}
+
+.secrets-number {
+    font: 49.04832vw/40.84919vw LeagueGothic;
+    color: #003f7e;
+    display: table-cell;
+    vertical-align: middle
+}
+
+.secrets-text {
+    text-transform: uppercase;
+    font: 500 36px/38px "PFDin Text Cond Pro";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: .050em;
+    display: table-cell;
+    width: 33.67496vw;
+    color: white;
+    vertical-align: middle;
+    position: absolute;
+    left: 60%;
+    top: 25%;
+    font-weight: 100
+}
+
+.secrets-text-under {
+    font: 18px/19px "PFDin Text Cond Pro";
+    padding: 0 0 0 18px;
+    margin-top: 18px
+}
+
+.secrets-text-under li {
+    padding: 0 0px 23px 0
+}
+
+.secrets-link {
+    color: #3a8fe5;
+    font: 300 1.02489vw/2.34261vw "PFDin Text Comp Pro";
+    text-decoration: underline;
+    display: block;
+    text-transform: none
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets-link {
+        font-size: 3.38542vw;
+        line-height: 6.77083vw
+    }
+}
+
+.secrets__right {
+    display: table;
+    bottom: -5.49048vw;
+    right: 35.13909vw;
+    position: absolute
+}
+
+.secrets__right .secrets-text {
+    padding-bottom: 6.22255vw
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .secrets__right {
+        bottom: 0
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .secrets__left {
+        top: 0;
+        left: 5.64129vw
+    }
+
+    .secrets__left .secrets-text {
+        width: 90vw
+    }
+
+    .secrets__right {
+        left: 5%;
+        right: 0%;
+        top: 480px
+    }
+
+    .secrets__right .secrets-text {
+        padding-bottom: 22.22255vw
+    }
+
+    .secrets-number {
+        font: 82.04832vw/82.84919vw "LeagueGothic"
+    }
+
+    .secrets-text {
+        width: 75vw;
+        left: 0%
+    }
+}
+
+div[data-anchor="sets"] {
+    overflow: hidden
+}
+
+.sets__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 79.06296vw;
+    height: 61.32813vh
+}
+
+@media screen and (min-width: 1370px) {
+    .sets__container {
+        width: 1080px;
+        height: 471px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .sets__container {
+        margin: 0;
+        height: auto;
+        position: relative
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .sets__container {
+        width: 92% !important
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .sets__container {
+        margin-top: 18vw
+    }
+}
+
+.sets__blob {
+    position: absolute;
+    left: 0;
+    top: -5.12445vw;
+    height: 19.76574vw;
+    width: 100%
+}
+
+.sets__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white
+}
+
+.sets__logo {
+    left: 0;
+    top: 0;
+    width: 35.37%;
+    height: 100%;
+    float: left;
+    margin-right: 10%;
+    background: url('/static/img/sets__logo.svg') no-repeat;
+    background-size: contain
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .sets__logo {
+        margin-bottom: 15%
+    }
+}
+
+.sets__keys {
+    overflow: hidden
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .sets__keys {
+        overflow: visible
+    }
+}
+
+.sets__keys .big-title {
+    font: 2.19619vw/2.48902vw "PFDin Text Cond Pro";
+    letter-spacing: .05em;
+    margin-bottom: 4.6875vh
+}
+
+@media screen and (min-width: 1370px) {
+    .sets__keys .big-title {
+        font-size: 30px;
+        line-height: 34px
+    }
+}
+
+.sets__item {
+    display: inline-block;
+    width: 44%;
+    vertical-align: top;
+    letter-spacing: .050em;
+    margin-right: 6%;
+    margin-bottom: 4.4%
+}
+
+.sets__item:nth-child(2n-1) {
+    margin-right: 0
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .sets__item {
+        width: 45% !important;
+        margin-right: 35px !important;
+        margin-bottom: 20px !important
+    }
+
+    .sets__item:last-of-type {
+        margin-bottom: 120px !important
+    }
+}
+
+.sets__item-title {
+    font: 3.51391vw/3.18184vw "LeagueGothic";
+    margin-bottom: 1.75695vw;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .sets__item-title {
+        font-size: 8.85417vw !important
+    }
+}
+
+@media screen and (min-width: 1370px) {
+    .sets__item-title {
+        font-size: 48px;
+        line-height: 38px
+    }
+}
+
+.sets__item-descr {
+    font: 1.1713vw/1.46413vw "PFDin Text Cond Pro";
+    letter-spacing: .025em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+@media screen and (min-width: 1370px) {
+    .sets__item-descr {
+        font-size: 16px;
+        line-height: 20px
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .sets__item-descr {
+        font-size: 3.64583vw !important;
+        line-height: 4.16667vw !important
+    }
+}
+
+.sets__button {
+    position: relative;
+    top: -.80527vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .big-title {
+        display: none
+    }
+
+    .sets__button {
+        display: none
+    }
+
+    .slide[data-anchor="sets"] {
+        height: auto
+    }
+
+    .sets__blob {
+        display: none
+    }
+
+    .sets__logo {
+        position: relative;
+        width: 100%;
+        left: 0;
+        top: 0;
+        margin-left: 5vw;
+        margin-top: 11vw;
+        height: 55.55344vw
+    }
+
+    .sets__keys {
+        left: 5.60761vw;
+        margin-top: 10.54319vw;
+        top: 0;
+        position: relative
+    }
+
+    .sets__item {
+        width: 100%;
+        margin-bottom: 8.51391vw;
+        margin-right: 0
+    }
+
+    .sets__item-title {
+        font: 10.51391vw/15.78184vw "LeagueGothic"
+    }
+
+    .sets__item-descr {
+        font: 5.2489vw/7.46413vw "PFDin Text Cond Pro";
+        width: 100%
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .slide[data-anchor="smart"] {
+        height: auto
+    }
+}
+
+.smart__container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 82.35725vw;
+    height: 57.68229vh
+}
+
+@media screen and (min-width: 1370px) {
+    .smart__container {
+        width: 1124px;
+        height: 582px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__container {
+        background: black;
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        position: relative;
+        padding: 8.62069% 7.03125vw;
+        padding-bottom: 1px
+    }
+}
+
+.smart__slogan {
+    font: 2.19619vw "PFDin Text Cond Pro";
+    color: white
+}
+
+@media screen and (min-width: 1370px) {
+    .smart__slogan {
+        font-size: 30px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__slogan {
+        font-size: 7.8125vw;
+        letter-spacing: .05em;
+        line-height: 9.11458vw;
+        margin-bottom: 13.67188vw
+    }
+}
+
+.smart__list {
+    margin-left: 0 !important;
+    width: 100%;
+    position: absolute;
+    bottom: 0
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__list {
+        position: relative
+    }
+}
+
+.smart__item {
+    width: 20.64057%;
+    position: relative;
+    margin-right: 5.69395%;
+    bottom: 8.12641%;
+    display: inline-block;
+    vertical-align: top;
+    font-family: "PFDin Text Comp Pro"
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__item {
+        display: block;
+        margin: 0;
+        margin-bottom: 8.46354vw;
+        width: 100%
+    }
+
+    .smart__item .button {
+        margin-top: 8.46354vw
+    }
+}
+
+.smart__item .name {
+    font: 1.46413vw "PFDin Text Cond Pro";
+    font-weight: 600;
+    margin-bottom: 1.82292vh;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .050em
+}
+
+@media screen and (min-width: 1370px) {
+    .smart__item .name {
+        font-size: 20px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__item .name {
+        font-weight: 600;
+        font-size: 7.8125vw
+    }
+}
+
+.smart__item .descr {
+    font: 1.02489vw/1.31772vw "PFDin Text Cond Pro";
+    color: white;
+    letter-spacing: .025em
+}
+
+@media screen and (min-width: 1370px) {
+    .smart__item .descr {
+        font-size: 14px;
+        line-height: 18px
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__item .descr {
+        font-weight: 400;
+        font-size: 4.6875vw;
+        line-height: 6.51042vw
+    }
+}
+
+.smart__item:last-of-type {
+    margin-right: 0
+}
+
+.smart__word {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: url('/static/img/smart__bg.jpg');
+    background-size: contain
+}
+
+.smart__word-mask, .smart__word-text {
+    left: 0;
+    top: 24%
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__word {
+        background-image: url('/static/img/smart__word-mob.jpg');
+        background-repeat: no-repeat;
+        background-position: 0 0 !important;
+        width: 84.11458vw;
+        height: 87.89063vw;
+        position: relative;
+        z-index: 0;
+        margin-bottom: 17.57813vw
+    }
+}
+
+.smart__word-mask {
+    width: 100%;
+    height: 34.76298%;
+    position: absolute;
+    box-shadow: 0 0 0 9999px black;
+    z-index: 1
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__word-mask {
+        display: none
+    }
+}
+
+.smart__word-text {
+    width: 100%;
+    height: 31.37698%;
+    position: absolute;
+    box-shadow: 0 0 0 9999px black
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__word-text {
+        display: none
+    }
+}
+
+.smart__footer {
+    position: absolute;
+    bottom: 0;
+    line-height: 2.2694vw;
+    padding: 0 2.19619vw 2.19619vw 2.19619vw;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-line-pack: center;
+    align-content: center
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__footer {
+        padding: 60% 7.03125vw;
+        padding-top: 0;
+        position: relative;
+        background: black;
+        height: 39.88006%;
+        box-sizing: content-box
+    }
+}
+
+.smart__footer-item {
+    font: 1.1713vw/1.75695vw "PFDin Text Cond Pro";
+    letter-spacing: .025em;
+    vertical-align: middle;
+    display: inline-block;
+    color: white
+}
+
+.smart__footer-item .text {
+    margin-right: 1.46413vw
+}
+
+.smart__footer-item .text--left {
+    margin-right: 0;
+    margin-left: 1.46413vw
+}
+
+.smart__footer-item a {
+    text-decoration: none;
+    color: white
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__footer-item.social {
+        position: absolute;
+        font: 4.6875vw "PFDin Text Cond Pro"
+    }
+
+    .smart__footer-item.social .text {
+        display: block;
+        margin-bottom: 3.37331%;
+        margin-top: 3.37331%
+    }
+
+    .smart__footer-item.social .text--left {
+        display: inline-block;
+        margin-top: 10.49475%;
+        margin-left: 0
+    }
+
+    .smart__footer-item.social .icon--share {
+        float: none
+    }
+
+    .smart__footer-item.social .mobile-br {
+        display: block
+    }
+
+    .smart__footer-item.industry {
+        position: absolute;
+        font: 3.90625vw/1.31772vw "PFDin Text Cond Pro";
+        letter-spacing: .025em;
+        bottom: 7.03125vw
+    }
+
+    .smart__footer-item.insight-logo {
+        position: absolute;
+        background-position: center left;
+        height: 5.33854vw;
+        width: 33.72396vw;
+        bottom: 5.33854vw;
+        right: 20.70313vw
+    }
+}
+
+.smart__footer .icon {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .smart__footer .icon {
+        margin-right: 16px
+    }
+}
+
+.smart__footer .icon--share {
+    float: right
+}
+
+.smart__footer .icon--fb {
+    background-image: url('/static/img/fb.svg')
+}
+
+.smart__footer .icon--vk {
+    background-image: url('/static/img/vk.svg')
+}
+
+.smart__footer .icon--in {
+    background-image: url('/static/img/instagram.svg')
+}
+
+.smart__footer .icon--yt {
+    background-image: url('/static/img/youtube.svg')
+}
+
+.smart__footer .icon--ok {
+    background-image: url('/static/img/ok.svg')
+}
+
+.smart__footer .icon--tw {
+    background-image: url('/static/img/twitter.svg')
+}
+
+.smart__footer .icon--share {
+    background-image: url('/static/img/share.png');
+    margin-left: 12px
+}
+
+.share {
+    display: inline-block
+}
+
+.share-icons {
+    max-width: 0px;
+    transition: max-width .25s;
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    vertical-align: bottom;
+    white-space: nowrap
+}
+
+[data-anchor="techniks"] {
+    overflow: hidden
+}
+
+.techniks {
+    background-color: #000000;
+    position: relative
+}
+
+.techniks__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: black;
+    width: 86.3836vw;
+    height: 63.80208vh;
+    margin: auto
+}
+
+@media screen and (min-width: 1366px) {
+    .techniks__bg {
+        width: 1180px;
+        height: 423px
+    }
+}
+
+.techniks__bullets {
+    position: absolute;
+    bottom: 5%;
+    right: 0
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .techniks__bullets {
+        top: 22.6vw
+    }
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .techniks__bullets .bullets-item {
+        display: inline-block
+    }
+}
+
+.techniks__slider {
+    width: 100%
+}
+
+.techniks__slider .title {
+    font: 500 50px/52px "PFDin Text Comp Pro";
+    letter-spacing: .025em;
+    text-transform: uppercase;
+    color: white
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .techniks__slider .title {
+        font: 500 37px/38px "PFDin Text Comp Pro";
+        margin-top: 48px
+    }
+}
+
+.techniks__slider-item {
+    top: 115px;
+    width: 100%
+}
+
+@media screen and (min-width: 1370px) {
+    .techniks__slider-item {
+        top: 130px
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    .techniks__slider-item {
+        top: 60px
+    }
+}
+
+.techniks__slider-item .text {
+    font: 18px/20px "PFDin Text Cond Pro";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: .075em;
+    color: #9e9e9e;
+    display: table-cell;
+    vertical-align: top;
+    position: relative;
+    height: auto;
+    bottom: 0px
+}
+
+.techniks__slider-item .text__title {
+    color: #ffffff;
+    font: 100 36px/38px "PFDin Text Cond Pro";
+    padding-bottom: 30px
+}
+
+.techniks__slider-item .text__description {
+    font: 100 18px/29px "PFDin Text Cond Pro"
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .techniks__slider-item .text {
+        display: table-header-group
+    }
+}
+
+.techniks__slider-item .person-container {
+    position: relative;
+    margin-top: 32px;
+    padding-right: 50px;
+    display: table-cell
+}
+
+.techniks__slider-item .person-container .avatar {
+    max-width: 400px;
+    max-height: 345px;
+    margin-right: 12px
+}
+
+.techniks__slider-item .person-container .name {
+    font: 20px/28px "PFDin Text Comp Pro";
+    letter-spacing: .075em;
+    color: white;
+    position: relative
+}
+
+.techniks__slider-item .person-container .city {
+    font: 12px/9px "PFDin Text Comp Pro";
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .150em;
+    color: #9e9e9e
+}
+
+.techniks__quote-left {
+    position: absolute;
+    background: url('/static/img/comments__quote.svg') no-repeat;
+    background-size: contain;
+    width: 36.60322vw;
+    height: 27.67204vw;
+    left: 8.19912vw;
+    top: 2.70864vw
+}
+
+.techniks__quote-right {
+    position: absolute;
+    background: url('/static/img/comments__quote.svg') no-repeat;
+    background-size: contain;
+    width: 9.0776vw;
+    height: 6.73499vw;
+    right: 7.9063vw;
+    bottom: 2.41581vw;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .techniks__quote-left {
+        height: 28.33583%;
+        width: 60vw;
+        left: 5.19912vw;
+        top: 14.70864vw
+    }
+
+    .techniks__quote-right {
+        bottom: 19.41581vw
+    }
+
+    .techniks__slider-item {
+        top: 200px
+    }
+
+    .techniks__slider-item .text {
+        font: 3.90625vw "PFDin Text Cond Pro";
+        width: 100%
+    }
+
+    .techniks__slider-item .person-container {
+        margin-top: 20px;
+        display: block
+    }
+
+    .techniks__slider-item .person-container .name {
+        font: 12px/18px "PFDin Text Comp Pro"
+    }
+
+    .techniks__slider-item .person-container .city {
+        font: 12px/18px "PFDin Text Comp Pro"
+    }
+
+    .techniks__bullets {
+        bottom: 3%;
+        left: 0;
+        top: auto
+    }
+
+    .avatar {
+        max-width: 80vw !important
+    }
+
+    .techniks {
+        height: 900px !important
+    }
+    .you-mobile {
+        height: 512px !important;
+    }
+
+    .techniks__bg {
+        height: 100%;
+        margin: auto;
+        bottom: auto
+    }
+}
+
+[data-anchor="video"] .slide__bg {
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    position: absolute
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    [data-anchor="video"] .slide__bg {
+        opacity: 1
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    [data-anchor="video"] .slide__bg {
+        opacity: 1
+    }
+}
+
+[data-anchor="video"] .video__container {
+    font-size: 0;
+    width: 797px;
+    height: 341px;
+    position: absolute;
+    display: block;
+    background: black;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    [data-anchor="video"] .video__container {
+        width: 100%;
+        height: 47.97601%
+    }
+}
+
+[data-anchor="video"] .video__container .video__content-overlay {
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    position: absolute
+}
+
+[data-anchor="video"] .video__container .video__content-overlay:after {
+    background: rgba(0, 0, 0, 0.4) url('/static/img/play-icon.png') no-repeat center center;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute
+}
+
+[data-anchor="video"] .video__container .video__title {
+    font: 2.19619vw "PFDin Text Cond Pro";
+    letter-spacing: .05em;
+    color: white;
+    position: absolute;
+    top: -4.61201vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    [data-anchor="video"] .video__container .video__title {
+        top: -24vw;
+        font-size: 7.8125vw;
+        left: 7.03125vw;
+        width: 80%
+    }
+}
+
+[data-anchor="video"] .video__container .video__scroll {
+    float: right;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    width: 171px;
+    margin-left: 10px;
+    height: 100%
+}
+
+[data-anchor="video"] .video__container .video__scroll .ps-scrollbar-x-rail {
+    display: none !important
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    [data-anchor="video"] .video__container .video__scroll {
+        float: none;
+        width: 100%;
+        height: 50%;
+        white-space: nowrap;
+        margin-left: 0
+    }
+
+    [data-anchor="video"] .video__container .video__scroll .ps-scrollbar-x-rail, [data-anchor="video"] .video__container .video__scroll .ps-scrollbar-y-rail {
+        display: none
+    }
+}
+
+[data-anchor="video"] .video__container .video__scroll .video__element {
+    margin-bottom: 10px
+}
+
+[data-anchor="video"] .video__container .video__scroll .video__element .thumbnail {
+    width: 158px;
+    height: 107px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center center;
+    position: relative
+}
+
+[data-anchor="video"] .video__container .video__scroll .video__element .thumbnail:hover:after {
+    opacity: .5
+}
+
+[data-anchor="video"] .video__container .video__scroll .video__element .thumbnail:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    transition: opacity .25s;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: black
+}
+
+[data-anchor="video"] .video__container .video__scroll .video__element:first-of-type {
+    margin-top: 0
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    [data-anchor="video"] .video__container .video__scroll .video__element {
+        margin-top: 0 !important;
+        height: auto;
+        display: inline-block;
+        margin-right: 10px
+    }
+}
+
+[data-anchor="video"] .video__container .video__content {
+    float: left;
+    width: 616px;
+    height: 100%;
+    position: relative
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    [data-anchor="video"] .video__container .video__content {
+        margin-bottom: 10px;
+        width: 100%
+    }
+}
+
+[data-anchor="video"] .video__container .video__content iframe {
+    border: none;
+    width: 100%;
+    height: 100%
+}
+
+.you {
+    position: relative
+}
+
+.you-brush {
+    background: url('/static/img/you__brush.png') no-repeat;
+    background-size: contain;
+    width: 12.15227vw;
+    height: 32.43045vw;
+    position: absolute;
+    left: 50%;
+    margin-left: -6.07613vw;
+    top: 0
+}
+
+@media screen and (min-width: 1370px) {
+    .you-brush {
+        width: 166px;
+        height: 443px;
+        margin-left: -83px
+    }
+}
+
+.you-tube, .you-particles {
+    background: url('/static/img/you__tube__text.png') no-repeat top left;
+    background-size: contain;
+    width: 39.23865vw;
+    height: 71.5959vw;
+    top: 8%;
+    left: 8.05271vw;
+    position: absolute;
+    z-index: 999
+}
+
+@media screen and (min-width: 1370px) {
+    .you-tube, .you-particles {
+        width: 536px;
+        height: 100vh;
+        left: 130px
+    }
+}
+
+.you-particles {
+    width: 49.26794vw;
+    height: 18.2284vw;
+    left: -.29283vw;
+    top: calc(100vh + 65.36458vh)
+}
+
+@media screen and (min-width: 1370px) {
+    .you-particles {
+        width: 673px;
+        height: 249px;
+        left: -4px;
+        top: calc(100vh + 73.17708vh)
+    }
+}
+
+.you-particles--1 {
+    background: url('/static/img/you__partials.png') no-repeat top left;
+    background-size: contain
+}
+
+.you-particles--2 {
+    background: url('/static/img/you__partials1.png') no-repeat top left;
+    background-size: contain
+}
+
+.you-text {
+    position: absolute;
+    top: 163vh;
+    height: 3.90625vh;
+    width: 50px;
+    left: 42.31332vw;
+    width: 50.51245vw
+}
+
+.you-text .you-wish {
+    font: 1.75695vw/1 "PFDin Text Cond Pro";
+    font-weight: 500;
+    letter-spacing: .050em;
+    margin-bottom: 2.04978vw;
+    text-transform: uppercase;
+    text-align: right
+}
+
+@media (max-width: 37.5em) and (orientation: portrait) {
+    .you-text .you-wish {
+        font-size: 16px !important;
+        margin-bottom: 18px !important;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content
+    }
+}
+
+.you-text .you-you {
+    background: url('/static/img/you__you.svg') no-repeat bottom left;
+    background-size: contain;
+    width: 50.51245vw;
+    height: 36.89605vw
+}
+
+@media screen and (max-width: 1028px) and (orientation: portrait) {
+    .you-tube {
+        width: 95vw;
+        height: 95vh;
+        top: 748px;
+        left: 0;
+        position: absolute;
+        z-index: 999;
+        background: url('/static/img/you__tube-mobile.png') no-repeat top left;
+        background-size: 95vw;
+    }
+
+    .you-wish {
+        text-align: left !important;
+        font-size: 2.92826vw !important;
+        margin-bottom: 3px !important
+    }
+
+    .you-brush {
+        opacity: 0;
+        width: 20.83333vw;
+        height: 50.78125vw;
+        position: absolute;
+        left: 50%;
+        margin-left: -10.41667vw;
+        top: 0
+    }
+
+    .you-text {
+        top: 1022px;
+        height: 135px;
+        left: 25.31332vw;
+        width: 100%
+    }
+
+    .you-you {
+        width: 74.51245vw !important;
+        height: 54.89605vw !important
+    }
+
+    .you-particles {
+        width: 106vw;
+        height: 74.2284vw;
+        left: -62.29283vw;
+        top: 7.6%
+    }
+}
