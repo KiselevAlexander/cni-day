@@ -150,6 +150,7 @@ $day = $arParams['DAY'];
                         </div>
 
                         <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 70%;">
+                            <?if ($day["YOUTUBE_VIDEO"]["VALUE"]):?>
                             <div class="mbr-figure">
                                 <iframe class="mbr-embedded-video"
                                         src="<?=$day["YOUTUBE_VIDEO"]["VALUE"]?>?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0"
@@ -159,6 +160,7 @@ $day = $arParams['DAY'];
                                         allowfullscreen
                                 ></iframe>
                             </div>
+                            <?endif;?>
                         </div>
 
                     </div>

@@ -1,13 +1,12 @@
 <?php include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 
-$TEMPLATE = '2018';
 
 // посмотрим какой город был выбран этим юзером в прошлый раз
 $sUserCity = $APPLICATION->get_cookie('USER_CITY');
 
 // установим глобальную переменную cur_city = код города (из сабдомена)
 if ($_SERVER['SERVER_NAME'] === '127.0.0.1') {
-    $GLOBALS['sCurCity'] = 'msk';
+    $GLOBALS['sCurCity'] = 'krr';
 } else {
     $GLOBALS['sCurCity'] = preg_replace('/^(?:([^\.]+)\.)?cni-day\.ru$/', '\1', $_SERVER['SERVER_NAME']);
 }
@@ -15,7 +14,7 @@ if ($_SERVER['SERVER_NAME'] === '127.0.0.1') {
 // символьные коды возможных городов и полные описания возможных городов
 $arCityCodes = $arCities = array();
 
-// кэшируем подключение модуля инфоблоков и выборку возможных городов
+// кэшируем подключение модуля инфоблоков и  выборку возможных городов
 $obCache = new CPHPCache;
 $iLifeTime = 60*60*3;
 
@@ -221,6 +220,12 @@ if ($days <= 10){
 //    var_dump($arCityCodes);
 ////    die('test');
 //}
+
+$TEMPLATE = '2017';
+
+if ($day['TEMPLATE']['VALUE']) {
+    $TEMPLATE = $day['TEMPLATE']['VALUE'];
+}
 
 $APPLICATION->IncludeFile(
     "/local/templates/{$TEMPLATE}/index.php",
