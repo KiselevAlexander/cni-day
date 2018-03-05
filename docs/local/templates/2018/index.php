@@ -184,6 +184,14 @@ $day = $arParams['DAY'];
                         <?=$day['SPEAKER_NAME']['VALUE'][0]?> <?=$day['SPEAKER_SURNAME']['VALUE'][0]?>
                     </h3>
 
+                    <div class="lead">
+
+                        <p>
+                            <?=$day["SPEAKER_DESCRIPTION"]["~VALUE"][0]?>
+                        </p>
+
+                    </div>
+
                 </div>
 
                 <div class="mbr-table-cell mbr-left-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
@@ -206,6 +214,14 @@ $day = $arParams['DAY'];
                     <h3 class="mbr-section-title display-2 text-uppercase">
                         <?=$day['SPEAKER_NAME']['VALUE'][1]?> <?=$day['SPEAKER_SURNAME']['VALUE'][1]?>
                     </h3>
+
+                    <div class="lead">
+
+                        <p>
+                            <?=$day["SPEAKER_DESCRIPTION"]["~VALUE"][1]?>
+                        </p>
+
+                    </div>
 
                 </div>
             </div>
@@ -429,9 +445,11 @@ $day = $arParams['DAY'];
                     </div>
 
 
-                    <form action="/" method="post" data-form-title="ОСТАВЬТЕ ЗАЯВКУ">
+                    <form action="/local/templates/2018/" method="post" data-form-title="ОСТАВЬТЕ ЗАЯВКУ">
 
                         <input type="hidden" value="d+W6CUmCvzkkK6cu/pvPGiAJ6ddQRsLROu7TqRMCF4NT3eN2DDvw2p7gOo95/up4QNIyDpyYUoMxWrbYzp1cbEM2lUv+i2sBnxFOmIP0FFn2GnYH1IawHyEQBCvqCFz4" data-form-email="true">
+
+                        <input data-form-sendto="true" type="hidden" name="sendto" value="<?=implode(',', $day['SEND_MAIL_ADDRESS']['VALUE'])?>">
 
                         <div class="row row-sm-offset">
 

@@ -18,6 +18,8 @@ $to = [
     'alexander.kiselev@mail.ru'
 ];
 
+$to = ($data['sendto']) ? explode(',', $data['sendto']) : $to;
+
 $data = $_POST;
 $name = $data['form']['data'][0][1];
 $phone = $data['form']['data'][1][1];
