@@ -5,7 +5,7 @@ const plumber     = require('gulp-plumber');
 
 
 const phpSettings = { 
-    base: 'src', 
+    base: 'docs',
     port: 8010, 
     keepalive: true
 };
@@ -35,7 +35,7 @@ gulp.task('connect-sync', function() {
         });
     });
  
-    gulp.watch(['src/*.php', 'src/local/**/*.*'],  function () {
+    gulp.watch(['docs/*.php', 'docs/local/**/*.*'],  function () {
         browserSync.reload();
     });
 

@@ -2,8 +2,8 @@
 yarn.lock
 *.sublime-workspace
 
-src/.access.php
-src/bitrix/*
-src/upload/*
-src/web.config
+docs/.access.php
+docs/bitrix/*
+docs/upload/*
+docs/web.config
 .idea/
