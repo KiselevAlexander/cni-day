@@ -181,8 +181,6 @@ $day = $arParams['DAY'];
         <div class="row">
             <div class="mbr-table-md-up">
 
-
-
                 <div class="mbr-table-cell col-md-5 text-xs-center text-md-right content-size">
                     <h3 class="mbr-section-title display-2 text-uppercase">
                         <?=$arParams['CITY_NAME']?>, <?=dateRus($day["DATE"]["VALUE"])?><br>
@@ -191,12 +189,7 @@ $day = $arParams['DAY'];
                     <div class="lead">
 
                         <p>
-                            ПОШАГОВЫЕ МАСТЕР-КЛАССЫ ПО МОДЕЛИРОВАНИЮ. УКРЕПЛЕНИЕ НОГТЕЙ, МАНИКЮР И ДИЗАЙН.<br>
-                            ПРИЗЫ И РОЗЫГРЫШ MIX-ЛАМПЫ<br>
-                            ВЕЧЕРИНКА С ФУРШЕТОМ<br>
-                            <strong>СКИДКА 15% НА ПРОДУКЦИЮ</strong><br>
-                            ПРЕЗЕНТАЦИЯ НОВЫХ КОЛЛЕКЦИЙ<br>
-                            СЕРТИФИКАТ УЧАСТНИКА<br>
+                            <?=$day["DESCRIPTION_2"]["~VALUE"]["TEXT"]?>
                         </p>
 
                     </div>
@@ -205,10 +198,6 @@ $day = $arParams['DAY'];
                         <a class="btn btn-primary" href="/#form1-8">ЗАПИСАТЬСЯ</a>
                     </div>
                 </div>
-
-
-
-
 
                 <div class="mbr-table-cell mbr-left-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
                     <div class="mbr-figure"><img src="/local/templates/2018/assets/images/mix-1400x1400.jpg"></div>
