@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?
+
+$day = $arParams['DAY'];
+
+?><!DOCTYPE html>
 <html>
 <head>
     <!-- Site made with Mobirise Website Builder v3.12.1, https://mobirise.com -->
@@ -6,21 +10,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v3.12.1, mobirise.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="assets/images/cni-.svg" type="image/x-icon">
     <meta name="description" content="Уникальная вечеринка-обучение для нейл-мастеров. Розыгрыши, щедрые подарки, море вдохновения и позитива. День, который нельзя пропустить!">
-    <title>День CNI в Иваново 17 февраля. Мастер-классы по маникюру</title>
+
+    <meta property="og:url" content="http://<?=$GLOBALS['sCurCity'];?>.cni-day.ru"/>
+    <meta property="og:title" content="Nail-семинар в городе <?=$GLOBALS['sCurCityName']?>."/>
+    <meta property="og:description"
+          content="<?=dateRus($day["DATE"]["VALUE"])?> Уникальная вечеринка-обучение для нейл-мастеров. Розыгрыши, щедрые подарки, море вдохновения и позитива. День, который нельзя пропустить!"/>
+    <meta name="description"
+          content="<?=dateRus($day["DATE"]["VALUE"])?> Уникальная вечеринка-обучение для нейл-мастеров. Розыгрыши, щедрые подарки, море вдохновения и позитива. День, который нельзя пропустить!"/>
+    <meta property="og:image" content="/static/img/cni_share-img.jpg"/>
+
+    <link rel="shortcut icon" href="/local/templates/2018/assets/images/cni-.svg" type="image/x-icon">
+    <title>День CNI. г. <?=$arParams['CITY_NAME']?> <?=dateRus($day["DATE"]["VALUE"])?> 2018. Мастер-классы по маникюру</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
-    <link rel="stylesheet" href="assets/et-line-font-plugin/style.css">
-    <link rel="stylesheet" href="assets/tether/tether.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/animate.css/animate.min.css">
-    <link rel="stylesheet" href="assets/dropdown/css/style.css">
-    <link rel="stylesheet" href="assets/theme/css/style.css">
-    <link rel="stylesheet" href="assets/mobirise-gallery/style.css">
-    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/bootstrap-material-design-font/css/material.css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/et-line-font-plugin/style.css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/tether/tether.min.css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/animate.css/animate.min.css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/theme/css/style.css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/mobirise-gallery/style.css">
+    <link rel="stylesheet" href="/local/templates/2018/assets/mobirise/css/mbr-additional.css" type="text/css">
 
 
 
@@ -65,8 +78,11 @@
                 <div class="mbr-table-cell">
 
                     <div class="navbar-brand">
-                        <a href="https://mobirise.com" class="navbar-logo"><img src="assets/images/cni-.svg" alt="Mobirise"></a>
-                        <a class="navbar-caption" href="index.html#features1-6">ДЕНЬ CNI В ИВАНОВО<br>17 февраля 2018<br></a>
+                        <a href="https://mobirise.com" class="navbar-logo"><img src="/local/templates/2018/assets/images/cni-.svg" alt="Mobirise"></a>
+                        <a class="navbar-caption" href="/#features1-6">
+                            ДЕНЬ CNI <span style="text-transform: uppercase;"><?=$arParams['CITY_NAME']?></span><br>
+                            <?=dateRus($day["DATE"]["VALUE"])?> 2018<br>
+                        </a>
                     </div>
 
                 </div>
@@ -77,19 +93,19 @@
                     </button>
 
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                        <li class="nav-item"><a class="nav-link link" href="index.html#msg-box5-2">ПРОГРАММА</a></li>
-                        <li class="nav-item"><a class="nav-link link" href="index.html#features1-6">КУПИТЬ БИЛЕТ</a></li>
-                        <li class="nav-item"><a class="nav-link link" href="index.html#gallery2-4">ГАЛЕРЕЯ ДИЗАЙНОВ</a></li>
-                        <li class="nav-item"><a class="nav-link link" href="index.html#contacts2-7">КОНТАКТЫ</a></li>
+                        <li class="nav-item"><a class="nav-link link" href="/#msg-box5-2">ПРОГРАММА</a></li>
+                        <li class="nav-item"><a class="nav-link link" href="/#features1-6">КУПИТЬ БИЛЕТ</a></li>
+                        <li class="nav-item"><a class="nav-link link" href="/#gallery2-4">ГАЛЕРЕЯ ДИЗАЙНОВ</a></li>
+                        <li class="nav-item"><a class="nav-link link" href="/#contacts2-7">КОНТАКТЫ</a></li>
                         <li class="nav-item nav-btn">
                             <a class="nav-link btn btn-white btn-white-outline"
-                               href="tel:+74932371714"
+                               href="tel:<?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
                                onclick="window.yaCounter42617899.reachGoal('Mobile_call');"
                             >
-                                +7 (4932) 37-17-14
+                                <?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>
                             </a>
                         </li>
-                        <li class="nav-item nav-btn"><a class="nav-link btn btn-primary" href="index.html#form1-8">ЗАПИСАТЬСЯ</a></li></ul>
+                        <li class="nav-item nav-btn"><a class="nav-link btn btn-primary" href="/#form1-8">ЗАПИСАТЬСЯ</a></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -102,7 +118,7 @@
 
 </section>
 
-<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-after-navbar" id="header2-0" style="background-image: url(assets/images/1-2-2000x1125.jpg);">
+<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-after-navbar" id="header2-0" style="background-image: url(/local/templates/2018/assets/images/1-2-2000x1125.jpg);">
 
     <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(0, 0, 0);">
     </div>
@@ -116,20 +132,33 @@
 
                         <div class="mbr-table-cell col-md-5 content-size text-xs-center text-md-right">
 
-                            <h3 class="mbr-section-title display-2">ДЕНЬ CNI <br>В ИВАНОВО</h3>
+                            <h3 class="mbr-section-title display-2">
+                                ДЕНЬ CNI<br>
+                                <span class="text-uppercase"><?=$arParams['CITY_NAME']?></span>
+                            </h3>
 
                             <div class="mbr-section-text">
-                                <p>4 мастер-класса для nail-мастеров, скидки на гель-лаки и гели, супер-розыгрыш MIX-лампы и лучшая вечеринка в ногтевом бизнесе.</p>
+                                <p>
+                                    <?=$day["DESCRIPTION"]["VALUE"]?>
+                                </p>
                             </div>
 
                             <div class="mbr-section-btn">
-                                <a class="btn btn-primary" href="index.html#form1-8">ЗАПИСАТЬСЯ</a>
+                                <a class="btn btn-primary" href="/#form1-8">ЗАПИСАТЬСЯ</a>
                             </div>
 
                         </div>
 
                         <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 70%;">
-                            <div class="mbr-figure"><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/4Ts_XcfjKmE?rel=0&amp;amp;showinfo=0&amp;autoplay=1&amp;loop=0" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
+                            <div class="mbr-figure">
+                                <iframe class="mbr-embedded-video"
+                                        src="<?=$day["YOUTUBE_VIDEO"]["VALUE"]?>?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0"
+                                        width="1280"
+                                        height="720"
+                                        frameborder="0"
+                                        allowfullscreen
+                                ></iframe>
+                            </div>
                         </div>
 
                     </div>
@@ -153,15 +182,25 @@
 
 
                 <div class="mbr-table-cell col-md-5 text-xs-center text-md-right content-size">
-                    <h3 class="mbr-section-title display-2">ИВАНОВО, 17 ФЕВРАЛЯ<br>ДЕНЬ CNI</h3>
+                    <h3 class="mbr-section-title display-2 text-uppercase">
+                        <?=$arParams['CITY_NAME']?>, <?=dateRus($day["DATE"]["VALUE"])?><br>
+                        ДЕНЬ CNI
+                    </h3>
                     <div class="lead">
 
-                        <p>ПОШАГОВЫЕ МАСТЕР-КЛАССЫ ПО МОДЕЛИРОВАНИЮ. УКРЕПЛЕНИЕ НОГТЕЙ, МАНИКЮР И ДИЗАЙН.<br>ПРИЗЫ И РОЗЫГРЫШ MIX-ЛАМПЫ<br>ВЕЧЕРИНКА С ФУРШЕТОМ<br><strong>СКИДКА 15% НА ПРОДУКЦИЮ</strong><br>ПРЕЗЕНТАЦИЯ НОВЫХ КОЛЛЕКЦИЙ<br>СЕРТИФИКАТ УЧАСТНИКА<br></p>
+                        <p>
+                            ПОШАГОВЫЕ МАСТЕР-КЛАССЫ ПО МОДЕЛИРОВАНИЮ. УКРЕПЛЕНИЕ НОГТЕЙ, МАНИКЮР И ДИЗАЙН.<br>
+                            ПРИЗЫ И РОЗЫГРЫШ MIX-ЛАМПЫ<br>
+                            ВЕЧЕРИНКА С ФУРШЕТОМ<br>
+                            <strong>СКИДКА 15% НА ПРОДУКЦИЮ</strong><br>
+                            ПРЕЗЕНТАЦИЯ НОВЫХ КОЛЛЕКЦИЙ<br>
+                            СЕРТИФИКАТ УЧАСТНИКА<br>
+                        </p>
 
                     </div>
 
                     <div>
-                        <a class="btn btn-primary" href="index.html#form1-8">ЗАПИСАТЬСЯ</a>
+                        <a class="btn btn-primary" href="/#form1-8">ЗАПИСАТЬСЯ</a>
                     </div>
                 </div>
 
@@ -170,7 +209,7 @@
 
 
                 <div class="mbr-table-cell mbr-left-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
-                    <div class="mbr-figure"><img src="assets/images/mix-1400x1400.jpg"></div>
+                    <div class="mbr-figure"><img src="/local/templates/2018/assets/images/mix-1400x1400.jpg"></div>
                 </div>
 
             </div>
@@ -197,91 +236,23 @@
     <!-- Gallery -->
     <div class="mbr-gallery-row container">
         <div class=" mbr-gallery-layout-default">
-            <div>
-                <div>
-                    <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Animated" data-video-url="false">
-                        <div href="#lb-gallery2-4" data-slide-to="0" data-toggle="modal">
 
+                    <?
+                    foreach ($day["TECHNIKS_SLIDER"]["VALUE"] as $k=>$v){
+                        $text = explode("head",$day["TECHNIKS_SLIDER"]["DESCRIPTION"][$k]);
+                        ?>
+                        <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Animated" data-video-url="false">
+                            <div href="#lb-gallery2-4" data-slide-to="0" data-toggle="modal">
 
+                                <img alt="" src="<?=CFile::getPath($v)?>">
 
-                            <img alt="" src="assets/images/kitayskaya-rospis-nail-art-2000x1810-800x724.png">
+                                <span class="icon-focus"></span>
 
-                            <span class="icon-focus"></span>
-                            <span class="mbr-gallery-title">КИТАЙСКАЯ РОСПИСЬ при помощи гель-пасты Glaze Up</span>
+                                <span class="mbr-gallery-title"><?=$text[0]?><br><?=$text[1]?></span>
+                            </div>
                         </div>
-                    </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Animated" data-video-url="false">
-                    <div href="#lb-gallery2-4" data-slide-to="1" data-toggle="modal">
+                    <?}?>
 
-
-
-                        <img alt="" src="assets/images/5-1-2000x1810-800x724.png">
-
-                        <span class="icon-focus"></span>
-                        <span class="mbr-gallery-title">АКВАРЕЛЬНЫЕ РОЗЫ при помощи CNI Aquarel</span>
-                    </div>
-                </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Awesome" data-video-url="false">
-                    <div href="#lb-gallery2-4" data-slide-to="2" data-toggle="modal">
-
-
-
-                        <img alt="" src="assets/images/2-1-2000x1810-800x724.png">
-
-                        <span class="icon-focus"></span>
-                        <span class="mbr-gallery-title">SMART-манкюр &nbsp;- укрепление и выравнивание ногтей</span>
-                    </div>
-                </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Responsive" data-video-url="false">
-                    <div href="#lb-gallery2-4" data-slide-to="3" data-toggle="modal">
-
-
-
-                        <img alt="" src="assets/images/1-1-2000x1810-800x724.png">
-
-                        <span class="icon-focus"></span>
-                        <span class="mbr-gallery-title">ИНСТРУМЕНТЫ - непрерывный срез кутикулы и другие секреты маникюра</span>
-                    </div>
-                </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Creative" data-video-url="false">
-                    <div href="#lb-gallery2-4" data-slide-to="4" data-toggle="modal">
-
-
-
-                        <img alt="" src="assets/images/8-1-2000x1810-800x724.png">
-
-                        <span class="icon-focus"></span>
-                        <span class="mbr-gallery-title">МОДЕЛИРОВАНИЕ НА ФОРМАХ - как наращивать ногти без отслоек и сколов.</span>
-                    </div>
-                </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Animated" data-video-url="false">
-                    <div href="#lb-gallery2-4" data-slide-to="5" data-toggle="modal">
-
-
-
-                        <img alt="" src="assets/images/9-1-2000x1810-800x724.png">
-
-                        <span class="icon-focus"></span>
-                        <span class="mbr-gallery-title">МАНИКЮР НАТУРАЛЬНЫХ НОГТЕЙ - маникюр, уход, работа с лаком.</span>
-                    </div>
-                </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Awesome" data-video-url="false">
-                    <div href="#lb-gallery2-4" data-slide-to="6" data-toggle="modal">
-
-
-
-                        <img alt="" src="assets/images/6-1-2000x1810-800x724.png">
-
-                        <span class="icon-focus"></span>
-                        <span class="mbr-gallery-title">FRENCH - идеальные пропорции френч маникюра. Секреты фирменной улыбки</span>
-                    </div>
-                </div><div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Beautiful" data-video-url="false">
-                    <div href="#lb-gallery2-4" data-slide-to="7" data-toggle="modal">
-
-
-
-                        <img alt="" src="assets/images/7-1-2000x1810-800x724.png">
-
-                        <span class="icon-focus"></span>
-                        <span class="mbr-gallery-title">ВНУТРЕННИЙ БАРЕЛЬЕФ и металлизированный &nbsp;эффект&nbsp;</span>
-                    </div>
-                </div>
-                </div>
-            </div>
             <div class="clearfix"></div>
         </div>
     </div>
@@ -293,23 +264,13 @@
                 <div class="modal-body">
 
                     <div class="carousel-inner">
-                        <div class="carousel-item">
-                            <img alt="" src="assets/images/kitayskaya-rospis-nail-art-2000x1810.png">
-                        </div><div class="carousel-item">
-                        <img alt="" src="assets/images/5-1-2000x1810.png">
-                    </div><div class="carousel-item">
-                        <img alt="" src="assets/images/2-1-2000x1810.png">
-                    </div><div class="carousel-item">
-                        <img alt="" src="assets/images/1-1-2000x1810.png">
-                    </div><div class="carousel-item">
-                        <img alt="" src="assets/images/8-1-2000x1810.png">
-                    </div><div class="carousel-item">
-                        <img alt="" src="assets/images/9-1-2000x1810.png">
-                    </div><div class="carousel-item">
-                        <img alt="" src="assets/images/6-1-2000x1810.png">
-                    </div><div class="carousel-item active">
-                        <img alt="" src="assets/images/7-1-2000x1810.png">
-                    </div>
+                        <?
+                        foreach ($day["TECHNIKS_SLIDER"]["VALUE"] as $k=>$v){
+                            ?>
+                            <div class="carousel-item<?=($k === 0) ? ' active': ''?>">
+                                <img alt="" src="<?=CFile::getPath($v)?>">
+                            </div>
+                        <?}?>
                     </div>
                     <a class="left carousel-control" role="button" data-slide="prev" href="#lb-gallery2-4">
                         <span class="icon-prev" aria-hidden="true"></span>
@@ -339,12 +300,21 @@
         <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 40px; padding-bottom: 40px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/-600x399.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/local/templates/2018/assets/images/-600x399.jpg" class="card-img-top"></div>
                     <div class="card-block">
-                        <h4 class="card-title">ДЕНЬ CNI ИВАНОВО</h4>
+                        <h4 class="card-title text-uppercase">ДЕНЬ CNI <?=$arParams['CITY_NAME']?></h4>
                         <h5 class="card-subtitle">5 мастер-классов</h5>
-                        <p class="card-text">✅✅● Моделирование ногтей гелем<br>● Укрепление ногтей<br>● Тонкости работы с гель-лаками<br>● Маникюр и инструменты<br>● 5 техник нейл-дизайна<br>***<br>Розыгрыши, Подарки, Главный приз - MIX-лампа.<br>Скидка 15% на продукцию CNI.&nbsp;Фуршет и праздник.<br>***<br>Стоимость участия = <strong>1000 р.</strong></p>
-                        <div class="card-btn"><a href="index.html#form1-8" class="btn btn-danger">ЗАПИСАТЬСЯ</a></div>
+                        <p class="card-text">
+                            ● Моделирование ногтей гелем<br>
+                            ● Укрепление ногтей<br>
+                            ● Тонкости работы с гель-лаками<br>
+                            ● Маникюр и инструменты<br>
+                            ● 5 техник нейл-дизайна<br>
+                            ***<br>
+                            Розыгрыши, Подарки, Главный приз - MIX-лампа.<br>Скидка 15% на продукцию CNI.&nbsp;Фуршет и праздник.<br>
+                            ***<br>
+                            Стоимость участия = <strong>1000 р.</strong></p>
+                        <div class="card-btn"><a href="/#form1-8" class="btn btn-danger">ЗАПИСАТЬСЯ</a></div>
                     </div>
                 </div>
             </div>
@@ -352,12 +322,22 @@
         <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 40px; padding-bottom: 40px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/93db23e5-5978-40c3-87e9-0bcb352ab561-600x410.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/local/templates/2018/assets/images/93db23e5-5978-40c3-87e9-0bcb352ab561-600x410.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">"АКВАРЕЛЬ"</h4>
                         <h5 class="card-subtitle">Семинар с отработкой</h5>
-                        <p class="card-text">5-часовой семинар с отработкой на моделях:<br>●&nbsp;<u>Акварельные цветы<br></u>●&nbsp;<u>Геометрия Акварелью<br></u>●&nbsp;<u>Абстракция.</u><br>***<br>Всего 10 мест! Материалы предоставляются.&nbsp;<br>Кисти и инструменты ученик приобретает самостоятельно.<br>***<br>Стоимость обучения = <strong>2000 р.</strong></p>
-                        <div class="card-btn"><a href="index.html#form1-8" class="btn btn-primary">ЗАПИСАТЬСЯ</a></div>
+                        <p class="card-text">
+                            5-часовой семинар с отработкой на моделях:<br>
+                            ●&nbsp;<u>Акварельные цветы</u><br>
+                            ●&nbsp;<u>Геометрия Акварелью</u><br>
+                            ●&nbsp;<u>Абстракция.</u><br>
+                            ***<br>
+                            Всего 10 мест! Материалы предоставляются.&nbsp;<br>
+                            Кисти и инструменты ученик приобретает самостоятельно.<br>
+                            ***<br>
+                            Стоимость обучения = <strong>2000 р.</strong>
+                        </p>
+                        <div class="card-btn"><a href="/#form1-8" class="btn btn-primary">ЗАПИСАТЬСЯ</a></div>
                     </div>
                 </div>
             </div>
@@ -374,11 +354,12 @@
     <div class="container">
         <div class="row">
             <div class="mbr-footer-content col-xs-12 col-md-3">
-                <p><strong>АДРЕС</strong><br>Г. Иваново, ул. Наумова, 1/8<br>парк-отель "Шереметьев"<br>ресторан, 1 этаж<br><br>
+                <p>
+                    <strong>АДРЕС</strong><br>
+                    <?=$day['PLACE_ADDRESS']['VALUE']?><br><br>
                     <strong>Контакты</strong><br>
-                    Email: <a href="mailto:ivanovo@cni.ru" style="color: #fff;">ivanovo@cni.ru</a><br>
-                    Тел.: <strong><a href="tel:+74932371714" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">+7 (4932) 37-17-14</a></strong><br>
-                    Тел: <strong><a href="tel:+74932325261" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">+7 (4932) 32-52-61</a></strong></p>
+                    Email: <a href="mailto:<?=$day['MAIL']['VALUE']?>" style="color: #fff;"><?=$day['MAIL']['VALUE']?></a><br><br>
+                    Тел.: <strong><a href="tel:+74932371714" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');"><?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?></a></strong><br>
             </div>
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p class="mbr-contacts__text"><strong>ССЫЛКИ</strong></p>
@@ -456,20 +437,20 @@
 </section>
 
 
-<script src="assets/web/assets/jquery/jquery.min.js"></script>
-<script src="assets/tether/tether.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/smooth-scroll/smooth-scroll.js"></script>
-<script src="assets/viewport-checker/jquery.viewportchecker.js"></script>
-<script src="assets/masonry/masonry.pkgd.min.js"></script>
-<script src="assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
-<script src="assets/dropdown/js/script.min.js"></script>
-<script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
-<script src="assets/theme/js/script.js"></script>
-<script src="assets/mobirise-gallery/player.min.js"></script>
-<script src="assets/mobirise-gallery/script.js"></script>
-<script src="assets/formoid/formoid.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/local/templates/2018/assets/tether/tether.min.js"></script>
+<script src="/local/templates/2018/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/local/templates/2018/assets/smooth-scroll/smooth-scroll.js"></script>
+<script src="/local/templates/2018/assets/viewport-checker/jquery.viewportchecker.js"></script>
+<script src="/local/templates/2018/assets/masonry/masonry.pkgd.min.js"></script>
+<script src="/local/templates/2018/assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="/local/templates/2018/assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
+<script src="/local/templates/2018/assets/dropdown/js/script.min.js"></script>
+<script src="/local/templates/2018/assets/touch-swipe/jquery.touch-swipe.min.js"></script>
+<script src="/local/templates/2018/assets/theme/js/script.js"></script>
+<script src="/local/templates/2018/assets/mobirise-gallery/player.min.js"></script>
+<script src="/local/templates/2018/assets/mobirise-gallery/script.js"></script>
+<script src="/local/templates/2018/assets/formoid/formoid.min.js"></script>
 
 
 <input name="animation" type="hidden">
