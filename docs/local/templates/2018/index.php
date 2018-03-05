@@ -118,7 +118,10 @@ $day = $arParams['DAY'];
 
 </section>
 
-<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-after-navbar" id="header2-0" style="background-image: url(/local/templates/2018/assets/images/1-2-2000x1125.jpg);">
+<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-after-navbar"
+         id="header2-0"
+         style="background-image: url('/local/templates/2018/assets/images/1-2-2000x1125.jpg');"
+>
 
     <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(0, 0, 0);">
     </div>
@@ -352,16 +355,14 @@ $day = $arParams['DAY'];
                         <h4 class="card-title text-uppercase">ДЕНЬ CNI <?=$arParams['CITY_NAME']?></h4>
                         <h5 class="card-subtitle">5 мастер-классов</h5>
                         <p class="card-text">
-                            ● Моделирование ногтей гелем<br>
-                            ● Укрепление ногтей<br>
-                            ● Тонкости работы с гель-лаками<br>
-                            ● Маникюр и инструменты<br>
-                            ● 5 техник нейл-дизайна<br>
+                            <?foreach ($day['DAY_1']['VALUE'] as $programmItem):?>
+                            ● <?=$programmItem?><br>
+                            <?endforeach;?>
                             ***<br>
                             Розыгрыши, Подарки, Главный приз - MIX-лампа.<br>Скидка 15% на продукцию CNI.&nbsp;Фуршет и праздник.<br>
                             ***<br>
-                            Стоимость участия = <strong>1000 р.</strong></p>
-                        <div class="card-btn"><a href="/#form1-8" class="btn btn-danger">ЗАПИСАТЬСЯ</a></div>
+                            Стоимость участия = <strong><?=$arParams['PRICES'][0]?> p.</strong></p>
+                        <div class="card-btn"><a href="/#form1-8" class="btn btn-danger" onclick="$('[data-form-product]').val(1)">ЗАПИСАТЬСЯ</a></div>
                     </div>
                 </div>
             </div>
@@ -375,16 +376,16 @@ $day = $arParams['DAY'];
                         <h5 class="card-subtitle">Семинар с отработкой</h5>
                         <p class="card-text">
                             5-часовой семинар с отработкой на моделях:<br>
-                            ●&nbsp;<u>Акварельные цветы</u><br>
-                            ●&nbsp;<u>Геометрия Акварелью</u><br>
-                            ●&nbsp;<u>Абстракция.</u><br>
+                            <?foreach ($day['DAY_2']['VALUE'] as $programmItem):?>
+                                ● <?=$programmItem?><br>
+                            <?endforeach;?>
                             ***<br>
                             Всего 10 мест! Материалы предоставляются.&nbsp;<br>
                             Кисти и инструменты ученик приобретает самостоятельно.<br>
                             ***<br>
-                            Стоимость обучения = <strong>2000 р.</strong>
+                            Стоимость обучения = <strong><?=$arParams['PRICES'][1]?> p.</strong>
                         </p>
-                        <div class="card-btn"><a href="/#form1-8" class="btn btn-primary">ЗАПИСАТЬСЯ</a></div>
+                        <div class="card-btn"><a href="/#form1-8" class="btn btn-primary" onclick="$('[data-form-product]').val(2)">ЗАПИСАТЬСЯ</a></div>
                     </div>
                 </div>
             </div>
@@ -450,6 +451,7 @@ $day = $arParams['DAY'];
                         <input type="hidden" value="d+W6CUmCvzkkK6cu/pvPGiAJ6ddQRsLROu7TqRMCF4NT3eN2DDvw2p7gOo95/up4QNIyDpyYUoMxWrbYzp1cbEM2lUv+i2sBnxFOmIP0FFn2GnYH1IawHyEQBCvqCFz4" data-form-email="true">
 
                         <input data-form-sendto="true" type="hidden" name="sendto" value="<?=implode(',', $day['SEND_MAIL_ADDRESS']['VALUE'])?>">
+                        <input data-form-product="true" type="hidden" name="product" value="0">
 
                         <div class="row row-sm-offset">
 

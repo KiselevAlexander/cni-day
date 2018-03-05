@@ -19,6 +19,9 @@ $to = [
 ];
 
 $to = ($data['sendto']) ? explode(',', $data['sendto']) : $to;
+$product = (isset($data['product']) && $data['product'] !== 0)
+    ? 'Продукт: день ' . $data['product']
+    : 'Продукт: не выбран';
 
 $data = $_POST;
 $name = $data['form']['data'][0][1];
