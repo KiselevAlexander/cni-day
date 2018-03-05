@@ -173,7 +173,47 @@ $day = $arParams['DAY'];
     <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#msg-box5-2"><i class="mbr-arrow-icon"></i></a></div>
 
 </section>
+<?if ($day['SPEAKER_NAME']['VALUE']):?>
+<section class="mbr-section" id="msg-box5-2" style="background-color: rgb(239, 239, 239); padding-top: 0px; padding-bottom: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="mbr-table-md-up">
 
+                <div class="mbr-table-cell col-md-5 text-xs-center text-md-right content-size">
+                    <h3 class="mbr-section-title display-2 text-uppercase">
+                        <?=$day['SPEAKER_NAME']['VALUE'][0]?> <?=$day['SPEAKER_SURNAME']['VALUE'][0]?>
+                    </h3>
+
+                </div>
+
+                <div class="mbr-table-cell mbr-left-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
+                    <div class="mbr-figure">
+                        <img src="<?=CFile::getPath($day['SPEAKER_PHOTO']['VALUE'][0])?>">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mbr-table-md-up">
+
+                <div class="mbr-table-cell mbr-left-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
+                    <div class="mbr-figure">
+                        <img src="<?=CFile::getPath($day['SPEAKER_PHOTO']['VALUE'][1])?>">
+                    </div>
+                </div>
+
+                <div class="mbr-table-cell col-md-5 text-xs-center text-md-right content-size">
+                    <h3 class="mbr-section-title display-2 text-uppercase">
+                        <?=$day['SPEAKER_NAME']['VALUE'][1]?> <?=$day['SPEAKER_SURNAME']['VALUE'][1]?>
+                    </h3>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<?endif;?>
 <section class="mbr-section" id="msg-box5-2" style="background-color: rgb(239, 239, 239); padding-top: 0px; padding-bottom: 0px;">
 
 
