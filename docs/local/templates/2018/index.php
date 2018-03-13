@@ -104,7 +104,7 @@ $day = $arParams['DAY'];
                                href="tel:<?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
                                onclick="window.yaCounter42617899.reachGoal('Mobile_call');"
                             >
-                                <?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>
+                                <?=$day['PHONE_CODE']['VALUE'].' '.$day['PHONE_NUMBER']['VALUE']?>
                             </a>
                         </li>
                         <li class="nav-item nav-btn">
@@ -391,7 +391,9 @@ $day = $arParams['DAY'];
                     <?=$day['PLACE_ADDRESS']['VALUE']?><br><br>
                     <strong>Контакты</strong><br>
                     Email: <a href="mailto:<?=$day['MAIL']['VALUE']?>" style="color: #fff;"><?=$day['MAIL']['VALUE']?></a><br><br>
-                    Тел.: <strong><a href="tel:+74932371714" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');"><?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?></a></strong><br>
+                    Тел.: <strong><a href="tel:+74932371714" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">
+                            <?=$day['PHONE_CODE']['VALUE'].' '.$day['PHONE_NUMBER']['VALUE']?>
+                        </a></strong><br>
             </div>
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p class="mbr-contacts__text"><strong>ССЫЛКИ</strong></p>

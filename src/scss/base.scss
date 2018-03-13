@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
 }
+
+@import 'custom';
+
 @import 'components/teachers-2018',
         'components/close-modal';

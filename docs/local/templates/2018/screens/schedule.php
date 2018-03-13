@@ -14,27 +14,53 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 lead">
-                <blockquote class=""><strong>10:30 – 11:50</strong><br></blockquote>
-                <blockquote class="">
-                    SCULPTING.NAILS.&nbsp;<br>
-                    <span style="font-style: normal; font-size: 1.09rem;">
-                        Салонная арка,  моделирование на длине до 5 единиц. Как задать ногтям правильную форму. Что мешает маникюру смотреться дорого. Формирование конструкции ногтя.
-                    </span>
-                </blockquote>
-                <blockquote class="">
-                    Ювелирный опил - техника работы с пилками и геометрия опиливания. Выкладной френч</span></blockquote>
-                <blockquote class=""><span style="font-style: normal; font-size: 1.09rem;"><strong>11:50 - 12:00&nbsp;</strong></span><br></blockquote>
-                <blockquote class=""><span style="font-style: normal;">Розыгрыш</span></blockquote>
-                <blockquote class=""><span style="font-style: normal; font-size: 1.09rem;"><strong>12:00 – 13:00&nbsp;</strong></span><br></blockquote>
-                <blockquote class=""><span style="font-style: normal;">Бизнес-ланч</span></blockquote>
-                <blockquote class=""><strong>13:00 – 14:20&nbsp;</strong><br></blockquote>
-                <blockquote class=""><span style="font-style: normal;">MANICURE. PRO.&nbsp;</span><br><span style="font-style: normal; font-size: 1.09rem;">Кутикула и виды ее обработки. Технология непрерывного среза кутикулы в сочетании с аппаратом.  Классификация инструментов и методика работы металлическими инструментами. </span><span style="font-style: normal; font-size: 1.09rem;">Экспресс-выравнивание  конструкции ногтя кистью из флакона. Безупречный результат даже на ногтях с нарушением анатомических особенностей без техники опила. Смарт система, как ультрастойкое покрытие для различных видов и состояний ногтей. Современное решение для коротких ногтей.&nbsp;</span></blockquote>
-                <blockquote class=""><span style="font-style: normal; font-size: 1.09rem;"><strong>14:20 – 14:30&nbsp;</strong></span><br></blockquote>
-                <blockquote class=""><span style="font-style: normal;">Розыгрыш</span></blockquote>
-                <blockquote class=""><span style="font-style: normal; font-size: 1.09rem;"><strong>14:30 – 16:00&nbsp;</strong></span><br></blockquote>
-                <blockquote class=""><span style="font-style: normal;">ART.&nbsp;</span><br><span style="font-style: normal; font-size: 1.09rem;">Территория трендового дизайна! Сочетание цветов, модных в этом сезоне. Дизайн: акварельные техники, имитация ткани и фактур. Роспись.  Все это и многое другое в креативном блоке ПРО ДИЗАЙН. Работа с гелевой акварелью, паста Glaze UP в росписи и прорисовках,  лепка гелем, обзор кистей для различных техник в нейл-арте.</span></blockquote>
-                <blockquote class=""><span style="font-style: normal; font-size: 1.09rem;"><strong>16:00 – 16:30&nbsp;</strong></span><br></blockquote>
-                <blockquote class=""><span style="font-style: normal;">Розыгрыш, выдача сертификатов, торт и шампанское.</span></blockquote>
+                <?if ($day['DAY_2']['~VALUE']):?>
+                    <h3>День 1</h3>
+                <?endif;?>
+                <?foreach ($day['DAY_1']['~VALUE'] as $k=>$schedule):?>
+                        <blockquote>
+                            <strong>
+                                <?=$day['DAY_1']['DESCRIPTION'][$k]?>
+                            </strong>
+                        </blockquote>
+                        <blockquote>
+                            <p>
+                                <?=str_replace("\n", '<br />', $schedule);?>
+                            </p>
+                        </blockquote>
+                <?endforeach;?>
+
+                <?if ($day['DAY_2']['~VALUE']):?>
+                    <h3 style="margin-top: 2rem">День 2</h3>
+                <?endif;?>
+                <?foreach ($day['DAY_2']['~VALUE'] as $k=>$schedule):?>
+                    <blockquote>
+                        <strong>
+                            <?=$day['DAY_2']['DESCRIPTION'][$k]?>
+                        </strong>
+                    </blockquote>
+                    <blockquote>
+                        <p>
+                            <?=str_replace("\n", '<br />', $schedule);?>
+                        </p>
+                    </blockquote>
+                <?endforeach;?>
+
+                <?if ($day['DAY_3']['~VALUE']):?>
+                    <h3 style="margin-top: 2rem">День 3</h3>
+                <?endif;?>
+                <?foreach ($day['DAY_3']['~VALUE'] as $k=>$schedule):?>
+                    <blockquote>
+                        <strong>
+                            <?=$day['DAY_3']['DESCRIPTION'][$k]?>
+                        </strong>
+                    </blockquote>
+                    <blockquote>
+                        <p>
+                            <?=str_replace("\n", '<br />', $schedule);?>
+                        </p>
+                    </blockquote>
+                <?endforeach;?>
             </div>
         </div>
     </div>
