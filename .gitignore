@@ -1,5 +1,7 @@
 /node_modules
 yarn.lock
+yarn-error.log
+
 *.sublime-workspace
 
 docs/.access.php
@@ -7,6 +9,5 @@ docs/bitrix/*
 docs/upload/*
 docs/web.config
 .idea/
-
 errordocs/
 stat/

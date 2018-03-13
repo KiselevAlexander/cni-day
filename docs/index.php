@@ -4,9 +4,11 @@
 // посмотрим какой город был выбран этим юзером в прошлый раз
 $sUserCity = $APPLICATION->get_cookie('USER_CITY');
 
+$isDev = $_SERVER['SERVER_NAME'] === '127.0.0.1';
+
 // установим глобальную переменную cur_city = код города (из сабдомена)
-if ($_SERVER['SERVER_NAME'] === '127.0.0.1') {
-    $GLOBALS['sCurCity'] = 'krr';
+if ($isDev) {
+    $GLOBALS['sCurCity'] = 'msk';
 } else {
     $GLOBALS['sCurCity'] = preg_replace('/^(?:([^\.]+)\.)?cni-day\.ru$/', '\1', $_SERVER['SERVER_NAME']);
 }
@@ -224,11 +226,11 @@ if ($days <= 10){
 $TEMPLATE = '2017';
 
 if ($day['TEMPLATE']['VALUE']) {
-    $TEMPLATE = $day['TEMPLATE']['VALUE'];
+    $TEMPLATE = (!$isDev) ? $day['TEMPLATE']['VALUE'] : '2018';
 }
 
 $APPLICATION->IncludeFile(
-    "/local/templates/{$TEMPLATE}/index.php",
+    "/local/templates/2018/index.php",
     Array(
         "CITY_NAME" => $sCurCityName,
         "DAY" => $day,
