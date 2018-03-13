@@ -230,7 +230,7 @@ if ($day['TEMPLATE']['VALUE']) {
 }
 
 $APPLICATION->IncludeFile(
-    "/local/templates/2018/index.php",
+    "/local/templates/{$TEMPLATE}/index.php",
     Array(
         "CITY_NAME" => $sCurCityName,
         "DAY" => $day,
