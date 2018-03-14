@@ -1,0 +1,15 @@
+.seminar {
+  &-image {
+    max-width: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+
+    &:before {
+      display: block;
+      width: 1px;
+      content: '';
+      padding-top: 65%;
+    }
+  }
+}

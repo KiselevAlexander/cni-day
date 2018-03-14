@@ -312,19 +312,21 @@ $day = $arParams['DAY'];
 
         <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 40px; padding-bottom: 40px;">
             <div class="container">
-                <div class="card cart-block">
-                    <div class="card-img"><img src="/local/templates/2018/assets/images/-600x399.jpg" class="card-img-top"></div>
+                <div class="card cart-block seminar">
+                    <div class="card-img seminar-image"
+                         style="background-image: url('<?=CFile::getPath(606)?>');"></div>
+                    <?var_dump($day['SEMINAR_2_IMAGE']);?>
                     <div class="card-block">
-                        <h4 class="card-title text-uppercase">ДЕНЬ CNI <?=$arParams['CITY_NAME']?></h4>
-                        <h5 class="card-subtitle">5 мастер-классов</h5>
-                        <p class="card-text">
-                            <?foreach ($day['DAY_1']['VALUE'] as $programmItem):?>
-                            ● <?=$programmItem?><br>
-                            <?endforeach;?>
-                            ***<br>
-                            Розыгрыши, Подарки, Главный приз - MIX-лампа.<br>Скидка 15% на продукцию CNI.&nbsp;Фуршет и праздник.<br>
-                            ***<br>
-                            Стоимость участия = <strong><?=$arParams['PRICES'][0]?> p.</strong></p>
+                        <h4 class="card-title"><?=$day['SEMINAR_1']['VALUE']?></h4>
+                        <h5 class="card-subtitle"><?=$day['SEMINAR_1']['DESCRIPTION']?></h5>
+                        <div class="card-text">
+                            <?=$day['SEMINAR_1_TEXT']['~VALUE']['TEXT']?>
+                            <?if($day['SEMINAR_1_COST']['VALUE']):?>
+                                <p>
+                                    Стоимость участия = <?=$day['SEMINAR_1_COST']['VALUE']?> p.
+                                </p>
+                            <?endif;?>
+                        </div>
                         <div class="card-btn">
                             <a href="/#order"
                                class="btn btn-danger"
@@ -341,22 +343,20 @@ $day = $arParams['DAY'];
         </div>
         <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 40px; padding-bottom: 40px;">
             <div class="container">
-                <div class="card cart-block">
-                    <div class="card-img"><img src="/local/templates/2018/assets/images/93db23e5-5978-40c3-87e9-0bcb352ab561-600x410.jpg" class="card-img-top"></div>
+                <div class="card cart-block seminar">
+                    <div class="card-img seminar-image"
+                         style="background-image: url('/local/templates/2018/assets/images/93db23e5-5978-40c3-87e9-0bcb352ab561-600x410.jpg');"></div>
                     <div class="card-block">
-                        <h4 class="card-title">"АКВАРЕЛЬ"</h4>
-                        <h5 class="card-subtitle">Семинар с отработкой</h5>
-                        <p class="card-text">
-                            5-часовой семинар с отработкой на моделях:<br>
-                            <?foreach ($day['DAY_2']['VALUE'] as $programmItem):?>
-                                ● <?=$programmItem?><br>
-                            <?endforeach;?>
-                            ***<br>
-                            Всего 10 мест! Материалы предоставляются.&nbsp;<br>
-                            Кисти и инструменты ученик приобретает самостоятельно.<br>
-                            ***<br>
-                            Стоимость обучения = <strong><?=$arParams['PRICES'][1]?> p.</strong>
-                        </p>
+                        <h4 class="card-title"><?=$day['SEMINAR_2']['VALUE']?></h4>
+                        <h5 class="card-subtitle"><?=$day['SEMINAR_2']['DESCRIPTION']?></h5>
+                        <div class="card-text">
+                            <?=$day['SEMINAR_2_TEXT']['~VALUE']['TEXT']?>
+                            <?if($day['SEMINAR_2_COST']['VALUE']):?>
+                                <p>
+                                    Стоимость участия = <?=$day['SEMINAR_1_COST']['VALUE']?> p.
+                                </p>
+                            <?endif;?>
+                        </div>
                         <div class="card-btn">
                             <a href="/#order"
                                class="btn btn-primary"
@@ -389,11 +389,16 @@ $day = $arParams['DAY'];
                 <p>
                     <strong>АДРЕС</strong><br>
                     <?=$day['PLACE_ADDRESS']['VALUE']?><br><br>
+
                     <strong>Контакты</strong><br>
+
                     Email: <a href="mailto:<?=$day['MAIL']['VALUE']?>" style="color: #fff;"><?=$day['MAIL']['VALUE']?></a><br><br>
-                    Тел.: <strong><a href="tel:+74932371714" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">
+
+                    Тел.: <strong>
+                        <a href="tel:+74932371714" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">
                             <?=$day['PHONE_CODE']['VALUE'].' '.$day['PHONE_NUMBER']['VALUE']?>
-                        </a></strong><br>
+                        </a>
+                    </strong>
             </div>
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p class="mbr-contacts__text"><strong>ССЫЛКИ</strong></p>
