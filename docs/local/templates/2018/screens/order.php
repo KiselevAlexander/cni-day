@@ -37,7 +37,7 @@
 
                                         <input data-form-sendto="true" type="hidden" name="sendto" value="<?=implode(',', $day['SEND_MAIL_ADDRESS']['VALUE'])?>">
                                         <input data-form-product="true" type="hidden" name="product" value="0">
-                                        <input data-form-city="true" type="hidden" name="product" value="<?=$arParams['CITY_NAME']?>">
+                                        <input data-form-city="true" type="hidden" name="city" value="<?=$arParams['CITY_NAME']?>">
 
                                         <div class="row row-sm-offset">
 
