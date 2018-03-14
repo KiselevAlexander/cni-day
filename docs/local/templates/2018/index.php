@@ -278,7 +278,7 @@ $day = $arParams['DAY'];
 
                     <div class="carousel-inner">
                         <?
-                        foreach ($day["TECHNIKS_SLIDER"]["VALUE"] as $k=>$v){
+                        foreach ($day["SKILLS_GALLERY"]["VALUE"] as $k=>$v){
                             ?>
                             <div class="carousel-item<?=($k === 0) ? ' active': ''?>">
                                 <img alt="" src="<?=CFile::getPath($v)?>">
