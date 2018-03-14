@@ -21,6 +21,7 @@ $product = (isset($data['product']) && $data['product'] !== 0)
     : 'Продукт: не выбран';
 
 $data = $_POST;
+$city = $data['city'];
 $name = $data['form']['data'][0][1];
 $phone = $data['form']['data'][1][1];
 $text = $data['form']['data'][2][1];
