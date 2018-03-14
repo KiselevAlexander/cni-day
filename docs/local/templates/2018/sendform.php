@@ -59,6 +59,9 @@ $arLoadProductArray = Array(
     "ACTIVE"         => "Y",            // активен
 );
 
+if(!$PRODUCT_ID = $el->Add($arLoadProductArray)) {
+    echo "Error: ".$el->LAST_ERROR;
+}
 
 /**
  * Send email
