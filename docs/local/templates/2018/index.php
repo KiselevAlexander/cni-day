@@ -279,9 +279,14 @@ $day = $arParams['DAY'];
                     <div class="carousel-inner">
                         <?
                         foreach ($day["SKILLS_GALLERY"]["VALUE"] as $k=>$v){
+                            $text = explode("head",$day["SKILLS_GALLERY"]["DESCRIPTION"][$k]);
                             ?>
                             <div class="carousel-item<?=($k === 0) ? ' active': ''?>">
-                                <img alt="" src="<?=CFile::getPath($v)?>">
+                                <img alt="<?=$text[0]?>" src="<?=CFile::getPath($v)?>">
+                                <p class="carousel-item-text mbr-gallery-title">
+                                    <?=$text[0]?><br>
+                                    <?=$text[1]?>
+                                </p>
                             </div>
                         <?}?>
                     </div>
