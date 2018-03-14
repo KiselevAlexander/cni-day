@@ -31,3 +31,16 @@
   margin-bottom: 0;
   text-align: center;
 }
+
+.screen-2-image {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &:before {
+    display: block;
+    width: 1px;
+    content: '';
+    padding-top: 100%;
+  }
+}

@@ -222,7 +222,10 @@ $day = $arParams['DAY'];
                 </div>
 
                 <div class="mbr-table-cell mbr-left-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
-                    <div class="mbr-figure"><img src="/local/templates/2018/assets/images/mix-1400x1400.jpg"></div>
+                    <div class="mbr-figure screen-2-image"
+                        style="background-image: url('<?=CFile::getPath($day['SCREEN_2_IMAGE']['VALUE'])?>');"
+                    >
+                    </div>
                 </div>
 
             </div>
