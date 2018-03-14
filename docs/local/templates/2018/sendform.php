@@ -9,12 +9,9 @@
 header('content/type: application/json');
 
 $to = [
-    'masha@profhairs.ru',
     'cni-day@ya.ru',
     'digital@cni.ru',
-    'ivanovo@cni.ru',
     'event@cni.ru',
-    'koreshkov@me.com',
     'alexander.kiselev@mail.ru'
 ];
 
@@ -27,16 +24,34 @@ $data = $_POST;
 $name = $data['form']['data'][0][1];
 $phone = $data['form']['data'][1][1];
 $text = $data['form']['data'][2][1];
-$date = date('Y-m-d H:i:s');
+$date = date('d.m.Y H:i:s');
 
-$message = "Заявка на сайте\n\nИмя:\n$name\nТелефон:\n$phone\nТекст:\n$text\nДата:\n$date";
+$message = "
+    <h1>Заявка на сайте</h1>
+    <hr />
+    <p><b>Имя:</b> $name</p>
+    <p><b>Телефон:</b> $phone</p>
+    <p><b>Текст:</b> $text</p>
+    <p><b>Дата:</b> $date</p>
+";
 
-$res = mail(implode(',', $to), 'Заявка на сайте', $message);
+
+$headers  = "Content-type: text/html; charset=utf-8 \r\n";
+$headers .= "From: Лендинг cni-day.ru <no-reply@cni-day.ru>\r\n";
+
+
+$to = implode(',', $to);
+
+if ($name == 'test') {
+    $to = 'alexander.kiselev@mail.ru';
+}
+
+$res = mail($to, 'Заявка на сайте', $message, $headers);
 
 if ($res) {
     echo json_encode([
         "status" => "Ready!",
-        "response" => "Thanks for filling out form!"
+        "response" => "Thanks!"
     ]);
 } else {
     echo json_encode([
