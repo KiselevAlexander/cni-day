@@ -28,8 +28,9 @@ $text = $data['form']['data'][2][1];
 $date = date('d.m.Y H:i:s');
 
 $message = "
-    <h1>Заявка на сайте</h1>
+    <h1>Заявка на сайте $city</h1>
     <hr />
+    <p><b>Город:</b> $city</p>
     <p><b>Имя:</b> $name</p>
     <p><b>Телефон:</b> $phone</p>
     <p><b>Текст:</b> $text</p>
@@ -38,7 +39,7 @@ $message = "
 
 
 $headers  = "Content-type: text/html; charset=utf-8 \r\n";
-$headers .= "From: Лендинг cni-day.ru <no-reply@cni-day.ru>\r\n";
+$headers .= "From: Лендинг cni-day.ru ($city) <no-reply@cni-day.ru>\r\n";
 
 
 $to = implode(',', $to);
