@@ -251,8 +251,8 @@ $day = $arParams['DAY'];
         <div class=" mbr-gallery-layout-default">
 
                     <?
-                    foreach ($day["TECHNIKS_SLIDER"]["VALUE"] as $k=>$v){
-                        $text = explode("head",$day["TECHNIKS_SLIDER"]["DESCRIPTION"][$k]);
+                    foreach ($day["SKILLS_GALLERY"]["VALUE"] as $k=>$v){
+                        $text = explode("head",$day["SKILLS_GALLERY"]["DESCRIPTION"][$k]);
                         ?>
                         <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p0" data-tags="Animated" data-video-url="false">
                             <div href="#lb-gallery2-4" data-slide-to="0" data-toggle="modal">

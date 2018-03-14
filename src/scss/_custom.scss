@@ -7,3 +7,17 @@
 .footer2 {
   overflow: hidden;
 }
+
+@media (min-width: 768px) {
+
+  .modal .modal-dialog {
+    position: relative;
+    top: 50%;
+    margin-top: 0;
+  }
+
+  .modal.in .modal-dialog {
+    transform: translate(0,-50%);
+  }
+
+}
