@@ -55,6 +55,7 @@ gulp.task('connect-sync', function() {
 
         browserSync({
             proxy: '127.0.0.1:8010',
+            https: true,
             reqHeaders: function (config) {
                 console.log(config);
                 return {

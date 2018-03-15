@@ -48,7 +48,7 @@
                             <?=$day['SEMINAR_2_TEXT']['~VALUE']['TEXT']?>
                             <?if($day['SEMINAR_2_COST']['VALUE']):?>
                                 <p>
-                                    Стоимость участия = <?=$day['SEMINAR_1_COST']['VALUE']?> p.
+                                    Стоимость участия = <?=$day['SEMINAR_2_COST']['VALUE']?> p.
                                 </p>
                             <?endif;?>
                         </div>
