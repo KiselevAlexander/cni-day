@@ -1,4 +1,4 @@
-<?php
+<?
 define('STOP_STATISTICS', true);
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 $GLOBALS['APPLICATION']->RestartBuffer();
@@ -6,7 +6,7 @@ $GLOBALS['APPLICATION']->RestartBuffer();
 header('content/type: application/json');
 
 
-$to = [
+$send_to = [
     'cni-day@ya.ru',
     'digital@cni.ru',
     'event@cni.ru',
@@ -15,16 +15,18 @@ $to = [
 
 $data = $_POST;
 
-$to = ($data['sendto']) ? explode(',', $data['sendto']) : $to;
+$send_to = ($data['sendto']) ? explode(',', $data['sendto']) : $send_to;
 
 $product = (isset($data['product']) && $data['product'] !== 0)
     ? 'Продукт: день ' . $data['product']
     : 'Продукт: не выбран';
 
 $city = $data['city'];
-$name = $data['form']['data'][0][1];
-$phone = $data['form']['data'][1][1];
-$text = $data['form']['data'][2][1];
+$name = $data['name'];
+$phone = $data['phone'];
+$email = $data['email'];
+$text = $data['text'];
+$additionalData = $data['data'];
 $date = date('d.m.Y H:i:s');
 
 
@@ -45,19 +47,19 @@ CModule::IncludeModule("iblock");
  */
 $el = new CIBlockElement;
 
-$PROP = array();
+$PROP = [];
 $PROP['NAME'] = $name;
 $PROP['PHONE'] = $phone;
 $PROP['TEXT'] = $text;
 $PROP['CITY'] = $city;
 
-$arLoadProductArray = Array(
+$arLoadProductArray = [
     "IBLOCK_SECTION_ID" => false,          // элемент лежит в корне раздела
     "IBLOCK_ID"      => 3,
     "PROPERTY_VALUES"=> $PROP,
     "NAME"           => $name,
     "ACTIVE"         => "Y",            // активен
-);
+];
 
 if(!$PRODUCT_ID = $el->Add($arLoadProductArray)) {
     echo "Error: ".$el->LAST_ERROR;
@@ -81,13 +83,13 @@ $headers  = "Content-type: text/html; charset=utf-8 \r\n";
 $headers .= "From: Лендинг cni-day.ru ($city) <no-reply@cni-day.ru>\r\n";
 
 
-$to = implode(',', $to);
+$send_to = implode(',', $send_to);
 
 if ($name == 'test') {
-    $to = 'alexander.kiselev@mail.ru';
+    $send_to = 'alexander.kiselev@mail.ru';
 }
 
-$res = mail($to, 'Заявка на сайте', $message, $headers);
+$res = mail($send_to, 'Заявка на сайте', $message, $headers);
 
 if ($res) {
     echo json_encode([

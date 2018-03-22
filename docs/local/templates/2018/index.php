@@ -366,7 +366,7 @@ $day = $arParams['DAY'];
 <script src="/local/templates/2018/assets/theme/js/script.js"></script>
 <script src="/local/templates/2018/assets/mobirise-gallery/player.min.js"></script>
 <script src="/local/templates/2018/assets/mobirise-gallery/script.js"></script>
-<script src="/local/templates/2018/assets/formoid/formoid.min.js"></script>
+<script src="/local/templates/2018/assets/sendform.min.js"></script>
 
 
 <input name="animation" type="hidden">

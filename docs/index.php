@@ -8,7 +8,7 @@ $isDev = $_SERVER['SERVER_NAME'] === '127.0.0.1';
 
 // установим глобальную переменную cur_city = код города (из сабдомена)
 if ($isDev) {
-    $GLOBALS['sCurCity'] = 'msk';
+    $GLOBALS['sCurCity'] = 'krr';
 } else {
     $GLOBALS['sCurCity'] = preg_replace('/^(?:([^\.]+)\.)?cni-day\.ru$/', '\1', $_SERVER['SERVER_NAME']);
 }
