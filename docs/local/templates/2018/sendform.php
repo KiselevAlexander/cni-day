@@ -108,7 +108,8 @@ $message = "
     <h1>Заявка на сайте %city%</h1>
     <hr />
     <table>
-        <tr><td><b>Город:</b></td><td>%name%</td></tr>
+        <tr><td><b>ФИО:</b></td><td>%name%</td></tr>
+        <tr><td><b>Город:</b></td><td>%city%</td></tr>
         <tr><td><b>Телефон:</b></td><td>%phone%</td></tr>
         <tr><td><b>Текст:</b></td><td>%text%</td></tr>
         <tr><td><b>Дата:</b></td><td>%date%</td></tr>
