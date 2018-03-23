@@ -86,6 +86,7 @@ if (!$isDev && CModule::IncludeModule("iblock")) {
     $PROP['PHONE'] = $data['phone'];
     $PROP['TEXT'] = $data['text'];
     $PROP['CITY'] = $data['city'];
+    $PROP['EMAIL'] = $data['email'];
 
     $arLoadProductArray = [
         "IBLOCK_SECTION_ID" => false,          // элемент лежит в корне раздела
