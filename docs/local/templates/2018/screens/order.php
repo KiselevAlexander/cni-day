@@ -4,7 +4,7 @@
  * @param $email_addresses
  * @param $city
  */
-function renderForm($email_addresses, $city) {
+function renderForm($email_addresses, $city, $cityId) {
     ?>
     <form action="/local/templates/2018/" method="post" data-form-title="ОСТАВЬТЕ ЗАЯВКУ">
 
@@ -13,6 +13,7 @@ function renderForm($email_addresses, $city) {
         <input data-form-sendto="true" type="hidden" name="sendto" value="<?=implode(',', $email_addresses)?>">
         <input data-form-product="true" type="hidden" name="product" value="0">
         <input data-form-city="true" type="hidden" name="city" value="<?=$city?>">
+        <input data-form-city="true" type="hidden" name="city_id" value="<?=$cityId?>">
 
         <div class="row row-sm-offset">
 
@@ -100,7 +101,8 @@ function renderForm($email_addresses, $city) {
 
                                     <? renderForm(
                                         $day['SEND_MAIL_ADDRESS']['VALUE'],
-                                        $arParams['CITY_NAME']
+                                        $arParams['CITY_NAME'],
+                                        $GLOBALS['iCurCityID']
                                     );
                                     ?>
 

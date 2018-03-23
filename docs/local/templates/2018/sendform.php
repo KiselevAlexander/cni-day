@@ -1,10 +1,49 @@
 <?
+/**
+ * Created by PhpStorm.
+ * User: alexander
+ * Date: 05.02.18
+ * Time: 0:14
+ */
+
 define('STOP_STATISTICS', true);
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 $GLOBALS['APPLICATION']->RestartBuffer();
 
 header('content/type: application/json');
 
+/**
+ * Преобразование utm меток
+ * @param $metrics
+ * @return string
+ */
+function parseMetrics($metrics) {
+    $metrics = json_decode($metrics, true);
+
+    $_map = [
+        'utm_source' => 'Рекламная площадка',
+        'utm_medium' => 'Канал трафика',
+        'utm_campaign' => 'Название рекламной кампании',
+        'utm_term' => 'Ключевая фраза',
+        'utm_content' => 'Дополнительной информации',
+    ];
+
+    $result = "";
+
+    foreach ($metrics as $mKey => $mValue) {
+        foreach ($_map as $key => $value) {
+            if ($mKey == $key) {
+                $result .= "<tr><td>{$value}:</td><td>{$mValue}</td></tr>";
+            }
+        }
+    }
+    if ($result) {
+        return "<table>{$result}</table>";
+    } else {
+        return "<table><tr><td>Отсутствует</td></tr></table>";
+    }
+
+}
 
 $send_to = [
     'cni-day@ya.ru',
@@ -12,6 +51,8 @@ $send_to = [
     'event@cni.ru',
     'alexander.kiselev@mail.ru'
 ];
+
+
 
 $data = $_POST;
 
@@ -21,75 +62,75 @@ $product = (isset($data['product']) && $data['product'] !== 0)
     ? 'Продукт: день ' . $data['product']
     : 'Продукт: не выбран';
 
-$city = $data['city'];
-$name = $data['name'];
-$phone = $data['phone'];
-$email = $data['email'];
-$text = $data['text'];
-$additionalData = $data['data'];
-$date = date('d.m.Y H:i:s');
 
+$data['metrics'] = parseMetrics($data['metrics']);
 
-CModule::IncludeModule("iblock");
+$data['date'] = date('d.m.Y H:i:s');
 
-/**
- * Created by PhpStorm.
- * User: alexander
- * Date: 05.02.18
- * Time: 0:14
- */
+$isDev = ($data['name'] == 'test');
 
+if (!$isDev && CModule::IncludeModule("iblock")) {
 
+    /**
+     * Save to bitrix
+     */
+    $el = new CIBlockElement;
 
+    $PROP = [];
+    $PROP['NAME'] = $data['name'];
+    $PROP['PHONE'] = $data['phone'];
+    $PROP['TEXT'] = $data['text'];
+    $PROP['CITY'] = $data['city'];
 
-/**
- * Save to bitrix
- */
-$el = new CIBlockElement;
+    $arLoadProductArray = [
+        "IBLOCK_SECTION_ID" => false,          // элемент лежит в корне раздела
+        "IBLOCK_ID"      => 3,
+        "PROPERTY_VALUES"=> $PROP,
+        "NAME"           => $data['name'],
+        "ACTIVE"         => "Y",            // активен
+    ];
 
-$PROP = [];
-$PROP['NAME'] = $name;
-$PROP['PHONE'] = $phone;
-$PROP['TEXT'] = $text;
-$PROP['CITY'] = $city;
-
-$arLoadProductArray = [
-    "IBLOCK_SECTION_ID" => false,          // элемент лежит в корне раздела
-    "IBLOCK_ID"      => 3,
-    "PROPERTY_VALUES"=> $PROP,
-    "NAME"           => $name,
-    "ACTIVE"         => "Y",            // активен
-];
-
-if(!$PRODUCT_ID = $el->Add($arLoadProductArray)) {
-    echo "Error: ".$el->LAST_ERROR;
+    if(!$PRODUCT_ID = $el->Add($arLoadProductArray)) {
+        echo "Error: ".$el->LAST_ERROR;
+    }
 }
+
 
 /**
  * Send email
  */
 $message = "
-    <h1>Заявка на сайте $city</h1>
+    <h1>Заявка на сайте %city%</h1>
     <hr />
-    <p><b>Город:</b> $city</p>
-    <p><b>Имя:</b> $name</p>
-    <p><b>Телефон:</b> $phone</p>
-    <p><b>Текст:</b> $text</p>
-    <p><b>Дата:</b> $date</p>
+    <table>
+        <tr><td><b>Город:</b></td><td>%name%</td></tr>
+        <tr><td><b>Телефон:</b></td><td>%phone%</td></tr>
+        <tr><td><b>Текст:</b></td><td>%text%</td></tr>
+        <tr><td><b>Дата:</b></td><td>%date%</td></tr>
+    </table>
+    <p>
+        <b>Маркетинговая информация:</b>
+        %metrics%
+    </p>
 ";
 
+foreach ($data as $key=>$value) {
+    $message = str_replace("%{$key}%", $value ? $value : '-', $message);
+}
 
 $headers  = "Content-type: text/html; charset=utf-8 \r\n";
-$headers .= "From: Лендинг cni-day.ru ($city) <no-reply@cni-day.ru>\r\n";
+$headers .= "From: Лендинг cni-day.ru ({$data['city']}) <no-reply@cni-day.ru>\r\n";
 
 
 $send_to = implode(',', $send_to);
 
-if ($name == 'test') {
+if ($isDev) {
     $send_to = 'alexander.kiselev@mail.ru';
+    $res = true;
+} else {
+    $res = mail($send_to, 'Заявка на сайте', $message, $headers);
 }
 
-$res = mail($send_to, 'Заявка на сайте', $message, $headers);
 
 if ($res) {
     echo json_encode([

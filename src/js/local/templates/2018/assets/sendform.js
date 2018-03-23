@@ -1,3 +1,20 @@
+const parseQueryString = (queryString) => {
+    const query = {};
+    const pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+    for (let i = 0; i < pairs.length; i++) {
+        const pair = pairs[i].split('=');
+        if (pair[0] && pair[1])
+            query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+    }
+    return query;
+};
+
+const queryData = parseQueryString(window.location.search);
+
+if (queryData.utm_campaign) {
+    localStorage.setItem('metrics', JSON.stringify(queryData))
+}
+
 jQuery(function(t) {
     const test = (sub) => {
         const params = {
@@ -48,14 +65,14 @@ jQuery(function(t) {
                     type: "POST",
                     dataType:'json',
                     data: {
-                        email: this.__email__,
                         sendto: $('[data-form-sendto]').val(),
                         product: $('[data-form-product]').val(),
                         city: $('[name="city"]').val(),
-                        form: {
-                            title: this.__title__,
-                            data: arguments.length ? n : this.__data__
-                        }
+                        name: $('[name="name"]').val(),
+                        phone: $('[name="phone"]').val(),
+                        email: $('[name="email"]').val(),
+                        text: $('[name="message"]').val(),
+                        metrics: localStorage.getItem('metrics')
                     }
                 }).done(function(t) {
                     try {
