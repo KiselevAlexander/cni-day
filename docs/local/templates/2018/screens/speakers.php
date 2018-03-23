@@ -4,12 +4,18 @@
  * @param $surname
  * @param $description
  * @param $image
+ * @param $title
  */
-function renderSpeaker($name, $surname, $description, $image) {
+function renderSpeaker($name, $surname, $description, $image, $title, $each_titles) {
 
     ?>
-    <div class="mbr-cards-col col-xs-12 col-lg-6" style="padding-top: 40px; padding-bottom: 40px;">
-        <div class="container">
+    <div class="mbr-cards-col col-xs-12<?=$each_titles ? ' col-lg-6' : ''?>">
+        <h3
+                class="mbr-section-title display-2 text-uppercase"
+        >
+            <?=$title?>
+        </h3>
+        <div class="container"  style="padding-top: 40px; padding-bottom: 40px;">
             <div class="card cart-block">
                 <?if ($image):?>
                     <div class="card-img"
@@ -47,17 +53,6 @@ function renderSpeaker($name, $surname, $description, $image) {
 ?>
 
 <?if ($day['SPEAKER_NAME']['VALUE']):?>
-    <section class="mbr-section mbr-section__container article" id="header3-e" data-rv-view="868" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h3 class="mbr-section-title display-2 text-uppercase">
-                        <?=($day['SPEKERS_TITLE']['VALUE']) ? $day['SPEKERS_TITLE']['VALUE'] : 'СПИКЕРЫ ДНЯ CNI'?>
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="mbr-cards mbr-section mbr-section-nopadding speakers" id="features1-d" data-rv-view="870" style="background-color: rgb(40, 50, 78);">
 
@@ -65,11 +60,14 @@ function renderSpeaker($name, $surname, $description, $image) {
 
             <?
             foreach ($day['SPEAKER_NAME']['VALUE'] as $key => $speakerName) {
+                $sKey = $key +1;
                 renderSpeaker(
                     $day['SPEAKER_NAME']['VALUE'][$key],
                     $day['SPEAKER_SURNAME']['VALUE'][$key],
                     $day["SPEAKER_DESCRIPTION"]["~VALUE"][$key],
-                    CFile::getPath($day['SPEAKER_PHOTO']['VALUE'][$key])
+                    CFile::getPath($day['SPEAKER_PHOTO']['VALUE'][$key]),
+                    $day["SPEAKERS_TITLE_{$sKey}"]['VALUE'],
+                    ($day["SPEAKERS_TITLE_2"]['VALUE'])
                 );
             }
             ?>
