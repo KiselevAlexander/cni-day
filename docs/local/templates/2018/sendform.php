@@ -4,6 +4,10 @@
  * User: alexander
  * Date: 05.02.18
  * Time: 0:14
+ *
+ * Для тестированая функционала без отправки почты и внесения в базу нужно указать имя клиента `test`
+ * Для тесирования отправки почты только на свой email нужно указать имя клиента `test_mail`
+ *
  */
 
 define('STOP_STATISTICS', true);
@@ -68,6 +72,7 @@ $data['metrics'] = parseMetrics($data['metrics']);
 $data['date'] = date('d.m.Y H:i:s');
 
 $isDev = ($data['name'] == 'test');
+$isTest = ($data['name'] == 'test_mail');
 
 if (!$isDev && CModule::IncludeModule("iblock")) {
 
@@ -125,9 +130,11 @@ $headers .= "From: Лендинг cni-day.ru ({$data['city']}) <no-reply@cni-day
 $send_to = implode(',', $send_to);
 
 if ($isDev) {
-    $send_to = 'alexander.kiselev@mail.ru';
     $res = true;
 } else {
+    if ($isTest) {
+        $send_to = 'alexander.kiselev@mail.ru';
+    }
     $res = mail($send_to, 'Заявка на сайте', $message, $headers);
 }
 
