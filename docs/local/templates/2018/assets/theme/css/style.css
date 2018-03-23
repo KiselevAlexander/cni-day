@@ -1246,6 +1246,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
       display: none; }
   .mbr-cards-col {
     display: table-cell;
+      vertical-align: top;
     float: none; }
   .mbr-cards > .container {
     margin: 0;

@@ -6,10 +6,10 @@
  * @param $image
  * @param $title
  */
-function renderSpeaker($name, $surname, $description, $image, $title, $each_titles) {
+function renderSpeaker($name, $surname, $description, $image, $title) {
 
     ?>
-    <div class="mbr-cards-col col-xs-12<?=$each_titles ? ' col-lg-6' : ''?>">
+    <div class="mbr-cards-col col-xs-12">
         <h3
                 class="mbr-section-title display-2 text-uppercase"
         >
@@ -66,8 +66,7 @@ function renderSpeaker($name, $surname, $description, $image, $title, $each_titl
                     $day['SPEAKER_SURNAME']['VALUE'][$key],
                     $day["SPEAKER_DESCRIPTION"]["~VALUE"][$key],
                     CFile::getPath($day['SPEAKER_PHOTO']['VALUE'][$key]),
-                    $day["SPEAKERS_TITLE_{$sKey}"]['VALUE'],
-                    ($day["SPEAKERS_TITLE_2"]['VALUE'])
+                    $day["SPEAKERS_TITLE_{$sKey}"]['VALUE']
                 );
             }
             ?>
