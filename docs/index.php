@@ -235,6 +235,7 @@ $APPLICATION->IncludeFile(
         "CITY_NAME" => $sCurCityName,
         "DAY" => $day,
         "PRICES" => $PRICES,
+        "IS_DEV" => $isDev
     ),
     Array("MODE"=>"html")
 );

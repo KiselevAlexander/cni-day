@@ -171,7 +171,7 @@ $day = $arParams['DAY'];
                             <?if ($day["YOUTUBE_VIDEO"]["VALUE"]):?>
                             <div class="mbr-figure">
                                 <iframe class="mbr-embedded-video"
-                                        src="<?=$day["YOUTUBE_VIDEO"]["VALUE"]?>?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0"
+                                        src="<?=$day["YOUTUBE_VIDEO"]["VALUE"]?>?rel=0&amp;amp;showinfo=0&amp;autoplay=<?=($day['IS_DEV']) ? 0 : 1?>&amp;loop=0"
                                         width="1280"
                                         height="720"
                                         frameborder="0"
