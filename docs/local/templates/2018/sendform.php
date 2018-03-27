@@ -16,6 +16,8 @@ $GLOBALS['APPLICATION']->RestartBuffer();
 
 header('content/type: application/json');
 
+include "client_email/email.php";
+
 /**
  * Преобразование utm меток
  * @param $metrics
@@ -136,11 +138,10 @@ if ($isDev) {
 } else {
     if ($isTest) {
         $send_to = 'alexander.kiselev@mail.ru';
-        include "client_email/email.php";
-
-        send_client_email($send_to, "День CNI {$data['city']}");
     }
     $res = mail($send_to, 'Заявка на сайте', $message, $headers);
+
+    send_client_email($data['email'], "День CNI {$data['city']}");
 }
 
 

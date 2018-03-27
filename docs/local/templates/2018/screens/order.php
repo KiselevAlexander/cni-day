@@ -38,6 +38,7 @@ function renderForm($email_addresses, $city, $cityId) {
                            name="phone"
                            data-form-field="Phone"
                            id="form1-8-phone"
+                           required
                     >
                 </div>
             </div>
@@ -50,6 +51,7 @@ function renderForm($email_addresses, $city, $cityId) {
                            name="email"
                            data-form-field="Email"
                            id="form1-8-email"
+                           required
                     >
                 </div>
             </div>
