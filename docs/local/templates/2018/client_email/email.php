@@ -1,17 +1,17 @@
 <?
-ob_start();
-?>
-
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body style="margin: 0;padding: 0;">
+function send_client_email($email, $subject) {
+    ob_start();
+    ?>
+    <!doctype html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body style="margin: 0;padding: 0;">
     <table border="0"
            cellpadding="0"
            cellspacing="0"
@@ -59,14 +59,14 @@ ob_start();
             </td>
         </tr>
     </table>
-</body>
-</html>
-<?
+    </body>
+    </html>
+    <?
 
-$msg = ob_get_clean();
+    $msg = ob_get_clean();
 
-$headers  = "Content-type: text/html; charset=utf-8 \r\n";
-$headers .= "From: Лендинг cni-day.ru <no-reply@cni-day.ru>\r\n";
+    $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+    $headers .= "From: {$subject} <no-reply@cni-day.ru>\r\n";
 
-// Отправляем
-mail('alexander.kiselev@mail.ru', 'My Subject', $msg, $headers);
+    mail($email, $subject, $msg, $headers);
+}

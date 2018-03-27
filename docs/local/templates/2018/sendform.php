@@ -136,6 +136,9 @@ if ($isDev) {
 } else {
     if ($isTest) {
         $send_to = 'alexander.kiselev@mail.ru';
+        include "client_email/email.php";
+
+        send_client_email($send_to, "День CNI {$data['city']}");
     }
     $res = mail($send_to, 'Заявка на сайте', $message, $headers);
 }
