@@ -24,7 +24,7 @@ header('content/type: application/json');
 function parseMetrics($metrics) {
     $metrics = json_decode($metrics, true);
 
-    $_map = [
+    $map = [
         'utm_source' => 'Рекламная площадка',
         'utm_medium' => 'Канал трафика',
         'utm_campaign' => 'Название рекламной кампании',
@@ -35,7 +35,7 @@ function parseMetrics($metrics) {
     $result = "";
 
     foreach ($metrics as $mKey => $mValue) {
-        foreach ($_map as $key => $value) {
+        foreach ($map as $key => $value) {
             if ($mKey == $key) {
                 $result .= "<tr><td>{$value}:</td><td>{$mValue}</td></tr>";
             }

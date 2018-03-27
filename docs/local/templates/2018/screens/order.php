@@ -2,7 +2,8 @@
 /**
  * Вывод формы
  * @param $email_addresses
- * @param $city
+ * @param $city - название города
+ * @param $cityId - ID города
  */
 function renderForm($email_addresses, $city, $cityId) {
     ?>
@@ -153,7 +154,8 @@ function renderForm($email_addresses, $city, $cityId) {
 
                                     <? renderForm(
                                         $day['SEND_MAIL_ADDRESS']['VALUE'],
-                                        $arParams['CITY_NAME']
+                                        $arParams['CITY_NAME'],
+                                        $GLOBALS['iCurCityID']
                                     );
                                     ?>
                                 </div>
