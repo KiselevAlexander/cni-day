@@ -146,7 +146,7 @@ $day = $arParams['DAY'];
 
                         <div class="mbr-table-cell col-md-5 content-size text-xs-center text-md-right">
 
-                            <h3 class="mbr-section-title display-2">
+                            <h3 class="mbr-section-title display-3">
                                 ДЕНЬ CNI<br>
                                 <span class="text-uppercase"><?=$arParams['CITY_NAME']?></span>
                             </h3>
@@ -167,7 +167,9 @@ $day = $arParams['DAY'];
 
                         </div>
 
-                        <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 70%;">
+                        <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size"
+                             style="padding: 0;"
+                        >
                             <?if ($day["YOUTUBE_VIDEO"]["VALUE"]):?>
                             <div class="mbr-figure">
                                 <iframe class="mbr-embedded-video"
@@ -347,6 +349,20 @@ $day = $arParams['DAY'];
                    <?=$day['GOOGLE_MAP']['~VALUE']?>
                 </div>
             </div>
+            <?
+                if($GLOBALS['sCurCity'] === 'ekb' && false) {
+                    ?>
+                        <div class="mbr-footer-content col-xs-12 col-md-3">
+                            <p class="mbr-contacts__text"><strong>Партнёры</strong></p>
+                            <ul>
+                                <li>
+                                    <img src="/local/templates/2018/assets/images/crown-logo.png" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    <?
+                }
+            ?>
         </div>
     </div>
 </section>
