@@ -1,0 +1,232 @@
+.services-list {
+    height: 606px !important;
+}
+.plus-in {
+    max-width:1206px;
+    margin:0auto;
+}
+.awards {
+    height: 410px !important;
+}
+.awards .left {
+    width: 310px !important;
+}
+span.unit1 , span.unit2 {
+    border: 1px solid #cccbcb;
+    border-radius: 50%;
+    padding: 10px;
+    background-position: center center !important;
+    margin: -10px;
+}
+#THEFORM span.unit1 , #THEFORM span.unit2 {
+    border-color:#fff;
+}
+.banner-in .banner-form {
+    background: none !important;
+}
+.mastera-in {
+    position: relative;
+}
+button.slick-next.slick-arrow {
+    position:absolute;
+    top:30%;
+    left:0px;
+    z-index:10;
+}
+button.slick-prev.slick-arrow {
+    position:absolute;
+    top:30%;
+    right:0px;
+    z-index:10;
+}
+.service1:before , .service2:before,.service3:before,.service4:before{display:none !important;}
+.arrows2 {
+    height:auto !important;
+    border-bottom:0px solid !important;
+}
+.top-phone {
+    background: url(/bitrix/templates/salon/img/top-phone.png) no-repeat 0 center !important;
+}
+
+.phone_input::-webkit-input-placeholder {color: #fff;}
+.phone_input::-moz-placeholder {color: #fff;}
+.phone_input:-ms-input-placeholder {color: #fff;}
+.phone_input:-moz-placeholder {color: #fff;}
+
+.phone2::-webkit-input-placeholder {color: #666666;}
+.phone2::-moz-placeholder {color: #666666;}
+.phone2:-ms-input-placeholder {color: #666666;}
+.phone2:-moz-placeholder {color: #666666;}
+
+
+/**
+ * New year banner
+ */
+.banner.new-year {
+    position: relative;
+    background: url('/static/img/new-year.jpg') top center no-repeat #121212 !important;
+}
+
+.banner.new-year .banner-form {
+    position: absolute;
+    top: 81%;
+    width: 100%;
+    background: none !important;
+    height: auto !important;
+    margin: 0 !important;
+}
+
+.banner.new-year .msg {
+    margin-top: 0;
+}
+
+.banner.new-year .banner-form input[type="text"]{
+    width: 14.600em;
+    padding-left: 4em;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    margin: 0 !important;
+    background-color: #121212;
+}
+
+.banner.new-year .banner-form span.unit1,
+.banner.new-year .banner-form span.unit2 {
+    border: 1px solid #cccbcb !important;
+    border-radius: 50% !important;
+    padding: 10px !important;
+    background-position: center center !important;
+    margin: -10px !important;
+}
+
+.banner.new-year .banner-form .field1,
+.banner.new-year .banner-form .field2,
+.banner.new-year .banner-form .field3 {
+    text-align: left;
+    width: auto !important;
+    margin: 0 1em;
+}
+
+.banner.new-year .banner-form .submit_upload {
+    background-color: #D9A652;
+    border-bottom-color: #CA9A4B;
+    text-shadow: none !important;
+}
+
+
+/**
+ * New year banner
+ */
+.banner.main {
+    position: relative;
+    background: url('/static/img/1920х620-1.jpg') top center no-repeat #ccc !important;
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+}
+
+@media (max-width: 768px) {
+    .banner.main {
+        background-position: top left !important;
+    }
+}
+
+.banner.main .banner-form {
+    position: absolute;
+    top: 81%;
+    width: 100%;
+    background: none !important;
+    height: auto !important;
+    margin: 0 !important;
+}
+
+.banner.main .msg {
+    margin-top: 0;
+}
+
+.banner.main .banner-text {
+    max-width: 72.875rem;
+    margin: 0 auto 0;
+    text-align: right;
+    font-size: 4.5em;
+    line-height: 1.1em;
+    color: #9d394d;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2.2em;
+}
+
+@media (max-width: 768px) {
+
+    .banner.main {
+        height: 56.1vw !important;
+    }
+
+    .banner.main .banner-text {
+        max-width: 100%;
+        margin: 0 1rem;
+        text-align: center;
+        font-size: 10vw;
+        justify-content: center;
+        padding-top: 0;
+        align-items: center;
+    }
+
+}
+
+.banner.main .banner-form input[type="text"]{
+    width: 14.600em;
+    padding-left: 4em;
+    border: 1px solid #333 !important;
+    color: #333 !important;
+    margin: 0 !important;
+    background-color: #fff;
+}
+.banner.main .banner-form input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #333;
+}
+.banner.main .banner-form input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+    color: #333;
+}
+.banner.main .banner-form input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+    color: #333;
+}
+.banner.main .banner-form input[type="text"]:-moz-placeholder { /* Firefox 18- */
+    color: #333;
+}
+
+.banner.main .banner-form span.unit1 {
+    background: url(/bitrix/templates/salon/img/unit12.png) no-repeat !important;
+}
+.banner.main .banner-form span.unit2 {
+    background: url(/bitrix/templates/salon/img/unit22.png) no-repeat !important;
+}
+.banner.main .banner-form span.unit1,
+.banner.main .banner-form span.unit2 {
+    border: 1px solid !important;
+    border-radius: 50% !important;
+    padding: 10px !important;
+    background-position: center center !important;
+    margin: -10px !important;
+    border-color: #333 !important;
+    color: #333 !important;
+    background-color: #fff !important;
+}
+
+.banner.main .banner-form .field1,
+.banner.main .banner-form .field2,
+.banner.main .banner-form .field3 {
+    text-align: left;
+    width: auto !important;
+    margin: 0 1em;
+}
+
+.banner.main .banner-form .submit_upload {
+    background-color: #e9bbbf;
+    border-bottom-color: #e0a6aa;
+    text-shadow: none !important;
+}
+
+
+#bx-panel {
+    top: 100px;
+}
