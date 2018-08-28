@@ -23,9 +23,10 @@
                         <div class="card-btn">
                             <a href="/#order"
                                class="btn btn-danger"
-                               onclick="$('[data-form-product]').val(1)"
+                               onclick="$('[data-form-product]').val(1); reachGoal('3scrn_open_program');"
                                data-toggle="modal"
                                data-target="#order"
+                               data-submit-goal="3scrn_send_program"
                             >
                                 ЗАПИСАТЬСЯ
                             </a>
@@ -55,9 +56,10 @@
                         <div class="card-btn">
                             <a href="/#order"
                                class="btn btn-primary"
-                               onclick="$('[data-form-product]').val(2)"
+                               onclick="$('[data-form-product]').val(2); reachGoal('3scrn_open_action');"
                                data-toggle="modal"
                                data-target="#order"
+                               data-submit-goal="3scrn_send_action"
                             >
                                 ЗАПИСАТЬСЯ
                             </a>

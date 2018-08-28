@@ -77,8 +77,22 @@ jQuery(function(t) {
                 }).done(function(t) {
                     try {
                         console.log(e);
-                        t.error ? o.reject(t.error) : o.resolve(t.response)
+                        t.error ? o.reject(t.error) : o.resolve(t.response);
+                        /**
+                         * Отправка целей при успешной заявке
+                         */
                         window.yaCounter42617899.reachGoal('Order');
+
+                        if (STORAGE_KEY) {
+                            const submitMetrics = localStorage.getItem(STORAGE_KEY);
+                            if (submitMetrics) {
+                                const params = JSON.parse(submitMetrics);
+                                reachGoal(params.goal, params.metric);
+                                localStorage.removeItem(STORAGE_KEY);
+                            }
+                        }
+                        /** /Отправка целей при успешной заявке */
+
                     } catch (a) {
                         o.reject("Incorrect server response.")
                     }

@@ -12,12 +12,22 @@
 
 define('STOP_STATISTICS', true);
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
-$GLOBALS['APPLICATION']->RestartBuffer();
+@$GLOBALS['APPLICATION']->RestartBuffer();
+error_reporting(E_ALL);
 
-header('content/type: application/json');
+// header('content/type: application/json');
+
+/**
+ * Тестовый ответ без отправки email
+ */
+/*echo json_encode([
+    "status" => "Ready!",
+    "response" => "Thanks!"
+]);
+
+die();*/
 
 include "client_email/email.php";
-
 /**
  * Преобразование utm меток
  * @param $metrics
@@ -69,7 +79,7 @@ $product = (isset($data['product']) && $data['product'] !== 0)
     : 'Продукт: не выбран';
 
 
-$data['metrics'] = parseMetrics($data['metrics']);
+$data['metrics'] = ($data['metrics']) ? parseMetrics($data['metrics']) : '';
 
 $data['date'] = date('d.m.Y H:i:s');
 
@@ -81,16 +91,17 @@ if (!$isDev && CModule::IncludeModule("iblock")) {
     /**
      * Save to bitrix
      */
-    $el = new CIBlockElement;
+    $el = new CIBlockElement();
 
     $PROP = [];
-    $PROP['NAME'] = $data['name'];
-    $PROP['PHONE'] = $data['phone'];
-    $PROP['TEXT'] = $data['text'];
-    $PROP['CITY'] = $data['city'];
-    $PROP['EMAIL'] = $data['email'];
+    $PROP['NAME'] = ($data['name']) ? $data['name'] : '';
+    $PROP['PHONE'] = ($data['phone']) ? $data['phone'] : '';
+    $PROP['TEXT'] = ($data['text']) ? $data['text'] : '';
+    $PROP['CITY'] = ($data['city']) ? $data['city'] : '';
+    $PROP['EMAIL'] = ($data['email']) ? $data['email'] : '';
 
     $arLoadProductArray = [
+        "SITE_ID" => 1,
         "IBLOCK_SECTION_ID" => false,          // элемент лежит в корне раздела
         "IBLOCK_ID"      => 3,
         "PROPERTY_VALUES"=> $PROP,
@@ -98,11 +109,12 @@ if (!$isDev && CModule::IncludeModule("iblock")) {
         "ACTIVE"         => "Y",            // активен
     ];
 
-    if(!$PRODUCT_ID = $el->Add($arLoadProductArray)) {
-        echo "Error: ".$el->LAST_ERROR;
-    }
+    // if(!$PRODUCT_ID = $el->Add($arLoadProductArray)) {
+    //     echo "Error: ".$el->LAST_ERROR;
+    // }
 }
 
+// die('test');
 
 /**
  * Send email
