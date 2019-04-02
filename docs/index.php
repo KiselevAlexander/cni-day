@@ -103,7 +103,6 @@ while($ob = $res->GetNextElement()){
 
 }
 
-
 //echo "</pre>";
 function dateRus ($date){
     $date = explode(".", $date);

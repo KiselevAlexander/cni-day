@@ -2,6 +2,15 @@
 
 $day = $arParams['DAY'];
 
+
+$caption = 'День CNI';
+$intensive = false;
+
+if ($day['INTENSIVE'] && $day['INTENSIVE']['VALUE'] === 'Да') {
+    $caption = 'CNI интенсив';
+    $intensive = true;
+}
+
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +30,7 @@ $day = $arParams['DAY'];
     <meta property="og:image" content="/static/img/social_preview.jpg"/>
 
     <link rel="shortcut icon" href="/local/templates/2018/assets/images/cni-.svg" type="image/x-icon">
-    <title>День CNI. г. <?=$arParams['CITY_NAME']?> <?=dateRus($day["DATE"]["VALUE"])?> 2019. Мастер-классы по маникюру</title>
+    <title><?=$caption?> г. <?=$arParams['CITY_NAME']?> <?=dateRus($day["DATE"]["VALUE"])?> 2019. Мастер-классы по маникюру</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -82,7 +91,7 @@ $day = $arParams['DAY'];
                     <div class="navbar-brand">
                         <a href="https://mobirise.com" class="navbar-logo"><img src="/local/templates/2018/assets/images/cni-.svg" alt="Mobirise"></a>
                         <a class="navbar-caption" href="/#features1-6">
-                            ДЕНЬ CNI <span style="text-transform: uppercase;"><?=$arParams['CITY_NAME']?></span><br>
+                            <?=$caption?> <span style="text-transform: uppercase;"><?=$arParams['CITY_NAME']?></span><br>
                             <?=dateRus($day["DATE"]["VALUE"])?> <?=date('Y')?><br>
                         </a>
                     </div>
@@ -149,7 +158,7 @@ $day = $arParams['DAY'];
                         <div class="mbr-table-cell col-md-5 content-size text-xs-center text-md-right">
 
                             <h3 class="mbr-section-title display-3">
-                                ДЕНЬ CNI<br>
+                                <span class="text-uppercase"><?=$caption?></span><br>
                                 <span class="text-uppercase"><?=$arParams['CITY_NAME']?></span>
                             </h3>
 
@@ -209,7 +218,7 @@ $day = $arParams['DAY'];
                 <div class="mbr-table-cell col-md-5 text-xs-center text-md-right content-size">
                     <h3 class="mbr-section-title display-2 text-uppercase">
                         <?=$arParams['CITY_NAME']?>, <?=dateRus($day["DATE"]["VALUE"])?><br>
-                        ДЕНЬ CNI
+                        <?=$caption?>
                     </h3>
                     <div class="lead">
 
@@ -247,7 +256,7 @@ $day = $arParams['DAY'];
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h3 class="mbr-section-title display-2">ЧЕМУ ВЫ НАУЧИТЕСЬ НА ДНЕ CNI</h3>
+                <h3 class="mbr-section-title display-2">ЧЕМУ ВЫ НАУЧИТЕСЬ НА <?=(!$intensive) ? 'ДНЕ CNI' : 'CNI ИНТЕНСИВЕ'?></h3>
                 <small class="mbr-section-subtitle"></small>
             </div>
         </div>

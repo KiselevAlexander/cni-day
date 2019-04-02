@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h3 class="mbr-section-title display-2">Программа дня CNI:</h3>
+                <h3 class="mbr-section-title display-2">Программа <?=(!$intensive) ? 'дня CNI' : 'CNI интенсива'?>:</h3>
             </div>
         </div>
     </div>
