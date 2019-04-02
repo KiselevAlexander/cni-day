@@ -16,9 +16,9 @@ const PATHS = {
     }
 };
 
-const phpSettings = { 
+const phpSettings = {
     base: 'docs',
-    port: 8010, 
+    port: 8010,
     keepalive: true
 };
 
@@ -76,7 +76,7 @@ gulp.task('connect-sync', function() {
             }
         });
     });
- 
+
     gulp.watch(['docs/*.php', 'docs/local/**/*.*'],  function () {
         browserSync.reload();
     });
@@ -117,7 +117,7 @@ gulp.task('javascript', () => {
 });
 
 
-gulp.task('default', ['sass', 'connect-sync', 'javascript'], () => {
+gulp.task('default', ['sass', 'javascript'], () => {
     gulp.watch(`${PATHS.SOURCE.SCSS}**/*.scss`, ['sass']);
     gulp.watch(`${PATHS.SOURCE.JS}`, ['javascript']);
     // gulp.watch(PATHS.SOURCE.IMAGES, ['images']);
