@@ -21,7 +21,7 @@ $day = $arParams['DAY'];
     <meta property="og:image" content="/static/img/social_preview.jpg"/>
 
     <link rel="shortcut icon" href="/local/templates/2018/assets/images/cni-.svg" type="image/x-icon">
-    <title>День CNI. г. <?=$arParams['CITY_NAME']?> <?=dateRus($day["DATE"]["VALUE"])?> 2018. Мастер-классы по маникюру</title>
+    <title>День CNI. г. <?=$arParams['CITY_NAME']?> <?=dateRus($day["DATE"]["VALUE"])?> 2019. Мастер-классы по маникюру</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -83,7 +83,7 @@ $day = $arParams['DAY'];
                         <a href="https://mobirise.com" class="navbar-logo"><img src="/local/templates/2018/assets/images/cni-.svg" alt="Mobirise"></a>
                         <a class="navbar-caption" href="/#features1-6">
                             ДЕНЬ CNI <span style="text-transform: uppercase;"><?=$arParams['CITY_NAME']?></span><br>
-                            <?=dateRus($day["DATE"]["VALUE"])?> 2018<br>
+                            <?=dateRus($day["DATE"]["VALUE"])?> <?=date('Y')?><br>
                         </a>
                     </div>
 
@@ -181,6 +181,7 @@ $day = $arParams['DAY'];
                                         width="1280"
                                         height="720"
                                         frameborder="0"
+                                        allow="autoplay; encrypted-media"
                                         allowfullscreen
                                 ></iframe>
                             </div>
@@ -338,7 +339,7 @@ $day = $arParams['DAY'];
                     Email: <a href="mailto:<?=$day['MAIL']['VALUE']?>" style="color: #fff;"><?=$day['MAIL']['VALUE']?></a><br><br>
 
                     Тел.: <strong>
-                        <a href="tel:+74932371714" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">
+                        <a href="tel:<?=$day['PHONE_CODE']['VALUE'].' '.$day['PHONE_NUMBER']['VALUE']?>" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">
                             <?=$day['PHONE_CODE']['VALUE'].' '.$day['PHONE_NUMBER']['VALUE']?>
                         </a>
                     </strong>
