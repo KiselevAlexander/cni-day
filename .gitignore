@@ -11,3 +11,5 @@ docs/web.config
 .idea/
 errordocs/
 stat/
+.ssh/
+.bash_history

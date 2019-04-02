@@ -4,7 +4,7 @@
 // посмотрим какой город был выбран этим юзером в прошлый раз
 $sUserCity = $APPLICATION->get_cookie('USER_CITY');
 
-$isDev = $_SERVER['SERVER_NAME'] === '127.0.0.1';
+$isDev = false; // $_SERVER['SERVER_NAME'] === '127.0.0.1';
 
 // установим глобальную переменную cur_city = код города (из сабдомена)
 if ($isDev) {

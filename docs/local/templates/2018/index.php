@@ -18,10 +18,10 @@ $day = $arParams['DAY'];
           content="<?=dateRus($day["DATE"]["VALUE"])?> Уникальная вечеринка-обучение для нейл-мастеров. Розыгрыши, щедрые подарки, море вдохновения и позитива. День, который нельзя пропустить!"/>
     <meta name="description"
           content="<?=dateRus($day["DATE"]["VALUE"])?> Уникальная вечеринка-обучение для нейл-мастеров. Розыгрыши, щедрые подарки, море вдохновения и позитива. День, который нельзя пропустить!"/>
-    <meta property="og:image" content="/static/img/cni_share-img.jpg"/>
+    <meta property="og:image" content="/static/img/social_preview.jpg"/>
 
     <link rel="shortcut icon" href="/local/templates/2018/assets/images/cni-.svg" type="image/x-icon">
-    <title>День CNI. г. <?=$arParams['CITY_NAME']?> <?=dateRus($day["DATE"]["VALUE"])?> 2018. Мастер-классы по маникюру</title>
+    <title>День CNI. г. <?=$arParams['CITY_NAME']?> <?=dateRus($day["DATE"]["VALUE"])?> 2019. Мастер-классы по маникюру</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -83,7 +83,7 @@ $day = $arParams['DAY'];
                         <a href="https://mobirise.com" class="navbar-logo"><img src="/local/templates/2018/assets/images/cni-.svg" alt="Mobirise"></a>
                         <a class="navbar-caption" href="/#features1-6">
                             ДЕНЬ CNI <span style="text-transform: uppercase;"><?=$arParams['CITY_NAME']?></span><br>
-                            <?=dateRus($day["DATE"]["VALUE"])?> 2018<br>
+                            <?=dateRus($day["DATE"]["VALUE"])?> <?=date('Y')?><br>
                         </a>
                     </div>
 
@@ -102,7 +102,7 @@ $day = $arParams['DAY'];
                         <li class="nav-item nav-btn">
                             <a class="nav-link btn btn-white btn-white-outline"
                                href="tel:<?=$day['PHONE_CODE']['VALUE'].$day['PHONE_NUMBER']['VALUE']?>"
-                               onclick="window.yaCounter42617899.reachGoal('Mobile_call');"
+                               onclick="reachGoal('Mobile_call');"
                             >
                                 <?=$day['PHONE_CODE']['VALUE'].' '.$day['PHONE_NUMBER']['VALUE']?>
                             </a>
@@ -112,6 +112,8 @@ $day = $arParams['DAY'];
                                href="/#order"
                                data-toggle="modal"
                                data-target="#order"
+                               onclick="reachGoal('menu_order_open')"
+                               data-submit-goal="menu_order_send"
                             >
                                 ЗАПИСАТЬСЯ
                             </a>
@@ -162,6 +164,8 @@ $day = $arParams['DAY'];
                                    href="/#order"
                                    data-toggle="modal"
                                    data-target="#order"
+                                   onclick="reachGoal('1scrn_open')"
+                                   data-submit-goal="1scrn_send_"
                                 >ЗАПИСАТЬСЯ</a>
                             </div>
 
@@ -177,6 +181,7 @@ $day = $arParams['DAY'];
                                         width="1280"
                                         height="720"
                                         frameborder="0"
+                                        allow="autoplay; encrypted-media"
                                         allowfullscreen
                                 ></iframe>
                             </div>
@@ -219,6 +224,8 @@ $day = $arParams['DAY'];
                            href="/#order"
                            data-toggle="modal"
                            data-target="#order"
+                           onclick="reachGoal('2scrn_open_MIX')"
+                           data-submit-goal="2scrn_send_MIX"
                         >ЗАПИСАТЬСЯ</a>
                     </div>
                 </div>
@@ -332,7 +339,7 @@ $day = $arParams['DAY'];
                     Email: <a href="mailto:<?=$day['MAIL']['VALUE']?>" style="color: #fff;"><?=$day['MAIL']['VALUE']?></a><br><br>
 
                     Тел.: <strong>
-                        <a href="tel:+74932371714" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">
+                        <a href="tel:<?=$day['PHONE_CODE']['VALUE'].' '.$day['PHONE_NUMBER']['VALUE']?>" style="color: #fff;" onclick="window.yaCounter42617899.reachGoal('Mobile_call');">
                             <?=$day['PHONE_CODE']['VALUE'].' '.$day['PHONE_NUMBER']['VALUE']?>
                         </a>
                     </strong>
@@ -383,6 +390,7 @@ $day = $arParams['DAY'];
 <script src="/local/templates/2018/assets/mobirise-gallery/player.min.js"></script>
 <script src="/local/templates/2018/assets/mobirise-gallery/script.js"></script>
 <script src="/local/templates/2018/assets/sendform.min.js"></script>
+<script src="/local/templates/2018/assets/metrics.min.js"></script>
 
 
 <input name="animation" type="hidden">

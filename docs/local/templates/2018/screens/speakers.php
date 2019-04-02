@@ -36,9 +36,9 @@ function renderSpeaker($name, $surname, $description, $image, $title) {
                            class="btn btn-danger"
                            data-toggle="modal"
                            data-target="#order-speaker"
-                           data-additional-data="<?=json_encode([
-                                   'speakerName' => "{$name} {$surname}"
-                           ])?>"
+                           data-additional-data="<?=json_encode(['speakerName' => "{$name} {$surname}"])?>"
+                           onclick="reachGoal('5scrn_open_teacher')"
+                           data-submit-goal="5scrn_send_teacher"
                         >
                             ЗАПИСАТЬСЯ
                         </a>
